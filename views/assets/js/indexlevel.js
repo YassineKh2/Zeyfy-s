@@ -1,4 +1,4 @@
-let level=0;
+let level;
 var button1 = document.getElementById('b1');
 var button2= document.getElementById('b2');
 var button3 = document.getElementById('b3');
@@ -86,4 +86,3 @@ else if(level==5)
 }
 
 console.log(button1);
-DisEn(button1,  button2,button3,button4,button5,4);
