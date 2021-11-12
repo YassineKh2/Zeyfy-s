@@ -1,0 +1,28 @@
+.header {
+    min-height: 110vh;
+    width: 100%;
+    background-image: url(../images/without_blaka.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+
+  .text-box{
+
+    position:relative;
+    top: 100px;
+  
+  }
+
+#contenuDuCours{
+    position:relative;
+font-size:150%;
+top: 50px;
+left: -190px;
+
+}
+.header
+{
+    display:flex;
+    flex-wrap: wrap;
+}
