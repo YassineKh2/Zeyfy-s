@@ -3,6 +3,7 @@ include '../config.php';
 include '../model/joueur_score.php';
 
 class joueur_score_jeuxC{
+    
 function afficherscore(){
 $sql="SELECT * FROM joueur_score";
 $db= config::getConnexion();
