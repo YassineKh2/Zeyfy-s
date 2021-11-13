@@ -41,7 +41,6 @@ public function setScore(string $score):void{
     $this->score = $score;
 }
 
-
- }
+}
 
  ?>
