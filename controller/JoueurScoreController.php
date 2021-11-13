@@ -3,7 +3,7 @@ include '../config.php';
 include '../model/joueur_score.php';
 
 class joueur_score_jeuxC{
-    
+
 function afficherscore(){
 $sql="SELECT * FROM joueur_score";
 $db= config::getConnexion();
@@ -19,12 +19,12 @@ catch(Exception $e){
 
 }
 
-function supprimerscore(){
+function supprimerscore($idJoueur){
 
-    $sql="DELETE FROM joueur_score where score=:score";
+    $sql="DELETE FROM joueur_score where idJoueur=:idJoueur";
     $db = config::getConnexion();
     $req = $db->prepare($sql);
-    $req->bindValue(':score' , $score);
+    $req->bindValue(':idJoueur' , $idJoueur);
         try{
             $req->execute();
         }
