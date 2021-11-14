@@ -33,35 +33,35 @@ function supprimerscore($idJoueur){
         }
 }
 
-function ajouterScore($score)
+function ajouterScore($joueur_score_jeux)
 {
 $sql= "INSERT INTO joueur_score(idJeux,idJoueur,score) values (:idJeux,:idJoueur,:score)";
 $db = config::getConnexion();
-    var_dump($score);
+    //var_dump($joueur_score_jeux);
 
     try{
   $query = $db->prepare($sql);
      $query->execute([
 'idJeux'=>$joueur_score_jeux->getIdJeux(),
 'idJoueur'=>$joueur_score_jeux->getIdJoueur(),
-'score'=>$score->getScore(),
+'score'=>$joueur_score_jeux->getScore(),
 ]);
     }
-    catch (PDOExeption $e){
+    catch (PDOException $e){
         $e->getMessage();
     }
 }
 
-function recupererscore($score)
+function recupererscore($idJoueur)
     {
     $sql="SELECT * from joueur_score where
-    score=$score";
+    idJoueur=$idJoueur";
     $db=config::getConnexion();
     try{
         $query=$db->prepare($sql);
         $query->execute();
-        $adherent=$query->fetch();
-        return $score;
+        $joueur_score_jeux=$query->fetch();
+        return $joueur_score_jeux;
 
     }
     catch(Exception $e)
@@ -70,7 +70,7 @@ function recupererscore($score)
 }
 
 
-function modifierscore ($joueur_score_jeux , $idJoueur)
+function modifierscore ($joueur_score_jeux, $idJoueur)
 { 
     try {
         $db= config::getConnexion();
@@ -81,8 +81,7 @@ function modifierscore ($joueur_score_jeux , $idJoueur)
      Where idJoueur= :idJoueur'
     );
     $query->execute ([
-    'idJeux'=> $joueur_score_jeux->getIdJeux(),
-    'idJoueur'=> $joueur_score_jeux->getIdJoueur(),
+    'idJoueur'=> $idJoueur,//enty hatit melowel :idJeux or que mastaamaltouch 
     'score'=> $joueur_score_jeux->getScore(),
  ]);
  echo $query->rowcount() . "records UPDATTED SUCCESSFULLY <br>";

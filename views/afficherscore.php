@@ -28,8 +28,8 @@ $listeScore=$joueur_score_jeuxC->afficherscore();
                 <td><?php echo $joueur_score_jeux['score']; ?></td>
            
                 <td>
-                    <form method="POST" action="FormUpdate.php">
-                        <input type="submit" name="Modifier" value="Modifier">
+                    <form method="POST" action="">
+                        <a href="modifierscore.php?idJoueur=<?php echo $joueur_score_jeux['idJoueur'];?>">modifier</a>
                         <input type="hidden" value=<?php echo $joueur_score_jeux['idJoueur']; ?> name="idJoueur">
                     </form>
                 </td>
