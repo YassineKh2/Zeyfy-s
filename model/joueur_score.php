@@ -7,10 +7,9 @@ class joueur_score_jeux
     private int $score;
 
     public function __construct($idJoueur,$idJeux,$score)
-    {
-
-        $this->idJoueur =$idJoueur;   
-        $this->idJeux =$idJeux;
+   {
+        $this->idJoueur =$idJoueur;
+        $this->idJeux =$idJeux;   
         $this->score=$score;
     
     }
@@ -32,12 +31,12 @@ public function setIdJoueur(int $idJo):void{
 }
 
 
-public function getscore():int{
+public function getScore():int{
     return $this->score;
 
 
 }
-public function setScore(string $score):void{
+public function setScore(int $score):void{
     $this->score = $score;
 }
 
