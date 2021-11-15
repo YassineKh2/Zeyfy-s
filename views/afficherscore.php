@@ -28,11 +28,11 @@ $listeScore=$joueur_score_jeuxC->afficherscore();
                 <td><?php echo $joueur_score_jeux['score']; ?></td>
            
                 <td>
-                    <form method="POST" action="">
-                        <a href="modifierscore.php?idJoueur=<?php echo $joueur_score_jeux['idJoueur'];?>">modifier</a>
-                        <input type="hidden" value=<?php echo $joueur_score_jeux['idJoueur']; ?> name="idJoueur">
-                    </form>
-                </td>
+					<form method="POST" action="modifierscore.php">
+						<input type="submit" name="Modifier" value="Modifier">
+						<input type="hidden" value=<?PHP echo $joueur_score_jeux['idJoueur']; ?> name="idJoueur">
+					</form>
+				</td>
                 <td>
                     <a href="supprimerscore.php?idJoueur=<?php echo $joueur_score_jeux['idJoueur']; ?>">Supprimer</a>
                 </td>

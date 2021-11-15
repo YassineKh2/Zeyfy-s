@@ -75,14 +75,12 @@ function modifierscore ($joueur_score_jeux, $idJoueur)
     try {
         $db= config::getConnexion();
         $query=$db->prepare(
-     'UPDATE joueur_score SET
- score= :score, 
-    
-     Where idJoueur= :idJoueur'
+     "UPDATE joueur_score SET score=:score WHERE idJoueur=:idJoueur;"
     );
     $query->execute ([
-    'idJoueur'=> $idJoueur,//enty hatit melowel :idJeux or que mastaamaltouch 
-    'score'=> $joueur_score_jeux->getScore(),
+        'score'=>$joueur_score_jeux->getScore(),
+        'idJoueur'=>$idJoueur
+    
  ]);
  echo $query->rowcount() . "records UPDATTED SUCCESSFULLY <br>";
 }
