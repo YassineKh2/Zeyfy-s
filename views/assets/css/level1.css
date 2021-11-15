@@ -19,7 +19,7 @@
     position:relative;
 
 font-size:150%;
-top: 50px;
+top: 40px;
 left: -100px;
 
 }
@@ -52,5 +52,5 @@ left: -100px;
       touch-action: manipulation;
   position: relative;
   top: 100px;
-  left: 10px;
+  left: 190px;
 }

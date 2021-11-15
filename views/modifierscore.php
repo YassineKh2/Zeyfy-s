@@ -63,21 +63,21 @@ include_once '../controller/JoueurScoreController.php';
                         <label for="IdJeux">id  jeux:
                         </label>
                     </td>
-                    <td><input type="text" name="idjeux" id="idJeux"  value="<?php echo $joueur_score_jeux['idJeux']; ?>" maxlength="20"></td>
+                    <td><input type="text" name="idjeux" id="idJeux"  value="<?php echo $joueur_score_jeux['idJeux']; ?>" maxlength="20" disabled></td>
                 </tr>
 				<tr>
                     <td>
                         <label for="IdJoueur">idJoueur:
                         </label>
                     </td>
-                    <td><input type="text" name="idjoueur" id="idJoueur "value="<?php echo $joueur_score_jeux['idJoueur']; ?>" maxlength="20"></td>
+                    <td><input type="text" name="idjoueur" id="idJoueur "value="<?php echo $joueur_score_jeux['idJoueur']; ?>" maxlength="20" disabled></td>
                 </tr>
                 <tr>
                     <td>
                         <label for="score">score:
                         </label>
                     </td>
-                    <td><input type="text" name="score" id="score" value="<?php echo $joueur_score_jeux['Score']; ?>" maxlength="20"></td>
+                    <td><input type="text" name="score" id="score" value="<?php echo $joueur_score_jeux['score']; ?>" maxlength="20"></td>
                 </tr>
                         <input type="submit" value="modfier" action="modifierscore.php" > 
                     </td>
