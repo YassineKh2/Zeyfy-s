@@ -1,6 +1,6 @@
 <?php
-include '../config.php';
-include '../model/joueur_score.php';
+include_once '../config.php';
+include_once '../model/joueur_score.php';
 
 class joueur_score_jeuxC{
 
@@ -75,16 +75,18 @@ function modifierscore ($joueur_score_jeux, $idJoueur)
     try {
         $db= config::getConnexion();
         $query=$db->prepare(
+        
+               
      "UPDATE joueur_score SET score=:score WHERE idJoueur=:idJoueur;"
+
     );
     $query->execute ([
         'score'=>$joueur_score_jeux->getScore(),
         'idJoueur'=>$idJoueur
-    
  ]);
- echo $query->rowcount() . "records UPDATTED SUCCESSFULLY <br>";
+ echo $query->rowcount() . "records UPDATED SUCCESSFULLY <br>";
 }
-catch (PDOExeption $e){
+catch (PDOException $e){
 $e->getMessage();
 }
 
