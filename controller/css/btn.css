@@ -1,0 +1,16 @@
+.btn{
+    position: relative;
+    padding: 5px 10px;
+    background: #f15a03;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #1a202c;
+    border-radius: 6px;
+    border:none;
+}
+.btnn{
+    background: #f15a03;
+    text-decoration: none;
+    color: #1a202c;
+    border:none;
+}
