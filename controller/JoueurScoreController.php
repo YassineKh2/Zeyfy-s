@@ -83,7 +83,7 @@ function modifierscore ($joueur_score_jeux, $idJoueur)
     $query->execute ([
         'score'=>$joueur_score_jeux->getScore(),
         'idJoueur'=>$idJoueur
- ]);
+ ]);    
  echo $query->rowcount() . "records UPDATED SUCCESSFULLY <br>";
 }
 catch (PDOException $e){
