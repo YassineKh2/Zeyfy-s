@@ -265,7 +265,7 @@ ajax.send();
            // converting json back to array
           alert(this.responseText);
          questions = JSON.parse(this.responseText);
-        console.log(questions); //for debugging
+         //for debugging
     
     
        
@@ -276,7 +276,7 @@ ajax.send();
 //     //function to shuffle and push 10 questions to shuffledQuestions array
 // //app would be dealing with 10questions per session
     
-     while (shuffledQuestions.length <1 ) {
+     while (shuffledQuestions.length <=questions.length-1 ) {
          const random = questions[Math.floor(Math.random() * questions.length)]
          if (!shuffledQuestions.includes(random)) {
              shuffledQuestions.push(random)
@@ -313,16 +313,22 @@ function NextQuestion(index) {
 
 function checkForAnswer() {
     const currentQuestion = shuffledQuestions[indexNumber] //gets current Question 
-    const currentQuestionAnswer = currentQuestion.correctOption //gets current Question's answer
-    const options = document.getElementsByName("option"); //gets all elements in dom with name of 'option' (in this the radio inputs)
-    let correctOption = null
+    const currentQuestionAnswer = currentQuestion.correctOption; //gets current Question's answer
+    const options = document.getElementsByName("option");//value problem
+     //gets all elements in dom with name of 'option' (in this the radio inputs)
+    let correctOption = null;
+    console.log();
+   
 
     options.forEach((option) => {
-        if (option.value === currentQuestionAnswer) {
+        
+        if (currentQuestion[option.value] === currentQuestionAnswer) {
             //get's correct's radio input with correct answer
             correctOption = option.labels[0].id
+            
         }
     })
+    //console.log(correctOption);
 
     //checking to make sure a radio input has been checked or an option being chosen
     if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false) {
@@ -363,7 +369,7 @@ function handleNextQuestion() {
     unCheckRadioButtons()
     //delays next question displaying for a second just for some effects so questions don't rush in on player
     setTimeout(() => {
-        if (indexNumber <=1 ) {
+        if (indexNumber <shuffledQuestions.length ) {
 //displays next question as long as index number isn't greater than 9, remember index number starts from 0, so index 1 is question 10
             NextQuestion(indexNumber)
         }
