@@ -1,243 +1,11 @@
-// //this would be the object shape for storing the questions  
-//  //you can change the questions to your own taste or even add more questions..
-//  const questions = [
-//     {
-//         question: "quel langage  est  un langage de balisage?",
-//         optionA: "HTML",
-//         optionB: "JAVASCRIPT",
-//         optionC: "PHP",
-//         optionD: "C",
-//         correctOption: "optionA"
-//     },
-
-//     {
-//         question: "How many players are allowed on a soccer pitch ?",
-//         optionA: "10 players",
-//         optionB: "11 players",
-//         optionC: "9 players",
-//         optionD: "12 players",
-//         correctOption: "optionB"
-//     },
-
-//     {
-//         question: "Who was the first President of USA ?",
-//         optionA: "Donald Trump",
-//         optionB: "Barack Obama",
-//         optionC: "Abraham Lincoln",
-//         optionD: "George Washington",
-//         correctOption: "optionD"
-//     },
-
-//     {
-//         question: "30 days has ______ ?",
-//         optionA: "January",
-//         optionB: "December",
-//         optionC: "June",
-//         optionD: "August",
-//         correctOption: "optionC"
-//     },
-
-//     {
-//         question: "How manay hours can be found in a day ?",
-//         optionA: "30 hours",
-//         optionB: "38 hours",
-//         optionC: "48 hours",
-//         optionD: "24 hours",
-//         correctOption: "optionD"
-//     },
-
-//     {
-//         question: "Which is the longest river in the world ?",
-//         optionA: "River Nile",
-//         optionB: "Long River",
-//         optionC: "River Niger",
-//         optionD: "Lake Chad",
-//         correctOption: "optionA"
-//     },
-
-//     {
-//         question: "_____ is the hottest Continent on Earth ?",
-//         optionA: "Oceania",
-//         optionB: "Antarctica",
-//         optionC: "Africa",
-//         optionD: "North America",
-//         correctOption: "optionC"
-//     },
-
-//     {
-//         question: "Which country is the largest in the world ?",
-//         optionA: "Russia",
-//         optionB: "Canada",
-//         optionC: "Africa",
-//         optionD: "Egypt",
-//         correctOption: "optionA"
-//     },
-
-//     {
-//         question: "Which of these numbers is an odd number ?",
-//         optionA: "Ten",
-//         optionB: "Twelve",
-//         optionC: "Eight",
-//         optionD: "Eleven",
-//         correctOption: "optionD"
-//     },
-
-//     {
-//         question: `"You Can't see me" is a popular saying by`,
-//         optionA: "Eminem",
-//         optionB: "Bill Gates",
-//         optionC: "Chris Brown",
-//         optionD: "John Cena",
-//         correctOption: "optionD"
-//     },
-
-//     {
-//         question: "Where is the world tallest building located ?",
-//         optionA: "Africa",
-//         optionB: "California",
-//         optionC: "Dubai",
-//         optionD: "Italy",
-//         correctOption: "optionC"
-//     },
-
-//     {
-//         question: "The longest river in the United Kingdom is ?",
-//         optionA: "River Severn",
-//         optionB: "River Mersey",
-//         optionC: "River Trent",
-//         optionD: "River Tweed",
-//         correctOption: "optionA"
-//     },
-
-
-//     {
-//         question: "How many permanent teeth does a dog have ?",
-//         optionA: "38",
-//         optionB: "42",
-//         optionC: "40",
-//         optionD: "36",
-//         correctOption: "optionB"
-//     },
-
-//     {
-//         question: "Which national team won the football World cup in 2018 ?",
-//         optionA: "England",
-//         optionB: "Brazil",
-//         optionC: "Germany",
-//         optionD: "France",
-//         correctOption: "optionD"
-//     },
-
-//     {
-//         question: "Which US state was Donald Trump Born ?",
-//         optionA: "New York",
-//         optionB: "California",
-//         optionC: "New Jersey",
-//         optionD: "Los Angeles",
-//         correctOption: "optionA"
-//     },
-
-//     {
-//         question: "How man states does Nigeria have ?",
-//         optionA: "24",
-//         optionB: "30",
-//         optionC: "36",
-//         optionD: "37",
-//         correctOption: "optionC"
-//     },
-
-//     {
-//         question: "____ is the capital of Nigeria ?",
-//         optionA: "Abuja",
-//         optionB: "Lagos",
-//         optionC: "Calabar",
-//         optionD: "Kano",
-//         correctOption: "optionA"
-//     },
-
-//     {
-//         question: "Los Angeles is also known as ?",
-//         optionA: "Angels City",
-//         optionB: "Shining city",
-//         optionC: "City of Angels",
-//         optionD: "Lost Angels",
-//         correctOption: "optionC"
-//     },
-
-//     {
-//         question: "What is the capital of Germany ?",
-//         optionA: "Georgia",
-//         optionB: "Missouri",
-//         optionC: "Oklahoma",
-//         optionD: "Berlin",
-//         correctOption: "optionD"
-//     },
-
-//     {
-//         question: "How many sides does an hexagon have ?",
-//         optionA: "Six",
-//         optionB: "Sevene",
-//         optionC: "Four",
-//         optionD: "Five",
-//         correctOption: "optionA"
-//     },
-
-//     {
-//         question: "How many planets are currently in the solar system ?",
-//         optionA: "Eleven",
-//         optionB: "Seven",
-//         optionC: "Nine",
-//         optionD: "Eight",
-//         correctOption: "optionD"
-//     },
-
-//     {
-//         question: "Which Planet is the hottest ?",
-//         optionA: "Jupitar",
-//         optionB: "Mercury",
-//         optionC: "Earth",
-//         optionD: "Venus",
-//         correctOption: "optionB"
-//     },
-
-//     {
-//         question: "where is the smallest bone in human body located?",
-//         optionA: "Toes",
-//         optionB: "Ears",
-//         optionC: "Fingers",
-//         optionD: "Nose",
-//         correctOption: "optionB"
-//     },
-
-//     {
-//         question: "How many hearts does an Octopus have ?",
-//         optionA: "One",
-//         optionB: "Two",
-//         optionC: "Three",
-//         optionD: "Four",
-//         correctOption: "optionC"
-//     },
-
-//     {
-//         question: "How many teeth does an adult human have ?",
-//         optionA: "28",
-//         optionB: "30",
-//         optionC: "32",
-//         optionD: "36",
-//         correctOption: "optionC"
-//     }
-
-// ]
-
+//sending ajax request
 
 var ajax= new XMLHttpRequest ();
 var method="GET";
 var url="assets/js/getQuestion.php";
 var asynchronous =true;
 
-//sending ajax request
 
-//receiving reponse from getquestion.php
 ajax.onreadystatechange = function()
 {
 
@@ -262,10 +30,8 @@ ajax.send();
     
        if(this.readyState == 4 && this.status == 200)
        {
-           // converting json back to array
-          alert(this.responseText);
+        //   alert(this.responseText);
          questions = JSON.parse(this.responseText);
-         //for debugging
     
     
        
@@ -273,8 +39,7 @@ ajax.send();
     }
     ajax.open(method,url,false);
     ajax.send();
-//     //function to shuffle and push 10 questions to shuffledQuestions array
-// //app would be dealing with 10questions per session
+
     
      while (shuffledQuestions.length <=questions.length-1 ) {
          const random = questions[Math.floor(Math.random() * questions.length)]
@@ -328,7 +93,6 @@ function checkForAnswer() {
             
         }
     })
-    //console.log(correctOption);
 
     //checking to make sure a radio input has been checked or an option being chosen
     if (options[0].checked === false && options[1].checked === false && options[2].checked === false && options[3].checked == false) {
