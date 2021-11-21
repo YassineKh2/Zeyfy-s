@@ -21,9 +21,9 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(247, 240, 240);
+    background-color: rgb(42, 39, 243);
     background: url('../assets/background_image.jpg');
-    background-color : rgba(0, 68, 255, 0.2);;
+    background-color : rgba(214, 128, 57, 0.178);;
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -32,7 +32,7 @@ main{
 .game-quiz-container{
     width: 40rem;
     height: 30rem;
-    background-color: #3438f5;
+    background-color: #251abb8a;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,7 +58,7 @@ main{
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 2px solid rgb(209, 203, 203);
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 25px;
 }
 
@@ -80,7 +80,7 @@ main{
 .game-options-container span{
     width: 45%;
     height: 3rem;
-    border: 2px solid rgb(209, 203, 203);
+    border: 2px solid rgb(255, 255, 255);
     border-radius: 20px;
     overflow: hidden;
 }
@@ -110,7 +110,7 @@ input[type="radio"] {
 
 
 input[type=radio]:checked ~ .option {
-    background: rgba(231, 135, 96, 0.2);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .next-button-container{
@@ -124,14 +124,14 @@ input[type=radio]:checked ~ .option {
     height: 2rem;
     border-radius: 10px;
     background: none;
-    color: rgb(245, 163, 130);
+    color: rgb(255, 255, 255);
     font-weight: 600;
-    border: 2px solid rgb(175, 93, 93);
+    border: 2px solid rgb(255, 255, 255);
     cursor: pointer;
     outline: none;
 }
 .next-button-container button:hover{
-    background-color: rgba(218, 230, 220, 0.616);
+    background-color: rgb(255, 255, 255);
 }
 
 .modal-container{
