@@ -28,8 +28,8 @@
                         <select name="idOffre">
                         <?php
                 foreach($liste as $offre) {
-             ?>
-                                <option value=""><?php echo $offre['idOffre'] ?></option>
+                        ?>
+                                <option value="<?php $offre['idOffre'] ?>"><?php echo $offre['idOffre'] ?></option>
                                      <?php }  ?>
                     </select>; 
                     </td>

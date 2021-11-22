@@ -3,6 +3,12 @@
  include_once '../Controller/CategorieC.php';
  $categorieC=new categorieC();
 $listecategories=$categorieC->afficherCategorie();
+
+include_once '../Model/Offre.php';
+ include_once '../Controller/OffreC.php';
+ $offreC=new offreC();
+$listeoffres=$offreC->afficherOffre();
+
 ?>
 
 <!DOCTYPE html>
@@ -105,7 +111,6 @@ $listecategories=$categorieC->afficherCategorie();
                                          <tr>
                                             <td>Id Catégorie</td>
                                             <td>Nom Catégorie</td>
-                                            <td>Jeux</td>
                                             <td>Offre</td>
                                             <td>Modifier</td>
                                             <td>Supprimer</td>
@@ -128,8 +133,10 @@ $listecategories=$categorieC->afficherCategorie();
                                           </td>
 
                                            <td> 
-                                           <a href="supprimerCategorie.php?IdCategorie=<?php echo $categorie['IdCategorie'];
-                                           ?>">Supprimer </a>
+                                           <form method="post" action="supprimerCategorie.php">
+						                     <input type="submit" class="btn supp" name="Supprimer" value="Supprimer">
+						                     <input type="hidden" value=<?php echo $categorie['IdCategorie']; ?> name="IdCategorie">
+					                        </form> 
                                            </td>
                                            </tr>
                                            <?php
@@ -139,59 +146,7 @@ $listecategories=$categorieC->afficherCategorie();
                                     </table>
                                 </div>
 
-                                <div class="recentorders">
-                                <div class="cardheader">
-                                    <h2>Demande recente</h2>
-                                    <a href="#" class="btn">Ajouter</a>
-                                </div>
-                                <table>
-                                    <thead>
-                                    <tr>
-                                        <td>Nom</td>
-                                        <td>Categorie</td>
-                                        <td>Prix</td>
-                                        <td>Offres</td>
-                                        <td>Statut</td>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Python</td>
-                                        <td>Programmation</td>
-                                        <td>45Dt</td>
-                                        <td>Paye avec réduction</td>
-                                        <td><span class="status delivered">Delivered</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mathematique base 2</td>
-                                        <td>Mathematique</td>
-                                        <td>35Dt</td>
-                                        <td>Non Paye</td>
-                                        <td><span class="status return">Refuser</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mathematique base 3</td>
-                                        <td>Mathematique</td>
-                                        <td>35Dt</td>
-                                        <td>Paye sans réduction</td>
-                                        <td><span class="status inprogress">En cours</span></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Système d'exploitation</td>
-                                        <td>Réseau</td>
-                                        <td>30Dt</td>
-                                        <td>Paye</td>
-                                        <td><span class="status pending">En Attente</span></td>
-                                    </tr>
-                                </tbody>
-                                </table>
-                            </div>  
-                        </div>
-                    </div>
-            </div>
-    </div>
-
-
+                          
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
