@@ -5,7 +5,7 @@ class categorie
     private $IdCategorie=null;
     private $idOffre=null;
    
-    function __construct($NomCategorie, $idJeux, $idOffre){
+    function __construct($NomCategorie, $idOffre){
         $this->NomCategorie=$NomCategorie;
         $this->idOffre=$idOffre;
     }

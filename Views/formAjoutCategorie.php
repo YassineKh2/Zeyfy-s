@@ -25,7 +25,13 @@
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="idOffre" id="idOffre" >
+                        <select name="idOffre">
+                        <?php
+                foreach($liste as $offre) {
+             ?>
+                                <option value=""><?php echo $offre['idOffre'] ?></option>
+                                     <?php }  ?>
+                    </select>; 
                     </td>
                 </tr>              
                 <tr>
