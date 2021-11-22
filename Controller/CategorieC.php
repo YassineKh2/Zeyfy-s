@@ -27,14 +27,13 @@
 		}
         function ajouterCategorie($categorie){
 
-            $sql = "INSERT INTO categorie (NomCategorie, idJeux, idOffre)
-                      VALUES (:NomCategorie, :idJeux, :idOffre)";
+            $sql = "INSERT INTO categorie (NomCategorie, idOffre)
+                      VALUES (:NomCategorie, :idOffre)";
          $db = config::getConnexion();
          try{
              $query = $db->prepare($sql);
              $query->execute([
                  'NomCategorie'=> $categorie->getNomCategorie(),
-                 'idJeux'=> $categorie->getidJeux(),
                  'idOffre'=> $categorie->getidOffre()
              ]);
              header("Location: ../Views/formAjoutCategorie.php");
@@ -64,7 +63,6 @@
 				$query = $db->prepare(
 					"UPDATE categorie SET 
 						NomCategorie = :NomCategorie, 
-						idJeux = :idJeux, 
 						idOffre = :idOffre 
 					WHERE IdCategorie = :IdCategorie"
 				);
@@ -72,7 +70,6 @@
 			//die( $categorie->getNomCategorie()." - ".$categorie->getidJeux()." - " .$categorie->getidOffre());
 				$query->execute([
                     'NomCategorie' => $categorie->getNomCategorie(),
-					'idJeux' => $categorie->getidJeux(),
 					'idOffre' => $categorie->getidOffre(),
 					'IdCategorie' => $IdCategorie
 				]);

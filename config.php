@@ -4,7 +4,7 @@ class config {
     public static function getConnexion(){
         if (!isset(self::$pdo)){
             try{
-                self::$pdo = new PDO('mysql:host=localhost;dbname=educaplay','root','',
+                self::$pdo = new PDO('mysql:host=localhost;dbname=educaplayy','root','',
             [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
                 PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC

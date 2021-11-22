@@ -21,13 +21,6 @@
                 </tr>
                 <tr>
                     <td>
-                        <label for="idJeux">Jeux:
-                        </label>
-                    </td>
-                    <td><input type="text" name="idJeux" id="idJeux" maxlength="20"></td>
-                </tr>
-                <tr>
-                    <td>
                         <label for="idOffre">Les offres:
                         </label>
                     </td>

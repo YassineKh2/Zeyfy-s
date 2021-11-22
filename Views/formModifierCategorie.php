@@ -32,13 +32,7 @@ $categorieC=new CategorieC();
                     <td><input type="text" name="NomCategorie" id="NomCategorie" value="<?php echo $categorie['NomCategorie']; ?>" maxlength="20"></td>
                     <input type="hidden" name="IdCategorie" value="<?php echo $categorie['IdCategorie']; ?>">
                 </tr>
-                <tr>
-                    <td>
-                        <label for="idJeux">Jeux:
-                        </label>
-                    </td>
-                    <td><input type="text" name="idJeux" id="idJeux" value="<?php echo $categorie['idJeux']; ?>" maxlength="20"></td>
-                </tr>
+               
                 <tr>
                     <td>
                         <label for="idOffre">Offre:

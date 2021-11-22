@@ -88,46 +88,8 @@ $listecategories=$categorieC->afficherCategorie();
                             <img src="logo.png">
                         </div>
                     </div>
-                <!---- Cards -->
-                    <div class="cardbox">
-                        <div class="card">
-                            <div>
-                            <div class="numbers">2.236</div>
-                            <div class="cardname">Vue Quotidienne</div>
-                            </div>
-                         
-                        <div class="iconBx">
-                            <ion-icon name="eye-outline"></ion-icon>
-                        </div>
-                    </div>
-                        <div class="card">
-                            <div>
-                            <div class="numbers">3</div>
-                            <div class="cardname">Cours Ajouter</div>
-                        </div>
-                        <div class="iconBx">
-                            <ion-icon name="book-outline"></ion-icon>
-                        </div>
-                    </div>
-                        <div class="card">
-                            <div>
-                            <div class="numbers">350</div>
-                            <div class="cardname">Avis</div>
-                        </div>
-                        <div class="iconBx">
-                            <ion-icon name="chatbubbles-outline"></ion-icon>
-                        </div>
-                    </div>
-                        <div class="card">
-                            <div>
-                            <div class="numbers">$1200</div>
-                            <div class="cardname">Revenue</div>
-                        </div>
-                        <div class="iconBx">
-                            <ion-icon name="cash-outline"></ion-icon>
-                        </div>
-                    </div>
-                    </div>
+                                          
+                
                  
                     <div class="details">
                              <!---- Order list -->
@@ -157,7 +119,6 @@ $listecategories=$categorieC->afficherCategorie();
                                         <tr>
                                            <td> <?php echo $categorie['IdCategorie']; ?></td>
                                            <td> <?php echo $categorie['NomCategorie']; ?></td>
-                                           <td> <?php echo $categorie['idJeux']; ?></td>
                                            <td> <?php echo $categorie['idOffre']; ?></td>
                                            <td>
                                             <form method="post" action="formModifierCategorie.php">
@@ -165,6 +126,7 @@ $listecategories=$categorieC->afficherCategorie();
 						                     <input type="hidden" value=<?PHP echo $categorie['IdCategorie']; ?> name="IdCategorie">
 					                        </form>
                                           </td>
+
                                            <td> 
                                            <a href="supprimerCategorie.php?IdCategorie=<?php echo $categorie['IdCategorie'];
                                            ?>">Supprimer </a>
