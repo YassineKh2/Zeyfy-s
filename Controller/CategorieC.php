@@ -10,7 +10,7 @@
 				return $liste;
 			}
 			catch(Exception $e){
-				die('Erreur:'. $e->getMeesage());
+				die('Erreur:'. $e->getMessage());
 			}
 		}
 		function supprimerCategorie($IdCategorie){
@@ -22,7 +22,7 @@
 				$req->execute();
 			}
 			catch(Exception $e){
-				die('Erreur:'. $e->getMeesage());
+				die('Erreur:'. $e->getMessage());
 			}
 		}
         function ajouterCategorie($categorie){

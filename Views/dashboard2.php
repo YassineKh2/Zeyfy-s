@@ -1,10 +1,14 @@
 <?php
- include_once '../Model/Categorie.php';
- include_once '../Controller/CategorieC.php';
- $categorieC=new categorieC();
-$listecategories=$categorieC->afficherCategorie();
+
+include_once '../Model/Offre.php';
+include_once '../Controller/OffreC.php';
+
+ $offreC=new offreC();
+$listeoffres=$offreC->afficherOffre();
+
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -91,58 +95,65 @@ $listecategories=$categorieC->afficherCategorie();
                     </div>
                                           
                 
-                 
                     <div class="details">
-                             <!---- Order list -->
-                            <div class="recentorders">
                                 <div class="recentorders">
-                                    <div class="cardheader">
-                                        <h2>Catégorie</h2>
-                                        <a href="formAjoutCategorie.php" class="btn">Ajouter</a>
-                                    </div>
-                                    <table>
-                                   
-                                        <thead>
-                                         <tr>
-                                            <td>Id Catégorie</td>
-                                            <td>Nom Catégorie</td>
-                                            <td>Offre</td>
-                                            <td>Modifier</td>
-                                            <td>Supprimer</td>
-                                          </tr>
-                                        </thead>
-                                       
-                                    <tbody>
-                                    <?php
-                foreach($listecategories as $categorie) {
-             ?>
-                                        <tr>
-                                           <td> <?php echo $categorie['IdCategorie']; ?></td>
-                                           <td> <?php echo $categorie['NomCategorie']; ?></td>
-                                           <td> <?php echo $categorie['idOffre']; ?></td>
+                                <div class="cardheader">
+                                    <h2>Offre de réduction</h2>
+                                    <a href="formAjoutOffre.php" class="btn">Ajouter</a>
+                                </div>
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <td>Offre</td>
+                                        <td>Date debut offre</td>
+                                        <td>Pourcentage offre</td>
+                                        <td>Date fin offre</td>
+                                        <td>Modifier</td>
+                                        <td>Supprimer</td>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                <?php
+                                 foreach($listeoffres as $offres) {
+                                ?>
+                                    <tr>
+                                           <td> <?php echo $offres['idOffre']; ?></td>
+                                           <td> <?php echo $offres['dateDebutOffre']; ?></td>
+                                           <td> <?php echo $offres['pourcentageOffre']; ?></td>
+                                           <td> <?php echo $offres['dateFinOffre']; ?></td>
                                            <td>
-                                            <form method="post" action="formModifierCategorie.php">
+                                            <form method="POST" action="formModifierOffre.php">
 						                     <input type="submit" class="btn modif" name="Modifier" value="Modifier">
-						                     <input type="hidden" value=<?PHP echo $categorie['IdCategorie']; ?> name="IdCategorie">
+						                     <input type="hidden" value=<?PHP echo $offres['idOffre']; ?> name="idOffre">
 					                        </form>
                                           </td>
 
-                                           <td> 
-                                           <form method="post" action="supprimerCategorie.php">
+                                           <td>
+                                           <form method="POST" action="supprimerOffre.php">
 						                     <input type="submit" class="btn supp" name="Supprimer" value="Supprimer">
-						                     <input type="hidden" value=<?php echo $categorie['IdCategorie']; ?> name="IdCategorie">
+						                     <input type="hidden" value=<?PHP echo $offres['idOffre']; ?> name="idOffre">
 					                        </form> 
                                            </td>
                                            </tr>
                                            <?php
                 }
                                            ?>
-                                    </tbody>
-                                    </table>
-                                </div>
-                                <form method="post" action="dashboard2.php">
-						                     <input type="submit" class="button" name="Offre" value="Offre">
-					                        </form>
+                                </tbody>
+                                </table>
+                            </div>  
+                        </div>
+                       
+                    </div>
+            </div>
+            <form method="post" action="dashboard.php">
+		 <input type="submit" class="button" name="Catégorie" value="Catégorie">
+	</form>
+            </div>
+    </div>
+
+    <form method="post" action="dashboard.php">
+		 <input type="submit" class="button" name="Catégorie" value="Catégorie">
+	</form>
                           
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

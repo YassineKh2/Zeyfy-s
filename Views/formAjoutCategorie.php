@@ -1,3 +1,14 @@
+<?php
+	include '../config.php';
+    $sql="SELECT * FROM offres";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+			}
+			catch(Exception $e){
+				die('Erreur:'. $e->getMeesage());
+			}
+?>
 
 <html lang="en">
 <head>

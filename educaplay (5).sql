@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 17, 2021 at 09:47 AM
+-- Generation Time: Nov 18, 2021 at 05:41 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.4.24
 
@@ -44,7 +44,6 @@ CREATE TABLE `avis` (
 
 CREATE TABLE `categorie` (
   `IdCategorie` int(11) NOT NULL,
-  `idJeux` int(11) NOT NULL,
   `idOffre` int(11) NOT NULL,
   `NomCategorie` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -56,13 +55,13 @@ CREATE TABLE `categorie` (
 --
 
 CREATE TABLE `cours` (
-  `contenuCours` varchar(9) NOT NULL,
-  `image` varchar(20) NOT NULL,
+  `contenuCours` longblob NOT NULL,
+  `image` longblob NOT NULL,
   `url` varchar(20) NOT NULL,
   `dateCreationCours` date NOT NULL,
   `dateModificationCours` date NOT NULL,
   `idFormation` int(11) DEFAULT NULL,
-  `idCours` int(11) DEFAULT NULL
+  `idCours` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -109,17 +108,9 @@ CREATE TABLE `jeux` (
   `reponseC` varchar(10) DEFAULT NULL,
   `correctAnswer` varchar(10) DEFAULT NULL,
   `idCours` int(11) DEFAULT NULL,
-  `idLevel` int(11) DEFAULT NULL,
-  `idCategorie` int(11) DEFAULT NULL
+  `idCategorie` int(11) DEFAULT NULL,
+  `reponseD` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `jeux`
---
-
-INSERT INTO `jeux` (`idJeux`, `question`, `reponseA`, `reponseB`, `reponseC`, `correctAnswer`, `idCours`, `idLevel`, `idCategorie`) VALUES
-(8, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL),
-(12, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -131,15 +122,6 @@ CREATE TABLE `joueur` (
   `idJoueur` int(11) NOT NULL,
   `nbEtoile` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `joueur`
---
-
-INSERT INTO `joueur` (`idJoueur`, `nbEtoile`) VALUES
-(1, 3),
-(2, 69),
-(3, 6);
 
 -- --------------------------------------------------------
 
@@ -153,13 +135,6 @@ CREATE TABLE `joueur_score` (
   `score` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `joueur_score`
---
-
-INSERT INTO `joueur_score` (`idJeux`, `idJoueur`, `score`) VALUES
-(12, 1, 300);
-
 -- --------------------------------------------------------
 
 --
@@ -169,7 +144,8 @@ INSERT INTO `joueur_score` (`idJeux`, `idJoueur`, `score`) VALUES
 CREATE TABLE `level` (
   `idJeux` int(9) NOT NULL,
   `nbEtoile` int(3) NOT NULL,
-  `libelle` varchar(20) NOT NULL
+  `libelle` varchar(20) NOT NULL,
+  `idLevel` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
@@ -197,17 +173,9 @@ CREATE TABLE `utilisateurs` (
   `prenomUtilisateur` varchar(20) NOT NULL,
   `mdpUtilisateur` varchar(20) NOT NULL,
   `admin` tinyint(1) DEFAULT NULL,
-  `Email` varchar(20) DEFAULT NULL
+  `Email` varchar(20) DEFAULT NULL,
+  `etat` tinyint(1) NOT NULL DEFAULT 1
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `utilisateurs`
---
-
-INSERT INTO `utilisateurs` (`idUtilisateur`, `nomUtilisateur`, `prenomUtilisateur`, `mdpUtilisateur`, `admin`, `Email`) VALUES
-(1, 'FARAH', 'TORKHANI', 'LOL', 0, 'asma.bouraoui@esprit'),
-(2, 'taz', 'tazza', 'fefe', 0, 'ngh@jjyjy.com'),
-(3, 'youssef', 'guetat', '0101', 0, 'youssef;guetat@€mail');
 
 --
 -- Indexes for dumped tables
@@ -225,13 +193,13 @@ ALTER TABLE `avis`
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`IdCategorie`),
-  ADD KEY `fk_categoriejeux` (`idJeux`),
   ADD KEY `fk_categorieoffre` (`idOffre`);
 
 --
 -- Indexes for table `cours`
 --
 ALTER TABLE `cours`
+  ADD PRIMARY KEY (`idCours`),
   ADD KEY `fk_coursFormation` (`idFormation`);
 
 --
@@ -239,7 +207,7 @@ ALTER TABLE `cours`
 --
 ALTER TABLE `enseignant`
   ADD PRIMARY KEY (`idEnseignant`),
-  ADD KEY `fk_formationE` (`idFormation`),
+  ADD UNIQUE KEY `idCategorie` (`idCategorie`),
   ADD KEY `fk_specialite` (`idCategorie`);
 
 --
@@ -254,7 +222,8 @@ ALTER TABLE `formation`
 --
 ALTER TABLE `jeux`
   ADD PRIMARY KEY (`idJeux`),
-  ADD KEY `FK_categorie` (`idCategorie`);
+  ADD KEY `idCours` (`idCours`),
+  ADD KEY `idCategorie` (`idCategorie`);
 
 --
 -- Indexes for table `joueur`
@@ -273,7 +242,7 @@ ALTER TABLE `joueur_score`
 -- Indexes for table `level`
 --
 ALTER TABLE `level`
-  ADD PRIMARY KEY (`idJeux`);
+  ADD KEY `idJeux` (`idJeux`);
 
 --
 -- Indexes for table `offres`
@@ -288,6 +257,46 @@ ALTER TABLE `utilisateurs`
   ADD PRIMARY KEY (`idUtilisateur`);
 
 --
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `avis`
+--
+ALTER TABLE `avis`
+  MODIFY `idAvis` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `categorie`
+--
+ALTER TABLE `categorie`
+  MODIFY `IdCategorie` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `cours`
+--
+ALTER TABLE `cours`
+  MODIFY `idCours` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `formation`
+--
+ALTER TABLE `formation`
+  MODIFY `idFormation` int(9) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `jeux`
+--
+ALTER TABLE `jeux`
+  MODIFY `idJeux` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `utilisateurs`
+--
+ALTER TABLE `utilisateurs`
+  MODIFY `idUtilisateur` int(9) NOT NULL AUTO_INCREMENT;
+
+--
 -- Constraints for dumped tables
 --
 
@@ -295,59 +304,58 @@ ALTER TABLE `utilisateurs`
 -- Constraints for table `avis`
 --
 ALTER TABLE `avis`
-  ADD CONSTRAINT `fk_avisUtilisateur` FOREIGN KEY (`idUtilisateur`) REFERENCES `utilisateurs` (`idUtilisateur`);
+  ADD CONSTRAINT `avis_ibfk_1` FOREIGN KEY (`idUtilisateur`) REFERENCES `utilisateurs` (`idUtilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `categorie`
 --
 ALTER TABLE `categorie`
-  ADD CONSTRAINT `fk_categoriejeux` FOREIGN KEY (`idJeux`) REFERENCES `jeux` (`idJeux`),
-  ADD CONSTRAINT `fk_categorieoffre` FOREIGN KEY (`idOffre`) REFERENCES `offres` (`idOffre`);
+  ADD CONSTRAINT `categorie_ibfk_1` FOREIGN KEY (`idOffre`) REFERENCES `offres` (`idOffre`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `cours`
 --
 ALTER TABLE `cours`
-  ADD CONSTRAINT `fk_coursFormation` FOREIGN KEY (`idFormation`) REFERENCES `formation` (`idFormation`);
+  ADD CONSTRAINT `cours_ibfk_1` FOREIGN KEY (`idFormation`) REFERENCES `formation` (`idFormation`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `enseignant`
 --
 ALTER TABLE `enseignant`
-  ADD CONSTRAINT `fk_formationE` FOREIGN KEY (`idFormation`) REFERENCES `formation` (`idFormation`),
-  ADD CONSTRAINT `fk_idenseignant` FOREIGN KEY (`idEnseignant`) REFERENCES `utilisateurs` (`idUtilisateur`),
-  ADD CONSTRAINT `fk_specialite` FOREIGN KEY (`idCategorie`) REFERENCES `categorie` (`IdCategorie`);
+  ADD CONSTRAINT `enseignant_ibfk_1` FOREIGN KEY (`idEnseignant`) REFERENCES `utilisateurs` (`idUtilisateur`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `enseignant_ibfk_2` FOREIGN KEY (`idCategorie`) REFERENCES `categorie` (`IdCategorie`) ON DELETE NO ACTION ON UPDATE CASCADE;
 
 --
 -- Constraints for table `formation`
 --
 ALTER TABLE `formation`
-  ADD CONSTRAINT `fk_idCat` FOREIGN KEY (`id2Categorie`) REFERENCES `categorie` (`IdCategorie`);
+  ADD CONSTRAINT `formation_ibfk_1` FOREIGN KEY (`id2Categorie`) REFERENCES `categorie` (`IdCategorie`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `jeux`
 --
 ALTER TABLE `jeux`
-  ADD CONSTRAINT `FK_categorie` FOREIGN KEY (`idCategorie`) REFERENCES `categorie` (`IdCategorie`);
+  ADD CONSTRAINT `jeux_ibfk_1` FOREIGN KEY (`idCours`) REFERENCES `cours` (`idCours`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `jeux_ibfk_2` FOREIGN KEY (`idCategorie`) REFERENCES `categorie` (`IdCategorie`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `joueur`
 --
 ALTER TABLE `joueur`
-  ADD CONSTRAINT `fk_idjoueur` FOREIGN KEY (`idJoueur`) REFERENCES `utilisateurs` (`idUtilisateur`);
+  ADD CONSTRAINT `joueur_ibfk_1` FOREIGN KEY (`idJoueur`) REFERENCES `utilisateurs` (`idUtilisateur`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `joueur_score`
 --
 ALTER TABLE `joueur_score`
-  ADD CONSTRAINT `fk_joueurid` FOREIGN KEY (`idJoueur`) REFERENCES `joueur` (`idJoueur`),
-  ADD CONSTRAINT `fk_joueurscore` FOREIGN KEY (`idJeux`) REFERENCES `jeux` (`idJeux`);
+  ADD CONSTRAINT `joueur_score_ibfk_1` FOREIGN KEY (`idJoueur`) REFERENCES `joueur` (`idJoueur`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `joueur_score_ibfk_2` FOREIGN KEY (`idJeux`) REFERENCES `jeux` (`idJeux`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Constraints for table `level`
 --
 ALTER TABLE `level`
-  ADD CONSTRAINT `fk_levelJeux` FOREIGN KEY (`idJeux`) REFERENCES `jeux` (`idJeux`);
+  ADD CONSTRAINT `level_ibfk_1` FOREIGN KEY (`idJeux`) REFERENCES `jeux` (`idJeux`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
