@@ -115,7 +115,7 @@ background: var(--white);
 .main{
     position: absolute;
     width: calc(100% - 300px);
-    left: 250px;
+    left: 300px;
     min-height: 100vh;
     background: var(--white);
     transition: 0.5s;
@@ -219,7 +219,6 @@ background: var(--white);
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 30px;
-    right:80px;
     /*margin-top: 10px;*/
 }
 .details .recentorders{
@@ -248,10 +247,6 @@ background: var(--white);
     text-decoration: none;
     color: var(--white);
     border-radius: 6px;
-    border:none;
-}
-.modif {
-    font-size: 1.07em;
 }
 .btn:hover{ 
     background: rgb(71, 71, 219);
