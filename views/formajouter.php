@@ -82,7 +82,7 @@ catch(Exeption $e)
                             
                     <td><input type="text" name="reponseA" id="reponseA" maxlength="20"></td>
                         
-                    </td>
+                    
 
                     </tr>
                     <tr>
@@ -91,36 +91,38 @@ catch(Exeption $e)
                         </label>
                         </td>
                     <td><input type="text" name="reponseB" id="reponseB" maxlength="20"></td>   
-                    </td>
+                    
                         </tr>
-
+<tr>
                     <td>
                         <label for="reponseC">reponseC:
                         </label>
                         </td>
                     <td><input type="text" name="reponseC" id="reponseC" maxlength="20"></td>   
                     </td>
-                <tr>
+                        </tr>
                 <tr>
                 <td>
                         <label for="reponseD">reponseD:
                         </label>
+                        </td>
                         <td><input type="text" name="reponseD" id="reponseD" maxlength="20"></td>   
 
-                        </td>
+                      
                         </tr>
 
-                        </td>    
-
+                        
+    <tr>
+        <td>
                 <label for="correctAnswer">correctAnswer:
+            
                 </label>
                 </td>
+               
                 <td><input type="text" name="correctAnswer" id="correctAnswer" maxlength="20"></td>   
-                </td>
+            
                 </tr>
-                 <tr>
-
-                </td>
+              
 
                 <tr>
                     <td>
@@ -162,7 +164,7 @@ catch(Exeption $e)
 
 
 
-<!-- <footer class="footer-distributed">
+ <footer class="footer-distributed">
 
 			<div class="footer-left">
           <img src="assets/images/logo.png">
@@ -210,10 +212,10 @@ catch(Exeption $e)
 			</div>
 		</footer>
 <!----------- Javascript for Toggle Menu ------------>
-    <!-- <script src="assets/js/indexlevel.js">
+   <script src="assets/js/indexlevel.js">
 
 
-    </script> --> -->
+    </script> 
 
 
 
