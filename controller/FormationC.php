@@ -4,7 +4,18 @@ include '../config.php';
 include '../model/Formation.php';
 class FormationC {
     function afficherformations(){
-        $sql="SELECT * FROM formations";
+        $sql="SELECT * FROM formations order by date_c";
+        $db = config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch(Exception $e){
+            die('Erreur:' . $e->getMessage());
+        }
+    }
+    function afficherformationsd(){
+        $sql="SELECT * FROM formations WHERE statut='en coure' order by date_c";
         $db = config::getConnexion();
         try{
             $liste = $db->query($sql);
@@ -28,8 +39,8 @@ class FormationC {
     }
     function ajouterformation($formations){
 
-       $sql = "INSERT INTO formations (date_c,filiere, titre_f, descriptions,prix_f,image)
-                 VALUES (:date_c, :filiere, :titre_f, :descriptions, :prix_f, :image)";
+       $sql = "INSERT INTO formations (date_c,filiere, titre_f, descriptions,prix_f,image, statut)
+                 VALUES (:date_c, :filiere, :titre_f, :descriptions, :prix_f, :image, 'en coure')";
     $db = config::getConnexion();
     try{
         $query = $db->prepare($sql);
@@ -61,6 +72,28 @@ $query->execute([
 ]);
     } catch (PDOExeption $e){
         $e->getMessage();
+}}
+function modifierstatutA($id_formation,$formations){
+    try{
+     $db = config::getConnexion();
+$query = $db->prepare('UPDATE formations SET statut = "acceptée" WHERE id_formation= :id_formation');
+$query->execute([
+ 
+ 'id_formation'=> $id_formation
+]);
+ } catch (PDOExeption $e){
+     $e->getMessage();
+}}
+function modifierstatutR($id_formation,$formations){
+    try{
+     $db = config::getConnexion();
+$query = $db->prepare('UPDATE formations SET statut = "refusée" WHERE id_formation= :id_formation');
+$query->execute([
+ 
+ 'id_formation'=> $id_formation
+]);
+ } catch (PDOExeption $e){
+     $e->getMessage();
 }}
 function recupererformations($id_formation){
     $sql="SELECT * from formations where id_formation=$id_formation";

@@ -34,6 +34,12 @@
                     </a>
                 </li>
                 <li>
+                    <a href="dashFormation.php">
+                        <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+                        <span class="title">Formations</span>
+                    </a>
+                </li>
+                <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
                         <span class="title">Message</span>
@@ -107,7 +113,7 @@
 new Chart(document.getElementById("bar-chart-horizontal"), {
     type: 'horizontalBar',
     data: {
-      labels: ["Africa", "Asia", "Europe", "Latin America", "North America"],
+        labels: ["Programmation", "Web", "Mathematiques", "Réseau", "Markiting"],
       datasets: [
         {
           label: "Population (millions)",
@@ -120,7 +126,7 @@ new Chart(document.getElementById("bar-chart-horizontal"), {
       legend: { display: false },
       title: {
         display: true,
-        text: 'Predicted world population (millions) in 2050'
+        ttext: 'Nombre des joueurs dans chaque categorie'
       }
     }
 });

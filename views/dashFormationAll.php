@@ -2,7 +2,7 @@
 include '../controller/FormationC.php';
 
 $formationC=new FormationC();
-$listeFormations=$formationC->afficherformationsd();
+$listeFormations=$formationC->afficherformations();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -93,7 +93,7 @@ $listeFormations=$formationC->afficherformationsd();
                             <div class="recentorders">
                                 <div class="cardheader">
                                     <h2>Demande recente</h2>
-                                    <a href="dashFormationAll.php" class="btn">Tout voir</a>
+                                    <a href="dashFormation.php" class="btn">Demmande</a>
                                 </div>
                                 <table>
                                     <thead>
@@ -118,20 +118,7 @@ $listeFormations=$formationC->afficherformationsd();
                                         <td><?php echo $formation['descriptions']; ?></td>
                                         <td><ion-icon name="download-outline"></td>
                                         <td>
-                                            <form action="modifierStatut.php" method="POST">
-                                        <div class="container">
-                                        <div class="radio">
-                                        <input id="radio-1" name="radioo" type="radio" value="acceptée">
-                                        <label for="radio-1" class="radio-label">Accepter</label>
-                                        </div>
-                                        <div class="radio">
-                                        <input id="radio-2" name="radioo" type="radio" value="refusée">
-                                        <label  for="radio-2" class="radio-label">Refuser</label>
-                                        </div>
-                                        </div>
-                                        <input type="submit" value="valider">
-                                        <input type="hidden" name="id_formation" value="<?php echo $formation['id_formation'] ?>">
-                                        </form>
+                                        <?php echo $formation['statut']; ?>
                                         </td>
                                         <td><?php echo $formation['date_c']; ?></td>
                                     </tr>

@@ -9,7 +9,7 @@ if(
     &&isset($_POST['description']) && !empty($_POST['description'])
     &&isset($_POST['file']) && !empty($_POST['file'])
 ){
-    $formation = new Formation($_POST['name'],$_POST['name'],$_POST['formation'],$_POST['prix'],$_POST['description'],$_POST['description'],$_POST['file']);
+    $formation = new Formation($_POST['name'],$_POST['name'],$_POST['formation'],$_POST['description'],$_POST['prix'],$_POST['description'],$_POST['file']);
     $formationC->modifierformations($id_formation, $formation);
 }
 else

@@ -113,7 +113,11 @@ function validateForm()
                </td>
 
                <td>
-                  <input type="text" name="name" class="long"/>
+               <select type="text" name="name" class="long"/>
+               <option value="Programmation">--Programmation--</option>
+               <option value="Mathématiques">Mathématiques</option>
+               <option value="Réseau">Réseau</option>
+               </select>
                   <span class="error" id="errorname"></span>
                </td>
             </tr>
@@ -158,7 +162,7 @@ function validateForm()
                </td>
                <td>
                  <input type="file" id="file" name="file" class="long" required
-                   minlength="3" maxlength="20" size="10" >
+                   minlength="3" maxlength="20" size="10" accept=".jpg, .jpeg, .png" >
                  <span class="error" id="errorfile"></span>
 
                </td>

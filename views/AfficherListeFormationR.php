@@ -17,21 +17,15 @@ $listeFormations=$formationC->afficherformations();
 <link rel="stylesheet" href="../controller/css/ens.css">
 <link rel="stylesheet" href="../controller/css/btn.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" integrity="sha256-46r060N2LrChLLb5zowXQ72/iKKNiw/lAmygmHExk/o=" crossorigin="anonymous" />
-
-
 </head>
-
 <body>
-
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <div class="container">
     <div class="view-account">
         <section class="module">
-
             <div class="module-inner">
                 <div class="side-bar">
                     <div class="user-info">
-           
                         <img class="img-profile img-circle img-responsive center-block" src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="">
                         <ul class="meta list list-unstyled">
                             <li class="name">
@@ -56,11 +50,9 @@ $listeFormations=$formationC->afficherformations();
                     <div class="content-header-wrapper">
                         <h2 class="title">Mon Historique</h2>
                         <div class="actions" >
-                        
                             <button class="btn btn-success" ><a href="FormAjoutFormation.php"><i class="fa fa-plus" ></i> Ajouter une formation</button>
                         </div>
                     </div>
-
                     <div class="content-utilities">
                         <div class="page-nav">
                             <span class="indicator">View:</span>
@@ -89,18 +81,13 @@ $listeFormations=$formationC->afficherformations();
                             <div class="btn-group" role="group">
                                 <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Refresh"><i class="fa fa-refresh"></i></button>
                                 <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Archive"><i class="fa fa-archive"></i></button>
-
                                 <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Report spam"><i class="fa fa-exclamation-triangle"></i></button>
                                 <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Delete"><i class="fa fa-trash-o"></i></button>
                             </div>
                         </div>
                     </div>
-                    
-    
-        
                           <div class="main-body p-0">
                               <div class="inner-wrapper">
-  
                                  <div class="inner-main">
                                  <div class="inner-main-body p-2 p-sm-3 collapse forum-content show">
                                  <div class="card mb-2">
@@ -108,11 +95,36 @@ $listeFormations=$formationC->afficherformations();
                                       foreach($listeFormations as $formation){
                                        if($formation['statut'] == 'refusée'){
                                      ?>
-            
-                 
                     <div class="card-body p-2 p-sm-3">
                         <div class="media forum-item">
-                            <a href="#" data-toggle="collapse" data-target=".forum-content"><img src="https://bootdey.com/img/Content/avatar/avatar1.png" class="mr-3 rounded-circle" width="50" alt="User" /></a>
+                        <?php
+ try{
+    $conn = new PDO("mysql:host=localhost;dbname=projet_web;charset=UTF8", 'root', '');
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //pour activer l'affichage des erreurs pdo
+ } catch(PDOException $e){
+      echo 'ERROR: ' . $e->getMessage();
+ } 
+ $a=$formation['id_formation'];
+$sql = "SELECT id_formation, image FROM formations WHERE id_formation = $a";
+$q = $conn->prepare($sql);
+try{
+$q->execute();
+}
+catch(Exception $e){
+    die('Erreur:' . $e->getMessage());
+}
+$q->bindColumn(1, $id_formation);
+$q->bindColumn(2, $cover, PDO::PARAM_LOB);
+while($q->fetch())
+{
+ file_put_contents($id_formation.".jpg",$cover);
+
+
+?>
+                            <a href="#" data-toggle="collapse" data-target=".forum-content"> <?php  echo "<image src='".$id_formation.".jpg' class='mr-3 rounded-circle' width='50' alt='User'>"; ?> </a>                           
+                            <?php
+                                        }
+                                        ?>
                             <div class="media-body">
                                 <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body"><?php echo $formation['titre_f']; ?></a></h6>
                                 <p class="text-secondary">
@@ -132,16 +144,12 @@ $listeFormations=$formationC->afficherformations();
                     }
                       }
                        ?>
-                        
                         </div>
                         </div>
                         </div>
                         </div>
                         </div>
                         </div>
-                        
-
-
             </section>
     </div>
 </div>

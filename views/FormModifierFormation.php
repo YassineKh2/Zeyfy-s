@@ -3,6 +3,7 @@ include '../controller/FormationC.php';
 $formationC=new FormationC();
 $id_formation = $_GET["id_formation"];
 $formation=$formationC->recupererformations($id_formation);
+var_dump($formation['filiere']);
 ?>
 
 <html>
@@ -117,8 +118,8 @@ function validateForm()
                </td>
 
                <td>
-                  <input type="text" name="name" class="long"/>
-                  <span class="error" id="errorname" value="<?php echo $formation['filiere'] ?>"></span>
+                  <input type="text" name="name" class="long" value="<?php echo $formation['filiere']; ?>"/>
+                  <span class="error" id="errorname" ></span>
                </td>
             </tr>
             <tr>
@@ -128,8 +129,8 @@ function validateForm()
                   </label>
                </td>
                <td>
-                  <input type="text" name="formation" class="long"/>
-                  <span class="error" id="errorformation" value="<?php echo $formation['titre_f'] ?>"></span>
+                  <input type="text" name="formation" class="long" value="<?php echo $formation['titre_f'] ?>"/>
+                  <span class="error" id="errorformation" ></span>
                </td>
             </tr>
                         <tr>
@@ -139,8 +140,8 @@ function validateForm()
                   </label>
                </td>
                <td>
-                  <input type="number" name="prix" class="long"/>
-                  <span class="error" id="errorprix" value="<?php echo $formation['prix_f'] ?>"></span>
+                  <input type="number" name="prix" class="long" value="<?php echo $formation['prix_f'] ?>"/>
+                  <span class="error" id="errorprix"></span>
                </td>
             </tr>
             <tr>
@@ -150,8 +151,8 @@ function validateForm()
                   </label>
                </td>
                <td>
-                  <textarea name="description" class="long field-textarea"></textarea>
-                  <span class="error" id="errordescription" value="<?php echo $formation['descriptions'] ?>"></span>
+                  <textarea name="description" class="long field-textarea" value="<?php echo $formation['descriptions'] ?>"></textarea>
+                  <span class="error" id="errordescription"></span>
                </td>
             </tr>
             <tr>
@@ -161,9 +162,9 @@ function validateForm()
                   </label>
                </td>
                <td>
-                 <input type="file" id="file" name="file" class="long" required
+                 <input type="file" id="file" name="file" class="long" value="<?php echo $formation['image'] ?>" required
                    minlength="3" maxlength="20" size="10" >
-                 <span class="error" id="errorfile" value="<?php echo $formation['image'] ?>"></span>
+                 <span class="error" id="errorfile" ></span>
 
                </td>
             </tr>

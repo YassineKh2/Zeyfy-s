@@ -112,7 +112,34 @@ $listeFormations=$formationC->afficherformations();
                  
                     <div class="card-body p-2 p-sm-3">
                         <div class="media forum-item">
-                            <a href="#" data-toggle="collapse" data-target=".forum-content"> <img src="<?php echo $formation['image']; ?>" class="mr-3 rounded-circle" width="50" alt="User" /></a>                           
+                        <?php
+ try{
+    $conn = new PDO("mysql:host=localhost;dbname=projet_web;charset=UTF8", 'root', '');
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //pour activer l'affichage des erreurs pdo
+ } catch(PDOException $e){
+      echo 'ERROR: ' . $e->getMessage();
+ } 
+ $a=$formation['id_formation'];
+$sql = "SELECT id_formation, image FROM formations WHERE id_formation = $a";
+$q = $conn->prepare($sql);
+try{
+$q->execute();
+}
+catch(Exception $e){
+    die('Erreur:' . $e->getMessage());
+}
+$q->bindColumn(1, $id_formation);
+$q->bindColumn(2, $cover, PDO::PARAM_LOB);
+while($q->fetch())
+{
+ file_put_contents($id_formation.".jpg",$cover);
+
+
+?>
+                            <a href="#" data-toggle="collapse" data-target=".forum-content"> <?php  echo "<image src='".$id_formation.".jpg' class='mr-3 rounded-circle' width='50' alt='User'>"; ?> </a>                           
+                            <?php
+                                        }
+                                        ?>
                             <div class="media-body">
                                 <h6><a href="#" data-toggle="collapse" data-target=".forum-content" class="text-body"><?php echo $formation['titre_f']; ?></a></h6>
                                 <p class="text-secondary">
@@ -148,7 +175,3 @@ $listeFormations=$formationC->afficherformations();
 </div>
 </body>
 </html>
-
-
-
-
