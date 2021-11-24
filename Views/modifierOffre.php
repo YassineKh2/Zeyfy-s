@@ -8,7 +8,7 @@ if(
     &&isset($_POST['dateFinOffre']) && !empty($_POST['dateFinOffre'])
 ){
     $offres = new offres($_POST['dateDebutOffre'],$_POST['pourcentageOffre'],$_POST['dateFinOffre']);
-    $offreC->modifierOffre($offres,$idOffre);
+    $offreC->modifierOffre($offres, $idOffre);
 }else{ 
     echo 'el forum mazelll na9esss hooooooooooooooy';
     header('Location: dashboard2.php');

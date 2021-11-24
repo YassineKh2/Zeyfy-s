@@ -3,11 +3,11 @@ class categorie
 {
     private $NomCategorie=null;
     private $IdCategorie=null;
-    private $idOffre=null;
+    private $NomOffre=null;
    
-    function __construct($NomCategorie, $idOffre){
+    function __construct($NomCategorie, $NomOffre){
         $this->NomCategorie=$NomCategorie;
-        $this->idOffre=$idOffre;
+        $this->NomOffre=$NomOffre;
     }
 
     function getNomCategorie(){
@@ -16,8 +16,8 @@ class categorie
     function getIdCategorie(){
         return $this->IdCategorie;
     }
-    function getidOffre(){
-        return $this->idOffre;
+    function getNomOffre(){
+        return $this->NomOffre;
     }
   
     function setNomCategorie(string $NomCategorie){
@@ -25,8 +25,8 @@ class categorie
     }
 
 
-    function setidOffre(string $idOffre){
-        $this->idOffre=$idOffre;
+    function setNomOffre(string $NomOffre){
+        $this->NomOffre=$NomOffre;
     }
   
 }

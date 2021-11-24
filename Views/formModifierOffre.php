@@ -14,9 +14,7 @@ $offreC=new OffreC();
         <button><a href="dashboard2.php">Retour</a></button>
         <hr>
         
-			
-
-        
+			        
         <form action="modifierOffre.php" method="POST">
         <?php
 			if (isset($_POST['idOffre'])){

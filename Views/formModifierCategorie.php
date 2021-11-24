@@ -35,11 +35,11 @@ $categorieC=new CategorieC();
                
                 <tr>
                     <td>
-                        <label for="idOffre">Offre:
+                        <label for="NomOffre">Offre:
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="idOffre" value="<?php echo $categorie['idOffre']; ?>" id="idOffre">
+                        <input type="text" name="NomOffre" value="<?php echo $categorie['NomOffre']; ?>" id="NomOffre">
                     </td>
                 </tr>            
                 <tr>

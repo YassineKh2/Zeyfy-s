@@ -32,15 +32,15 @@
                 </tr>
                 <tr>
                     <td>
-                        <label for="idOffre">Les offres:
+                        <label for="NomOffre">Les offres:
                         </label>
                     </td>
                     <td>
-                        <select name="idOffre">
+                        <select name="NomOffre">
                         <?php
                 foreach($liste as $offre) {
                         ?>
-                                <option value="<?php $offre['idOffre'] ?>"><?php echo $offre['idOffre'] ?></option>
+                                <option value="<?php $offre['idOffre'] ?>"><?php echo $offre['NomOffre'] ?></option>
                                      <?php }  ?>
                     </select>; 
                     </td>

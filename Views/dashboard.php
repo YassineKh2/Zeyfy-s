@@ -119,7 +119,7 @@ $listecategories=$categorieC->afficherCategorie();
                                         <tr>
                                            <td> <?php echo $categorie['IdCategorie']; ?></td>
                                            <td> <?php echo $categorie['NomCategorie']; ?></td>
-                                           <td> <?php echo $categorie['idOffre']; ?></td>
+                                           <td> <?php echo $categorie['NomOffre']; ?></td>
                                            <td>
                                             <form method="post" action="formModifierCategorie.php">
 						                     <input type="submit" class="btn modif" name="Modifier" value="Modifier">

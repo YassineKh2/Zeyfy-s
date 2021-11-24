@@ -14,7 +14,7 @@ $listecategories=$categorieC->afficherCategorie();
             <tr>
             <th>IdCategorie</th>
             <th>NomCategorie</th>  
-                <th>idOffre</th>
+                <th>NomOffre</th>
                 <th>Modifier</th>
                 <th>Supprimer</th>
              </tr>
@@ -24,7 +24,7 @@ $listecategories=$categorieC->afficherCategorie();
              <tr>
                  <td> <?php echo $categorie['IdCategorie']; ?></td>
                  <td> <?php echo $categorie['NomCategorie']; ?></td>
-                 <td> <?php echo $categorie['idOffre']; ?></td>
+                 <td> <?php echo $categorie['NomOffre']; ?></td>
                  <td>
                     <a href="modifierCategorie.php?IdCategorie=<?php echo $categorie['IdCategorie'];
                        ?>"> Modifier </a> 
