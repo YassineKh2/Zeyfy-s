@@ -27,14 +27,14 @@
 		}
         function ajouterCategorie($categorie){
 
-            $sql = "INSERT INTO categorie (NomCategorie, idOffre)
-                      VALUES (:NomCategorie, :idOffre)";
+            $sql = "INSERT INTO categorie (NomCategorie, NomOffre)
+                      VALUES (:NomCategorie, :NomOffre)";
          $db = config::getConnexion();
          try{
              $query = $db->prepare($sql);
              $query->execute([
                  'NomCategorie'=> $categorie->getNomCategorie(),
-                 'idOffre'=> $categorie->getidOffre()
+                 'NomOffre'=> $categorie->getNomOffre()
              ]);
              header("Location: ../Views/formAjoutCategorie.php");
      } catch (PDOExeption $e){
@@ -63,14 +63,14 @@
 				$query = $db->prepare(
 					"UPDATE categorie SET 
 						NomCategorie = :NomCategorie, 
-						idOffre = :idOffre 
+						NomOffre = :NomOffre 
 					WHERE IdCategorie = :IdCategorie"
 				);
 			//die("-->".$IdCategorie);
-			//die( $categorie->getNomCategorie()." - ".$categorie->getidJeux()." - " .$categorie->getidOffre());
+			//die( $categorie->getNomCategorie()." - ".$categorie->getidJeux()." - " .$categorie->getNomOffre());
 				$query->execute([
                     'NomCategorie' => $categorie->getNomCategorie(),
-					'idOffre' => $categorie->getidOffre(),
+					'NomOffre' => $categorie->getNomOffre(),
 					'IdCategorie' => $IdCategorie
 				]);
 				header("Location: ../Views/dashboard.php");

@@ -11,6 +11,15 @@
         
         <form action="ajouterOffre.php" method="post">
             <table border="1" align="center">
+            <tr>
+                    <td>
+                        <label for="NomOffre">Nom-Offre:
+                        </label>
+                    </td>
+                    <td><input type="text" name="NomOffre" id="NomOffre" ></td>
+                    <input type="hidden" name="idOffre" value="<?php echo $categorie['idOffre']; ?>">
+
+                </tr>
                 <tr>
                     <td>
                         <label for="dateDebutOffre">date-Debut-Offre:

@@ -27,12 +27,13 @@
 		}
         function ajouterOffre($offres){
 
-            $sql = "INSERT INTO offres (dateDebutOffre, pourcentageOffre, dateFinOffre)
-                      VALUES (:dateDebutOffre, :pourcentageOffre, :dateFinOffre)";
+            $sql = "INSERT INTO offres (NomOffre, dateDebutOffre, pourcentageOffre, dateFinOffre)
+                      VALUES (:NomOffre, :dateDebutOffre, :pourcentageOffre, :dateFinOffre)";
          $db = config::getConnexion();                 
          try{
              $query = $db->prepare($sql);
              $query->execute([
+				 'NomOffre'=> $offres->getNomOffre(),
                  'dateDebutOffre'=> $offres->getdateDebutOffre(),
                  'pourcentageOffre'=> $offres->getpourcentageOffre(),
                  'dateFinOffre'=> $offres->getdateFinOffre()
@@ -63,12 +64,14 @@
 				$db = config::getConnexion();
 				$query = $db->prepare(
 					"UPDATE offres SET 
+					    NomOffre = :NomOffre, 
 						dateDebutOffre = :dateDebutOffre, 
                         pourcentageOffre = :pourcentageOffre, 
 						dateFinOffre = :dateFinOffre 
 					WHERE idOffre = :idOffre"
 				);
 				$query->execute([
+					'NomOffre' => $offres->getNomOffre(),
                     'dateDebutOffre' => $offres->getdateDebutOffre(),
                     'pourcentageOffre' => $offres->getpourcentageOffre(),
 					'dateFinOffre' => $offres->getdateFinOffre(),

@@ -105,6 +105,7 @@ $listeoffres=$offreC->afficherOffre();
                                     <thead>
                                     <tr>
                                         <td>Offre</td>
+                                        <td>Nom Offre</td>
                                         <td>Date debut offre</td>
                                         <td>Pourcentage offre</td>
                                         <td>Date fin offre</td>
@@ -118,6 +119,7 @@ $listeoffres=$offreC->afficherOffre();
                                 ?>
                                     <tr>
                                            <td> <?php echo $offres['idOffre']; ?></td>
+                                           <td> <?php echo $offres['NomOffre']; ?></td>
                                            <td> <?php echo $offres['dateDebutOffre']; ?></td>
                                            <td> <?php echo $offres['pourcentageOffre']; ?></td>
                                            <td> <?php echo $offres['dateFinOffre']; ?></td>

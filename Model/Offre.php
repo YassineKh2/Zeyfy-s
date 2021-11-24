@@ -2,11 +2,13 @@
 class offres
 {
     private $idOffre=null;
+    private $NomOffre=null;
     private $dateDebutOffre=null;
     private $pourcentageOffre=null;
     private $dateFinOffre=null;
    
-    function __construct($dateDebutOffre, $pourcentageOffre, $dateFinOffre){
+    function __construct($NomOffre, $dateDebutOffre, $pourcentageOffre, $dateFinOffre){
+        $this->NomOffre=$NomOffre;
         $this->dateDebutOffre=$dateDebutOffre;
         $this->pourcentageOffre=$pourcentageOffre;
         $this->dateFinOffre=$dateFinOffre; 
@@ -14,6 +16,10 @@ class offres
 
     function getidOffre(){
         return $this->idOffre;
+    }
+
+    function getNomOffre(){
+        return $this->NomOffre;
     }
 
     function getdateDebutOffre(){
@@ -27,6 +33,10 @@ class offres
         return $this->dateFinOffre; 
     }
   
+    function setNomOffre(string $NomOffre){
+        $this->NomOffre=$NomOffre;
+    }
+
     function setdateDebutOffre(string $dateDebutOffre){
         $this->dateDebutOffre=$dateDebutOffre;
     }

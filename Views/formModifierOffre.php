@@ -22,6 +22,13 @@ $offreC=new OffreC();
 				
 		?>
             <table border="1" align="center">
+            <tr>
+                    <td>
+                        <label for="NomOffre">Nom-Offre:
+                        </label>
+                    </td>
+                    <td><input type="text" name="NomOffre" id="NomOffre" value="<?php echo $offres['NomOffre']; ?>" ></td>
+                </tr>
                 <tr>
                     <td>
                         <label for="dateDebutOffre">date-Debut-Offre:
