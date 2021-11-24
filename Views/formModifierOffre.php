@@ -8,12 +8,24 @@ $offreC=new OffreC();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="dashboard.css">
     <title>User Display</title>
 </head>
     <body>
         <button><a href="dashboard2.php">Retour</a></button>
         <hr>
         
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="details">
+                    <div class="recentorders">
+                        <div class="cardheader">
+                            <h2>Ajouter offre</h2>
+                            </div>  
 			        
         <form action="modifierOffre.php" method="POST">
         <?php
@@ -28,6 +40,7 @@ $offreC=new OffreC();
                         </label>
                     </td>
                     <td><input type="text" name="NomOffre" id="NomOffre" value="<?php echo $offres['NomOffre']; ?>" ></td>
+                    <input type="hidden" name="idOffre" value="<?php echo $offres['idOffre']; ?>">
                 </tr>
                 <tr>
                     <td>
@@ -55,10 +68,10 @@ $offreC=new OffreC();
                 <tr>
                     <td></td>
                     <td>
-                        <input type="submit" value="Modifier"> 
+                        <input type="submit" class="btn" value="Modifier"> 
                     </td>
                     <td>
-                        <input type="reset" value="Annuler" >
+                        <input type="reset" class="btn" value="Annuler" >
                     </td>
                 </tr>
             </table>

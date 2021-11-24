@@ -1,6 +1,7 @@
 <?php
 include '../Controller/OffreC.php';
 $idOffre = $_POST["idOffre"];
+var_dump($idOffre);
 $offreC = new OffreC();
 if(
     isset($_POST['NomOffre']) && !empty($_POST['NomOffre'])
@@ -11,7 +12,7 @@ if(
     $offres = new offres($_POST['NomOffre'],$_POST['dateDebutOffre'],$_POST['pourcentageOffre'],$_POST['dateFinOffre']);
     $offreC->modifierOffre($offres, $idOffre);
 }else{ 
-    echo 'el forum mazelll na9esss hooooooooooooooy';
+    echo 'Erreur';
     header('Location: dashboard2.php');
 }
 ?>
