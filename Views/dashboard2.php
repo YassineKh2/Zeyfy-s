@@ -81,13 +81,7 @@ $listeoffres=$offreC->afficherOffre();
                         <div class="toggle">
                             <ion-icon name="menu-outline"></ion-icon>
                         </div>
-                        <!---- search -->
-                        <div class="search">
-                            <label>
-                                <input type="text" placeholder="Chercher ici">
-                                <ion-icon name="search-outline"></ion-icon>
-                            </label>
-                        </div>
+                       
                         <!---- mainImg -->
                         <div class="user">
                             <img src="logo.png">
