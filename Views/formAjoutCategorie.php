@@ -6,7 +6,7 @@
 				$liste = $db->query($sql);
 			}
 			catch(Exception $e){
-				die('Erreur:'. $e->getMeesage());
+				die('Erreur:'. $e->getMessage());
 			}
 ?>
 
@@ -50,9 +50,9 @@
                     <td>
                         <select name="NomOffre">
                         <?php
-                foreach($liste as $offre) {
+                foreach($liste as $offres) {
                         ?>
-                                <option value="<?php $offre['idOffre'] ?>"><?php echo $offre['NomOffre'] ?></option>
+                                <option value="<?php $offres['NomOffre'] ?>"><?php echo $offres['NomOffre'] ?></option>
                                      <?php }  ?>
                     </select>; 
                     </td>
