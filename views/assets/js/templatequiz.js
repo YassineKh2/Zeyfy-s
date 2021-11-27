@@ -51,10 +51,10 @@ ajax.send();
 
 
 
-let questionNumber = 1 //holds the current question number
-let playerScore = 0  //holds the player score
-let wrongAttempt = 0 //amount of wrong answers picked by player
-let indexNumber = 0 //will be used in displaying next question
+let questionNumber = 1; //holds the current question number
+let playerScore = 0;  //holds the player score
+let wrongAttempt = 0; //amount of wrong answers picked by player
+let indexNumber = 0; //will be used in displaying next question
 
 //call ajax
 
@@ -62,10 +62,11 @@ let indexNumber = 0 //will be used in displaying next question
 // function for displaying next question in the array to dom
 //also handles displaying players and quiz information to dom
 function NextQuestion(index) {
-    
     handleQuestions()
     const currentQuestion = shuffledQuestions[index]
-    document.getElementById("question-number").innerHTML = questionNumber
+    document.getElementById("totalNumQuest").innerHTML=shuffledQuestions.length;
+    document.getElementById("totalNum").innerHTML=shuffledQuestions.length;
+    document.getElementById("question-number").innerHTML = questionNumber;
     document.getElementById("player-score").innerHTML = playerScore
     document.getElementById("display-question").innerHTML = currentQuestion.question;
     document.getElementById("option-one-label").innerHTML = currentQuestion.optionA;
@@ -101,17 +102,17 @@ function checkForAnswer() {
 
     //checking if checked radio button is same as answer
     options.forEach((option) => {
-        if (option.checked === true && option.value === currentQuestionAnswer) {
+        if (option.checked === true && currentQuestion[option.value] === currentQuestionAnswer) {
             document.getElementById(correctOption).style.backgroundColor = "green"
-            playerScore++ //adding to player's score
-            indexNumber++ //adding 1 to index so has to display next question..
+            playerScore++; //adding to player's score
+            indexNumber++; //adding 1 to index so has to display next question..
             //set to delay question number till when next question loads
             setTimeout(() => {
                 questionNumber++
             }, 1000)
         }
 
-        else if (option.checked && option.value !== currentQuestionAnswer) {
+        else if (option.checked && currentQuestion[option.value] !== currentQuestionAnswer) {
             const wrongLabelId = option.labels[0].id
             document.getElementById(wrongLabelId).style.backgroundColor = "red"
             document.getElementById(correctOption).style.backgroundColor = "green"
@@ -119,7 +120,7 @@ function checkForAnswer() {
             indexNumber++
             //set to delay question number till when next question loads
             setTimeout(() => {
-                questionNumber++
+                questionNumber++;
             }, 1000)
         }
     })
@@ -178,7 +179,7 @@ function handleEndGame() {
         remark = "Excellent, Keep the good work going."
         remarkColor = "green"
     }
-    const playerGrade = (playerScore / 10) * 100
+    const playerGrade = (playerScore / shuffledQuestions.length) * 100
 
     //data to display to score board
     document.getElementById('remarks').innerHTML = remark
@@ -192,6 +193,10 @@ function handleEndGame() {
 
 //closes score modal, resets game and reshuffles questions
 function closeScoreModal() {
+    var xhttp=new XMLHttpRequest();
+    xhttp.open("POST",url);
+    xhttp.send()
+    
     questionNumber = 1
     playerScore = 0
     wrongAttempt = 0

@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/templatequiz.css">
+    <link rel="stylesheet" href="assets/css/customquiz.css">
     <title>Document</title>
 </head>
 <body onload="NextQuestion(0)">
@@ -35,8 +36,8 @@
         <div class="game-quiz-container">
 
             <div class="game-details-container">
-                <h1>Score : <span id="player-score"></span> / 10</h1>
-                <h1> Question : <span id="question-number"></span> / 10</h1>
+                <h1 id="totalQue">Score : <span id="player-score"></span> / <span id="totalNumQuest"></span></h1>
+                <h1> Question : <span id="question-number"></span> / <span id="totalNum"></span></h1>
             </div>
 
             <div class="game-question-container">
