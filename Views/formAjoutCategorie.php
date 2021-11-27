@@ -50,7 +50,7 @@
                     <td>
                         <select name="NomOffre">
                         <?php
-                foreach($liste as $offres) {
+                         foreach($liste as $offres) {
                         ?>
                                 <option value="<?php $offres['NomOffre'] ?>"><?php echo $offres['NomOffre'] ?></option>
                                      <?php }  ?>
