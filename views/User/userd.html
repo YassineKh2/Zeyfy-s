@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UserD</title>
+    <script src="https://kit.fontawesome.com/56a94e38db.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="userd.css">
+</head>
+<body>
+    <div class="action">
+        <div class="profile" onclick="drop();">
+            <img src="../pics/idk.png">
+        </div>
+        <div class="menu">
+            <h3>User<br><span>Profession</span></h3>
+           <ul>
+                <li class="fas fa-user"><a href="#">My Profile</a></li><br>
+                <li class="fas fa-edit"><a href="#">Edit Profile</a></li><br>
+                <li class="fas fa-inbox"><a href="#">Inbox</a></li><br>
+                <li class="fas fa-cog"><a href="#">Settings</a></li><br>
+                <li class="fas fa-question"><a href="#">Help</a></li><br>
+                <li class="fas fa-sign-out-alt"><a href="#">Logout</a></li>
+           </ul>
+        </div>
+    </div>
+    <!----------------- script for drop donw menu---------------------->
+    <script>
+        function drop(){
+            const dropmenu = document.querySelector(".menu");
+            dropmenu.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

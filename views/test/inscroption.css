@@ -1,0 +1,109 @@
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color:#213996 ;
+    background-image: url("pics/kek.png");
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-display: swap;
+    src: url(https://fonts.gstatic.com/s/poppins/v15/pxiByp8kv8JHgFVrLEj6Z1JlFc-K.woff2) format('woff2');
+    unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+.singup{
+    width: 340px;
+    height: 550px;
+    margin: auto;
+    margin-top: 20px;
+    background-color: #2c7fcc    ;
+    border-radius: 5px;
+    
+}
+h2{
+      text-align: center; 
+      margin-top: 100px;
+      font-size: 30px;
+      
+}
+form{
+    width: 300px;
+    margin-left: 20px;
+}
+form label{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 3px;
+    font-size: 18px;
+}
+form input{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 7px;
+    outline: none;
+    margin-top: 30px;
+}
+form select{
+    width: 100%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 7px;
+    outline: none;
+    margin-top: 30px;
+}
+input[type="submit"]{
+    width: 150px;
+    height: 35px;
+    margin-top: 20px;
+    margin-left: 70px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 18px;
+}
+input[type="submit"]:hover{
+    background-color: #F44336;
+}
+p{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 15px;
+}
+p a:hover{
+    color: #fd4e4e;
+}
+.par2{
+    text-align: center;
+    color: white;
+    font-size: 15px;
+    margin-top: -10px;
+}
+
+.par2 a{
+    color: rgb(219, 96, 14);
+}
+input [type="file"]{
+    width: 150px;
+    height: 35px;
+}
+.accueil{
+    padding: 12px 30px;
+    margin-top: 20px;
+    margin-left: 20px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+}
+.accueil:hover{
+    cursor: pointer;
+    background-color: #fd4e4e;
+    transform: scale(1.10);
+}

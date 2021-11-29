@@ -1,0 +1,153 @@
+
+/****************************************************************************************************/
+nav{
+    display: flex;
+    padding: -2% 2%;
+justify-content: space-between;
+align-items:center;
+}
+nav img{
+    width: 150px;
+
+}
+.nav-links{
+    flex: 1;
+    text-align:left;
+
+}
+.nav-links ul li{
+    list-style:none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+  color: #FE7062;
+  text-decoration:none;
+  font-size: 20px;
+}
+.nav-links ul li::after{
+content:'';
+width: 0%;
+height: 2px;
+background: #220CB6;
+display:block;
+margin: auto;
+transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+  width: 100%;
+}
+/****************************************************************************************************/
+body{
+    background-image: url(../Mainpage/pics/formation1.jpg) ;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position:center ;
+    background-position-y: -170px;
+    
+}
+
+.singup{
+    width: 500px;
+    height: 500px;
+    background: #e0e0e0;
+    color: rgb(0, 0, 0);
+    top: 55%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 70px 30px;
+    font-family:Roboto,sans-serif ;
+    border-radius: 15px;
+
+}
+
+h2{
+    position: absolute;
+    left: 100px;
+    top: -140px;
+   font-size: 50px;
+}
+.singup p{
+    
+    padding: 0;
+    font-weight: bold;
+}
+.singup input{
+    width: 80%;
+    margin-bottom: 40px;
+    margin-left: 60px;
+}
+.singup input[type="text"],input[type="password"],input[type="email"]{
+border: none;
+border-bottom: 1px solid rgb(0, 0, 0);
+background: transparent;
+outline: none;
+height: 40px;
+color: rgb(0, 0, 0);
+font-size: 16px;
+}
+.singup input[type="submit"]{
+    border: none;
+    background: #F44336;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+    width: 250px;
+    margin-left: 100px;
+}
+.singup input[type="submit"]:hover{
+
+background-color: #FE7062;
+}
+.singup p{
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-size: 13px;
+    margin-top: -10px;
+}
+
+.singup p a{
+    color: rgb(219, 96, 14);
+}
+.singup p a:hover{
+    color: rgb(230, 128, 61);
+}
+
+.par2{
+    position:absolute;
+    top: 770px;
+    left: 840px;
+    color: #ffffff;
+    font-size: 15px;
+    
+}
+
+.par2 a{
+    color: rgb(219, 96, 14);
+}
+.moez{
+    position: relative;
+    margin-top: 50px;
+
+}
+.moez select{
+    width: 30%;
+    padding: 7px;
+    border: none;
+    border: 1px solid gray;
+    border-radius: 7px;
+    outline: none;
+    margin-bottom: 10px;
+    margin-left: 60px;
+}
+.cv{
+    position: relative;
+    left: 60px;
+    top: -10px;
+}
+/****************************************************************************************************/
