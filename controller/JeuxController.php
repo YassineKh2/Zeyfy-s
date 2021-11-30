@@ -33,8 +33,8 @@ class jeuxC{
 
     function ajouterJeux($jeux)
 {
-$sql= "INSERT INTO jeux(idJeux,question,reponseA,reponseB,reponseC,correctAnswer,idCours,idCategorie,reponseD)
-values (:idJeux,:question,:reponseA,:reponseB,:reponseC,:correctAnswer,:idCours,:idCategorie,:reponseD)";
+$sql= "INSERT INTO jeux(question,reponseA,reponseB,reponseC,correctAnswer,idCours,idCategorie,reponseD)
+values (:question,:reponseA,:reponseB,:reponseC,:correctAnswer,:idCours,:idCategorie,:reponseD)";
 
 $db = config::getConnexion();
     var_dump($jeux);
@@ -42,7 +42,6 @@ $db = config::getConnexion();
     try{
   $query = $db->prepare($sql);
      $query->execute([
-'idJeux'=>$jeux->getIdJeux(),
 'question'=>$jeux->getQuestion(),
 'reponseA'=>$jeux->getreponseA(),
 'reponseB'=>$jeux->getreponseB(),

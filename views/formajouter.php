@@ -1,19 +1,66 @@
- <?php
-include'../config.php';
-$sql="SELECT * from categorie";
-$sql1="SELECT * from cours";
-$db=config::getConnexion();
-try {
+<?php
+    include_once '../config.php';
+    include_once '../controller/JeuxController.php';
+    include_once '../model/jeux.php'; 
+     $sql= "SELECT * from categorie";
+     $sql1= "SELECT * from cours";
+        try {
+            $db=config::getConnexion();
     $liste=$db->query($sql);
     $listeCours=$db->query($sql1);
 
-}
-catch(Exeption $e)
-{
-    die('Erreur:'.$e->getMessage());
+        }
+                    catch(Exeption $e)
+                    {
+                        die('Erreur:'.$e->getMessage());
+                    
+                    }
 
-}
 
+                            $error = "";
+                             $jeux = null;
+                        // create an instance of the controller
+                        $jeuxC = new jeuxC();
+                        if (
+                    		isset($_POST["question"]) &&		
+                            isset($_POST["reponseA"])  &&
+                            isset($_POST["reponseB"]) &&
+                    		isset($_POST["reponseC"]) &&
+                            isset($_POST["correctAnswer"]) &&
+                    		isset($_POST["idCours"]) &&
+                            isset($_POST["idCategorie"]) &&
+                    		isset($_POST["reponseD"]))
+                             {
+                            if (
+                    			 !empty($_POST["question"]) &&
+                                 !empty($_POST["reponseA"])  &&
+                                 !empty($_POST["reponseB"]) &&
+                                 !empty($_POST["reponseC"])  &&
+                                 !empty($_POST["correctAnswer"]) &&
+                    			 !empty($_POST["idCours"]) &&
+                                 !empty($_POST["idCategorie"])  &&
+                                 !empty($_POST["reponseD"]) 
+
+                            ) { echo "hello";
+                                $jeux = new jeux(
+                                
+                                    $_POST['question'],
+                                    $_POST['reponseA'],
+                                    $_POST['reponseB'],
+                                    $_POST['reponseC'],
+                                    $_POST['correctAnswer'],
+                                    $_POST['idCours'],
+                                    $_POST['idCategorie'],
+                                    $_POST['reponseD']
+                                
+                                );
+
+                                $jeuxC->ajouterJeux($jeux);
+                                header('Location:indexlevel.html');
+                            }
+                            else
+                                $error = "Missing information";
+                        }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,6 +72,7 @@ catch(Exeption $e)
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/formajouter.css">
 </head>
 <body>
     <section class="header">
@@ -47,20 +95,24 @@ catch(Exeption $e)
 
 
 
-      <form action="" method="POST">
+      <form  class="f" action="" method="POST">
           
             <table>
                 <thead>
+
+                <div class="text-box">
+    <!-- <h1>Quiz Data</h1> -->
+</div>
                 <tr>
                     <td>
                         
-                        <label for="NomCategorie">NomCategorie:
+                        <label for="idCategorie">NomCategorie:
                         </label>
                     </td>
-                    <td><select name="Nomcategorie" id="NomCategorie">
+                    <td><select name="idCategorie" id="NomCategorie">
                         <?php foreach($liste as $categorie)
                         { ?>
-                      <option value="<?php $categorie['idCategorie']?>"><?php echo $categorie['NomCategorie']?></option>
+                      <option value=<?php echo $categorie['IdCategorie']?>><?php echo $categorie['NomCategorie']?></option>
                       <?php 
                         } 
                         ?>
@@ -71,7 +123,7 @@ catch(Exeption $e)
                         <label for="question">question:
                         </label>
                     </td>
-                    <td><input type="text" name="question" id="question" maxlength="20"></td>
+                    <td><input type="text" name="question" id="question" maxlength="20" class=""></td>
                 </tr>
                 <tr>
                     <td>
@@ -127,31 +179,23 @@ catch(Exeption $e)
                 <tr>
                     <td>
                         
-                        <label for="nomCours"> Nom Cours:
+                        <label for="idCours"> Nom Cours:
                         </label>
                     </td>
-                    <td><select name="nomCours" id="nomCours">
+                    <td><select name="idCours" id="nomCours">
                         <?php foreach($listeCours as $contenuCours)
                         { ?>
-                      <option value="<?php $contenuCours['idCours']?>"><?php echo $contenuCours['nomCours']?></option>
+                      <option value="<?php echo $contenuCours['idCours']?>"><?php echo $contenuCours['nomCours']?></option>
                       <?php 
                         } 
                         ?>
                     </td>
                 </tr>
-                   
-                  
-                   
-                 
-                   
-                       
-                        
-                       
-
+                
                     <tr>
                     <td>
                     <input type="submit" class="btn" value="Envoyer">
-                        <input type="reset"  class="btn" value="Annuler" >
+                        <!-- <input type="reset"  class="btn" value="Annuler" > -->
                         </td>
                 </tr>
             </table>
