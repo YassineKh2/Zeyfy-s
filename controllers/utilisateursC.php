@@ -120,5 +120,20 @@ function ajouterjoueur($id){
         echo 'Erreur: '.$e->getMessage();
     }			
 }
+function modifierimage($photo,$id)
+{
+    $sql="UPDATE utilisateurs SET photo=:photo WHERE idUtilisateur=$id";
+    $db = config::getConnexion();
+    try{
+        $query = $db->prepare($sql);
+        $query->execute([
+            'photo'=>$photo
+        ]);			
+    }
+    catch (Exception $e){
+        echo 'Erreur: '.$e->getMessage();
+    }			
+
+}
 }
 ?>

@@ -42,10 +42,16 @@
         else
             $error = "Missing information";
     }
- 
 
     if($_SESSION['auth']==false)
     header('Location:..\Login\login.php');
+
+    if (isset($_POST['upload'])){
+        $target= "Userpics/".basename($_FILES['image']['name']);
+        $image=$_FILES['image']['name'];
+        $utilisateurc->modifierimage($image,$_SESSION['user_id']);
+        move_uploaded_file($_FILES['image']['tmp_name'],$target);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -151,8 +157,8 @@
                 <button id="sure" class="btn">Desactiver</button>   
             </div>
             
-            <img  src="clow.jpg" onclick="" class="pic" width="40%">
-            <input type="file"  class="pic2">';
+            <img  src="Userpics/'.$utilisateur['photo'].'" onclick="" class="pic" width="40%">
+           ';
         ?>
         </div>
         
@@ -161,7 +167,10 @@
         <input type="reset" value="Annuler" class="btn" id='no'>
 </form>
 
- 
+ <form action="settings.php" method="POST" enctype="multipart/form-data">
+ <input type="file" name="image">
+ <input type="submit" value="Changer" id='yes' name="upload"> 
+ </form>
        
 
 

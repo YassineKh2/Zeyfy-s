@@ -49,7 +49,7 @@ if($_SESSION['auth']==false)
         $utilisateur = $utilisateurc->recupererutilisateurinfo($_SESSION['user_id']);
       echo '<div class="action">
       <div class="profile" onclick="drop();">
-          <img src="../pics/idk.png">
+          <img src="../User/Userpics/'.$utilisateur['photo'].'">
       </div>
       <div class="menu">
           <h3>'.$utilisateur['username'].'<br><p class="a">Etudient</p></h3>

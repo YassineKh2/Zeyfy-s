@@ -74,7 +74,7 @@
     <div class="wrapper">
     <?php $utilisateur = $utilisateurc->recupererutilisateurinfo($_SESSION['user_id']);        
      echo'    <div class="left">
-            <img src="clow.jpg" alt="user" width="200">
+            <img src="Userpics/'.$utilisateur['photo'].'" alt="user" width="200">
             <h4>'.$utilisateur['nomUtilisateur'].'<br>'.$utilisateur['prenomUtilisateur']. '</h4>
              <p>UI Developer</p>
         </div>  
