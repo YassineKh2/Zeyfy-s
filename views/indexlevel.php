@@ -1,3 +1,28 @@
+<?php
+
+include_once '../config.php';
+include_once '../controller/JeuxController.php';
+include_once '../model/jeux.php'; 
+ $sql= "SELECT  * from joueur_score  order by score  desc limit 3";
+
+    try {
+        $db=config::getConnexion();
+$liste=$db->query($sql);
+$topPlayers=array();
+foreach($liste as $player){
+    array_push($topPlayers,$player);
+}
+    }
+                catch(Exeption $e)
+                {
+                    die('Erreur:'.$e->getMessage());
+                
+                }
+
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,7 +46,7 @@
     <li><a href=""> Plus d'information</a></li>
     <li><a href="">Reclamation</a></li>
     <li><a href="">Nous-contacter</a></li>
-    <li><a href="index.html">>Quitter</a></li>
+    <li><a href="index.html">Quitter</a></li>
 </ul>
     </div>
     <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -35,7 +60,7 @@
       <span><a href="#"></a></span>
       
 
-     <a href="level1.html"> <button class="button-l1" id="b1" role="button" >Level 1 </button></a>
+     <a href="level1.php"> <button class="button-l1" id="b1" role="button" >Level 1 </button></a>
       <button class="button-l2" id="b2" role="button" >Level 2</button>
       <button class="button-l3" id="b3" role="button" >Level 3</button>
       <button class="button-l4" id="b4" role="button" >Level 4</button>
@@ -53,23 +78,26 @@
 <section class="formation">
 <h1>Top joueurs</h1>
     <div class="row">
+
+    
 <div class="formation-col">
     <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
     <div class="layer">
-     <h3>player1</h3>
+     <h3><?php echo $topPlayers[0]["score"]?></h3>
     
     </div>
 </div>
 <div class="formation-col">
     <img src="https://www.bootdey.com/img/Content/avatar/avatar1.png">
     <div class="layer">
-     <h3>player2</h3>
+     <h3>player2<?php echo $topPlayers[1]["score"]?></h3>
+
     </div>
 </div>
 <div class="formation-col">
     <img src="https://www.bootdey.com/img/Content/avatar/avatar8.png">
     <div class="layer">
-     <h3>player3</h3>
+    <h3>player3<?php echo $topPlayers[2]["score"]?></h3>
     </div>
 </div>
     </div>

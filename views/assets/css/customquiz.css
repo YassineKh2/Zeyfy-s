@@ -37,3 +37,7 @@ main{
     color: #f24237;
    
 }
+
+.next-button-container button:hover{
+    background-color: #f24237;
+}

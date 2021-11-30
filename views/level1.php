@@ -1,3 +1,21 @@
+<?php
+   include_once '../config.php';
+   include_once '../controller/JeuxController.php';
+$sql= "SELECT * from cours";
+  try {
+	$db=config::getConnexion();
+$liste=$db->query($sql);
+
+}
+			catch(Exeption $e)
+			{
+				die('Erreur:'.$e->getMessage());
+			
+			}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,12 +49,13 @@
 
 <div class="text-box">
     <h1 id="titreCours1">Cours Javascript</h1>
-    <pre id ="contenuDuCours"> 
-        En informatique, on parle de code interprété ou compilé. 
-        JavaScript est un langage interprété : le code est exécuté de haut en
-         bas et le résultat du code exécuté est envoyé immédiatement. 
-         Vous n'avez pas à transformer le code en une autre forme avant 
-         que le navigateur ne l'exécute.
+
+	<?php foreach($liste as $cours)
+                        { ?>
+    <pre id ="contenuDuCours" value=<?php echo $cours['idCours']?>><?php echo $cours['contenuCours']?>
+	<?php 
+                        } 
+                        ?> 
      </pre>
    
      <a href="templatequiz.html" >  <button class="button-jouer" role="button">Commencez le quiz!</button>  </a>

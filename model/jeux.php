@@ -1,7 +1,7 @@
 <?php
 class jeux
 {
-    private int $idJeux;
+    
     private string $question;
     private string $reponseA;
     private string $reponseB;
@@ -12,8 +12,7 @@ class jeux
     private string $reponseD;
 
 
-        public function __construct($idJeux,$question,$reponseA,$reponseB,$reponseC,$correctAnswer,$idCours,$idCategorie,$reponseD) {
-            $this->idJeux=$idJeux;
+        public function __construct($question,$reponseA,$reponseB,$reponseC,$correctAnswer,$idCours,$idCategorie,$reponseD) {
             $this->question=$question;
             $this->reponseA=$reponseA;
             $this->reponseB=$reponseB;

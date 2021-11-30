@@ -193,9 +193,17 @@ function handleEndGame() {
 
 //closes score modal, resets game and reshuffles questions
 function closeScoreModal() {
-    var xhttp=new XMLHttpRequest();
-    xhttp.open("POST",url);
-    xhttp.send()
+    var url = 'assets/js/getScore.php';
+    var formData = new FormData();
+    formData.append('score', playerScore);
+
+    fetch(url, { method: 'POST', body: formData })
+    .then(function (response) {
+      return response.text();
+    })
+    .then(function (body) {
+      console.log(body);
+    });
     
     questionNumber = 1
     playerScore = 0
