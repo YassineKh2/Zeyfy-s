@@ -37,7 +37,7 @@ $DB= new DB();
 <body>
 
     <nav>
-        <a href="offres.html"> <img src="images/logo.png"> </a>
+        <a href="offres.html"> <img src="logo.png"> </a>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
     <ul>
