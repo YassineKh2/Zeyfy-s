@@ -13,7 +13,7 @@ if(
 }
 else
 {
-echo 'Erreur';
+echo 'Erreur test';
 //header('Location: dashboard.php');
 }
 ?>

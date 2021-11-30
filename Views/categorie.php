@@ -22,7 +22,7 @@ require 'header.php'; ?>
               <li class='pricing-feature'>5 Level</li>
               <li class='pricing-feature'>Formations limitées</li>
             </ul>
-            <a class='pricing-action' href="addpanier.php?id=<?php echo $categorie->IdCategorie; ?>">Ajouter panier</a>
+            <a class='pricing-action' href="addpanier.php?IdCategorie=<?php echo $categorie->IdCategorie; ?>">Ajouter panier</a>
               <?php }?>
               
           </div>

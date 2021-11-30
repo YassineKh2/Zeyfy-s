@@ -8,6 +8,9 @@ class panier{
             $SESSION['panier'] = array();
         }
     }
+    public function add($IdCategorie){
+        $_SESSION['panier'][$IdCategorie] = 1;
+    }
   
 }
 

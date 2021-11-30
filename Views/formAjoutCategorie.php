@@ -31,7 +31,7 @@
                     <div class="recentorders">
                         <div class="cardheader">
                             <h2>Ajouter Catégorie</h2>
-                            </div>   
++                            </div>   
 
         <form action="ajouterCategorie.php" method="post">
             <table border="1" align="center">
@@ -52,9 +52,9 @@
                         <?php
                          foreach($liste as $offres) {
                         ?>
-                                <option value="<?php $offres['NomOffre'] ?>"><?php echo $offres['NomOffre'] ?></option>
+                                <option value="<?php echo $offres['NomOffre'] ?>"><?php echo $offres['NomOffre'] ?></option>
                                      <?php }  ?>
-                    </select>; 
+                    </select>;  
                     </td>
                 </tr>              
                 <tr>
