@@ -3,11 +3,14 @@
 include_once '../config.php';
 include_once '../controller/JeuxController.php';
 include_once '../model/jeux.php'; 
- $sql= "SELECT  * from joueur_score  order by score  desc limit 3";
+//   $sql= "SELECT  * from joueur_score  order by score  desc limit 3";
+$sql="SELECT utilisateurs.nomUtilisateur,utilisateurs.prenomUtilisateur,joueur_score.score
+ FROM utilisateurs JOIN joueur_score ON utilisateurs.idUtilisateur=joueur_score.idJoueur order by score  desc limit 3";
 
     try {
         $db=config::getConnexion();
 $liste=$db->query($sql);
+// $liste1=$db->query($sql1);
 $topPlayers=array();
 foreach($liste as $player){
     array_push($topPlayers,$player);
@@ -83,21 +86,22 @@ foreach($liste as $player){
 <div class="formation-col">
     <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
     <div class="layer">
-     <h3><?php echo $topPlayers[0]["score"]?></h3>
+     <h3>Player1 : <br> Prenom: <?php echo $topPlayers[0]["prenomUtilisateur"]?> <br> Name: <?php echo $topPlayers[0]["nomUtilisateur"]?> <br>score :<?php echo $topPlayers[0]["score"]?></h3>
     
     </div>
 </div>
 <div class="formation-col">
     <img src="https://www.bootdey.com/img/Content/avatar/avatar1.png">
     <div class="layer">
-     <h3>player2<?php echo $topPlayers[1]["score"]?></h3>
+        <!-- <h1>TESSSSSSSSSSSSSSSST</h1> -->
+     <h3>player2 : <br> Prenom: <?php echo $topPlayers[1]["prenomUtilisateur"]?> <br>Name:<?php echo $topPlayers[1]["nomUtilisateur"]?><br> Score :<?php echo $topPlayers[1]["score"]?></h3>
 
     </div>
 </div>
 <div class="formation-col">
     <img src="https://www.bootdey.com/img/Content/avatar/avatar8.png">
     <div class="layer">
-    <h3>player3<?php echo $topPlayers[2]["score"]?></h3>
+    <h3>player3 : <br> Prenom: <?php echo $topPlayers[2]["prenomUtilisateur"]?> <br>  Nom :<?php echo $topPlayers[2]["nomUtilisateur"]?> <br>  score :<?php echo $topPlayers[2]["score"]?></h3>
     </div>
 </div>
     </div>
