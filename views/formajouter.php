@@ -56,7 +56,7 @@
                                 );
 
                                 $jeuxC->ajouterJeux($jeux);
-                                header('Location:indexlevel.html');
+                                header('Location:indexlevel.php');
                             }
                             else
                                 $error = "Missing information";
