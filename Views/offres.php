@@ -1,10 +1,14 @@
+<?php 
+require '../Model/db.class.php';
+?>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EDUCAPLAY - by the ZEYFY's</title>
-<link rel="stylesheet" href="offres.css">
+<link rel="stylesheet" href="Front/offres.css">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -28,30 +32,20 @@
 
 <!------------- formation------------>
 <section class="formation">
+      <?php $offres = $DB->query('SELECT * from offres') ?>
+      <?php foreach ($offres as $offres ) { ?>
 <h1>Les offres disponibles</h1>
 
     <div class="row">
 <div class="formation-col">
     <img src="images/black_friday.jpg">
     <div class="layer">
-		<h3>Black-Friday</h3>
-		<h4>Disponible</h4>
+		<h3><?php echo $offres->NomOffre; ?></h3>
+		<h4><?php echo $offres->pourcentageOffre; ?></h4>
     </div>
 </div>
-<div class="formation-col">
-    <img src="images/new_year.jpg">
-    <div class="layer">
-     <h3>New-Year</h3>
-	 <h4>Pas Disponible</h4>
-    </div>
-</div>
-<div class="formation-col">
-    <img src="images/Halloween.jpg">
-    <div class="layer">
-     <h3>Halloween</h3>
-	 <h4>Pas Disponible</h4>
-    </div>
-</div>
+
+<?php }?>
     </div>
 </section>
 
