@@ -124,7 +124,7 @@ $listecategories=$categorieC->afficherCategorie();
                                            <td> 
                                            <form method="post" action="supprimerCategorie.php">
 						                     <input type="submit" class="btn supp" name="Supprimer" value="Supprimer">
-						                     <input type="hidden" value=<?php echo $categorie['IdCategorie']; ?> name="IdCategorie">
+						                     <input type="hidden" value=<?PHP echo $categorie['IdCategorie']; ?> name="IdCategorie">
 					                        </form> 
                                            </td>
                                            </tr>

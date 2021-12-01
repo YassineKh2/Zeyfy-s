@@ -17,11 +17,7 @@ require 'header.php'; ?>
               </div>
               <h3 class='pricing-title'>  <?php echo $categorie->NomOffre; ?>  </h3>
             </div>
-            <ul class='pricing-feature-list'>
-              <li class='pricing-feature'>1 Joueur</li>
-              <li class='pricing-feature'>5 Level</li>
-              <li class='pricing-feature'>Formations limitées</li>
-            </ul>
+            
             <a class='pricing-action' href="addpanier.php?IdCategorie=<?php echo $categorie->IdCategorie; ?>">Ajouter panier</a>
               <?php }?>
               
