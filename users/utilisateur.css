@@ -51,7 +51,6 @@ background: var(--white);
 }
 .navigation ul li:nth-child(1){
     margin-bottom: 40px;
-    pointer-events: none;
 }
 .navigation ul li a {
     position: relative;

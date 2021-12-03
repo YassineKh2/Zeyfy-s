@@ -5,12 +5,15 @@
     $_SESSION['auth']=false;
     $verif=0;
     $utilisateur= new utilisateurc();
+   
     $listeutilisateurs=$utilisateur->recupererutilisateur();
     foreach ($listeutilisateurs as $utilisateur)
     {
         if((isset($_POST['email']))&&(isset($_POST['password'])))
         {
-    if (($_POST['email']==$utilisateur['Email'])&&($_POST['password']==$utilisateur['mdpUtilisateur'])&&($utilisateur['etat']==1)) 
+          $verifm = password_verify($_POST['password'], $utilisateur['mdpUtilisateur']);
+        
+    if ((($_POST['email']==$utilisateur['Email'])&&($verifm==true)&&($utilisateur['etat']==1))||(($_POST['email']==$utilisateur['username'])&&($verif==true)&&($utilisateur['etat']==1))) 
     {
     $verif=1;
     $_SESSION['auth']=true;
@@ -52,14 +55,14 @@
     <img src="../pics/idk2.png" class="avatar">
     <form action="" class='form' method="POST">
           <h2>LOGIN</h2>    
-          <p>Email d'utilisateur</p>
+          <p>Email / Nom d'utilisateur</p>
         <input type="text" name='email' class='box' placeholder="Saiser votre email" >
         <p>Mot De Pass</p>
         <input type='password' name='password' class="box" placeholder="Saiser votre mot de pass" >
         <input type="submit" value="LOGIN" id='submit' action="veriflog.php"> <p class='mochkla'><?php if($verif==2) echo'Information erroné !'; ?></p>
         <a href="#" class="k">Mot de pass oublié?</a><br>
     </form>
-    <p class="kek">Vous N'aves pas de compte? <a href="ins.php">Inscrivez vous ici</a></p>
+    <p class="kek">Vous n'avez pas de compte? <a href="ins.php">Inscrivez vous ici</a></p>
   </div>
   
  <?php

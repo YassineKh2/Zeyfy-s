@@ -3,8 +3,10 @@
      include_once 'C:\xampp\htdocs\Project web\models\utilisateurs.php';
     $error = "";
 
+    $k=0;
     $utilisateur=null;
     $utilisateurc= new utilisateurc;
+    $listeutilisateurs=$utilisateurc->recupererutilisateur();
     if (
 		isset($_POST["nom"]) &&		
         isset($_POST["prenom"]) &&
@@ -19,21 +21,32 @@
             !empty($_POST["password"])  && 
             !empty($_POST["username"]) 
         ) {
+            
+    foreach ($listeutilisateurs as $utilisateur)
+     {
+          if($utilisateur['username']==$_POST['username']) {
+            $error = 'username takendd!!';
+               $k=1;
+          }
+            }
+        if($k==0) {
+
             $utilisateur = new utilisateur(
 				$_POST['nom'],
                 $_POST['prenom'], 
-                $_POST['password'],
+                password_hash($_POST['password'],PASSWORD_DEFAULT),
                 $_POST['email'],
                 $_POST['username']
             );
             $utilisateurc->ajouterutilisateur($utilisateur);
-         
+        }
+        
         }
         else
             $error = "Missing information";
     }
 
-if(isset($_POST['type'])){
+if((isset($_POST['type']))&&($k==0)){
     $fb=$utilisateurc->recupererdernierutilisateur();
     $kh=$fb['idUtilisateur'];
    if($_POST['type']=='et'){
@@ -44,6 +57,9 @@ if(isset($_POST['type'])){
    header('Location:insed.php?id='.$kh.'');
 
 }
+
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -80,7 +96,7 @@ if(isset($_POST['type'])){
          
             <input type="text" name="nom" placeholder="Ecrire votre nom" id="nom" class="nom"> <p id="errorNom" class="no"></p>
         </div>
-        <input type="text" name="username" placeholder="Ecrire votre username" id="username" > <p id="username" class="userr"></p>
+        <input type="text" name="username" placeholder="Ecrire votre username" id="username" > <p id="username" class="userr"><?php echo  $error; ?></p>
         
         <input type="email" name="email" placeholder="Ecrire votre email" id="email">   <p id="errorEmail" class="em"></p>
         
@@ -93,7 +109,7 @@ if(isset($_POST['type'])){
               <option value="en"><label>Enseignant</label></option>
           </select> <br></br>
             <input type="submit" value="Confirmer" id="yes">
-            <p>En appuiant sur Confirmer vous accepter nos <a href="#">termes et conditions </a> et notre <a href="#">politique de confidentialité</a></p>
+            <p>En appuiant sur Confirmer vous accepter nos <a href="term.html">termes et conditions </a> et notre <a href="politique.html">politique de confidentialité</a></p>
             </div>
        
         </form>

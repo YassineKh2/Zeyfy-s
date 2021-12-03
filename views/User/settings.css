@@ -259,7 +259,7 @@ background: var(--white);
   left: 50%;
   transform: translate(-50%,-50%);
   width: 900px;    
-  height: 700px;
+  height: 750px;
   display: flex;
   box-shadow: 0 20px 20px 0 rgba(69, 90, 100, 0.39);
 }
@@ -312,6 +312,7 @@ background: var(--white);
 .wrapper .right .info_data .data,
 .wrapper .right .projects_data .data{
   width: 45%;
+  margin-top: 15px;
 }
 
 .wrapper .right .info_data .data h4,
@@ -371,4 +372,16 @@ bottom: 0;
     left: 500px;
     bottom: 616px;
 
+}
+.mdp{
+    position:absolute;
+}
+.prenom{
+    position: absolute;
+}
+.no{
+    position: absolute;
+}
+.em{
+    position: absolute;
 }

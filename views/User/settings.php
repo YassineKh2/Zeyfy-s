@@ -23,20 +23,18 @@
 			!empty($_POST['nom']) &&
             !empty($_POST["prenom"]) && 
             !empty($_POST["username"]) && 
-            !empty($_POST["email"]) && 
-            !empty($_POST["password"])&& 
-            !empty($_POST["password2"])
+            !empty($_POST["email"]) 
            
         ) {
-            $utilisateur = new utilisateur(
+            $utilisateur = new utilisateur( 
 				$_POST['nom'],
                 $_POST['prenom'], 
-				$_POST['password'],
+				password_hash($_POST['password'],PASSWORD_DEFAULT),
                 $_POST['email'],
                 $_POST['username']
             );
             $utilisateurc->modifierutilisateur($utilisateur,$_SESSION['user_id']);
-            
+            header('Location:profiedash.php');
       
         }
         else
@@ -130,28 +128,28 @@
         
                 echo '    <div class="data">
                         <h4>Nom</h4>
-                       <input type="text" name="nom" value='.$utilisateur['nomUtilisateur'].'>
+                       <input type="text" name="nom" id="nom" value='.$utilisateur['nomUtilisateur'].'> <p id="errorNom" class="prenom"></p>
                      </div>
                      <div class="data">
                        <h4>Prenom</h4>
-                       <input type="text" name="prenom" value='.$utilisateur['prenomUtilisateur'].'>
+                       <input type="text" name="prenom" id="prenom" value='.$utilisateur['prenomUtilisateur'].'> <p id="errorPrenom" class="no"></p>
                     </div>
                     <div class="data">
                     <h4>Nom de utilisateur</h4>
-                    <input type="text" name="username" value='.$utilisateur['username'].'>
+                    <input type="text" name="username" value='.$utilisateur['username'].'> <p id="username" class="userr"></p>
                  </div>
                     <div class="data">
                         <h4>Email</h4>
-                        <input type="text" name="email" value='.$utilisateur['Email'].'>
+                        <input type="text" name="email" id="email" value='.$utilisateur['Email'].'> <p id="errorEmail" class="em"></p>
                      </div>
                      <div class="data">
                         <h4>Mot De Pass</h4>
-                        <input type="password" name="password" id="password1" value='.$utilisateur['mdpUtilisateur'].'> <p id="errorMdp" class="mdp"></p>
+                        <input type="password" name="password" id="password" value="" onclick="ver()"> <p id="errorMdp" class="mdp"></p>
                         <ion-icon name="eye-outline" onclick="myFunction()" class="eyee"></ion-icon>
                         </div>
                      <div class="conf">
                      <h4>Confirmer Mot De Pass</h4>
-                     <input type="password" name="password2" id="password2" value='.$utilisateur['mdpUtilisateur'].'> <p id="errorMdp2" class="mdp"></p>
+                     <input type="password" name="password2" id="passwordd" value=""> 
                      </div>
                 </div>
                 <button id="sure" class="btn">Desactiver</button>   
@@ -169,7 +167,7 @@
 
  <form action="settings.php" method="POST" enctype="multipart/form-data">
  <input type="file" name="image">
- <input type="submit" value="Changer" id='yes' name="upload"> 
+ <input type="submit" value="Changer" id='yess' name="upload"> 
  </form>
        
 

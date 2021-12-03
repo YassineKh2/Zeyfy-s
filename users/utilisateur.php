@@ -18,7 +18,7 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="#">
+                    <a href="../views\Mainpage\indexa.php">
                         <span class="icon"><ion-icon name="albums-outline"></ion-icon></span>
                         <span class="title">Educaplay</span>
                     </a>
@@ -98,6 +98,7 @@
                         <tbody>
                         <?php // hné t7ot el boucle ely taffichi mté3ek ex foreach hné 7atit for just bech nwarik
                          foreach($listeutilisateurs as $utilisateur){
+                             if($utilisateur['admin']==NULL)
                         echo '
                             <tr>
                                 <td>'.$utilisateur['nomUtilisateur'].'</td>

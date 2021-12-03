@@ -13,7 +13,7 @@
         <div class="navigation">
             <ul>
                 <li>
-                    <a href="../Mainpage/index.php">
+                    <a href="../Mainpage/indexa.php">
                         <span class="icon"><ion-icon name="albums-outline"></ion-icon></span>
                         <span class="title">Educaplay</span>
                     </a>
