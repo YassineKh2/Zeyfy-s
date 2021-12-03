@@ -50,6 +50,7 @@ function validateForm()
        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
       <link rel="stylesheet" href="../controller/css/style.css">
+      <link rel="stylesheet" href="../controller/css/ens.css">
 <link rel="preconnect" href="https://fonts.gstatic.com"> 
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -90,11 +91,11 @@ function validateForm()
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
       <button>Suggérer une formation</button>
  
-      <form action="AjoutFormation.php" onsubmit="return validateForm()" method="post">
+      <form action="AjoutFormation.php" id="myForm" class="myForm" onsubmit="return validateForm()" method="post">
      
          <table class="form-style"> 
-         <tr>
-            <td>
+         
+           
             <?php
 					if(isset($_SESSION['error']))
                         {
@@ -104,7 +105,7 @@ function validateForm()
                         	echo '</div>';
                         }
                         ?>  
-                        </td>
+                    <tr>    
                <td>
                   
                   <label>
@@ -191,7 +192,6 @@ function validateForm()
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ajouter une formation</title>
 <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
  <form action="#" onsubmit="Verif()">
@@ -223,11 +223,7 @@ minlength="3" maxlength="20" size="10" >
 <br><br>
 <button type"submit">Ajouter </button>
 <button type"reset">Annuler </button>
-
 </div>
-
-
-
 </form>
 </body>
 </html> --> 

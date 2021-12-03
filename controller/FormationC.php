@@ -1,10 +1,31 @@
 <?php
-session_start();
-include '../config.php';
+include_once("../config.php");
 include '../model/Formation.php';
 class FormationC {
     function afficherformations(){
         $sql="SELECT * FROM formations order by date_c";
+        $db = config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch(Exception $e){
+            die('Erreur:' . $e->getMessage());
+        }
+    }
+    function afficherformationss($sta,$categ){
+        $sql="SELECT * FROM formations WHERE statut = '$sta' AND filiere = '$categ'";
+        $db = config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch(Exception $e){
+            die('Erreur:' . $e->getMessage());
+        }
+    }
+    function afficherformationsss($tem){
+        $sql="SELECT * FROM formations WHERE statut = '$tem' or filiere = '$tem' or titre_f = '$tem' or prix_f = '$tem' ";
         $db = config::getConnexion();
         try{
             $liste = $db->query($sql);
@@ -53,8 +74,8 @@ class FormationC {
             'image'=> $formations->getimage()
         ]);
         $_SESSION['error']="data add seccsesfuly";
-        header("Location: ../views/FormAjoutFormation.php");
-} catch (PDOExeption $e){
+        header("Location: ../views/index2.php");
+} catch (Exception $e){
     $e->getMessage();
 }
 
@@ -70,7 +91,7 @@ $query->execute([
     'descriptions'=> $formations->getdescriptions(),
     'id_formation'=> $id_formation
 ]);
-    } catch (PDOExeption $e){
+    } catch (Exception $e){
         $e->getMessage();
 }}
 function modifierstatutA($id_formation,$formations){
@@ -81,7 +102,7 @@ $query->execute([
  
  'id_formation'=> $id_formation
 ]);
- } catch (PDOExeption $e){
+ } catch (Exception $e){
      $e->getMessage();
 }}
 function modifierstatutR($id_formation,$formations){
@@ -92,7 +113,7 @@ $query->execute([
  
  'id_formation'=> $id_formation
 ]);
- } catch (PDOExeption $e){
+ } catch (Exception $e){
      $e->getMessage();
 }}
 function recupererformations($id_formation){
@@ -103,7 +124,7 @@ try{
 $query->execute();
 $formations=$query->fetch();
 return $formations;
-}catch (PDOExeption $e){
+}catch (Exception $e){
     $e->getMessage();}
 }
 }

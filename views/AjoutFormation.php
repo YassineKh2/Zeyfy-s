@@ -18,4 +18,3 @@ else
 echo 'el forum mazelll na9esss hooooooooooooooy';
 //header('Location: AfficherListeAdherent.php');
 }
-?>

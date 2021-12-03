@@ -5,7 +5,7 @@ class Formation
     private string $date_c;
     private string $filiere;
     private string $titre_f;
-    private string $descriptions;
+    private string $descreptions;
     private string $prix_f;
     private string $statut;
     private string $image;
@@ -13,7 +13,7 @@ public function __construct($d,$f,$t,$de,$p,$s,$i){
     $this->date_c = $d;
     $this->filiere = $f;
     $this->titre_f = $t;
-    $this->descriptions= $de;
+    $this->descreptions= $de;
     $this->prix_f= $p;
     $this->statut= $s;
     $this->image= $i;
@@ -30,8 +30,8 @@ public function getfiliere(){
 public function gettitre_f(){
     return $this->titre_f ;
 }
-public function getdescriptions(){
-    return $this->descriptions ;
+public function getdescreptions(){
+    return $this->descreptions ;
 }
 public function getprix_f(){
     return $this->prix_f ;
@@ -45,25 +45,25 @@ public function getimage(){
 
 
 
-public function setdate_c(){
+public function setdate_c($date_c){
     $this->date_c = $date_c ;
 }
-public function setfiliere(){
+public function setfiliere($filiere){
     $this->filiere = $filiere ;
 }
-public function settitre_f(){
+public function settitre_f($titre_f){
     $this->titre_f = $titre_f ;
 }
-public function setdescriptions(){
-    $this->descriptions = $descriptions ;
+public function setdescreptions($descreptions){
+    $this->descreptions = $descreptions ;
 }
-public function setprix_f(){
+public function setprix_f($prix_f){
     $this->prix_f = $prix_f ;
 }
-public function setstatut(){
+public function setstatut($statut){
     $this->statut = $statut ;
 }
-public function setimage(){
+public function setimage($image){
     $this->image = $image ;
 }
 }

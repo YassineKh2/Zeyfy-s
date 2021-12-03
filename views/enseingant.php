@@ -59,7 +59,7 @@ $listeEnseignants=$enseigantC->afficherenseignants();
                         <h2 class="title">Mon Historique</h2>
                         <div class="actions" >
                         
-                            <button class="btn btn-success" >   <a href="#"><i class="fa fa-plus" ></i> Ajouter une formation</button>
+                            <button class="btn btn-success" >   <a href="FormAjoutFormation.php"><i class="fa fa-plus" ></i> Ajouter une formation</button>
                         </div>
                     </div>
                     <div class="content-utilities">

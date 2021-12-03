@@ -1,10 +1,10 @@
 <?php
 session_start();
-include '../config.php';
+include_once("../config.php");
 include '../model/Enseigant.php';
 class EnseigantC {
     function afficherenseignants(){
-        $sql="SELECT * FROM enseignants";
+        $sql="SELECT * FROM enseignant";
         $db = config::getConnexion();
         try{
             $liste = $db->query($sql);

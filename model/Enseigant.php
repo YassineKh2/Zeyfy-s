@@ -36,19 +36,19 @@ public function getemail(){
 
 
 
-public function setnom_enseignant(){
+public function setnom_enseignant($nom_enseignant){
     $this->nom_enseignant = $nom_enseignant ;
 }
-public function setprenom_enseignant(){
+public function setprenom_enseignant($prenom_enseignant){
     $this->prenom_enseignant = $prenom_enseignant ;
 }
-public function setmdp_enseignant(){
+public function setmdp_enseignant($mdp_enseignant){
     $this->mdp_enseignant = $mdp_enseignant ;
 }
-public function setfonctionalite(){
+public function setfonctionalite($fonctionalite){
     $this->fonctionalite = $fonctionalite ;
 }
-public function setemail(){
+public function setemail($email){
     $this->email = $email ;
 }
 }
