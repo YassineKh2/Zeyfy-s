@@ -1,0 +1,56 @@
+.header {
+    min-height: 110vh;
+    width: 100%;
+    background-image: url(../images/without_blaka.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+
+  .text-box{
+
+    position:relative;
+    top: 100px;
+    left:20;
+  
+  }
+
+#contenuDuCours{
+    position:relative;
+
+font-size:150%;
+top: 40px;
+left: -100px;
+
+}
+.header
+{
+    display:flex;
+    flex-wrap: wrap;
+}
+.button-jouer {
+  background-color: #f44336;
+  border-radius: 100px;
+  -webkit-box-shadow: #f44336 0 -25px 18px -14px inset, rgba(0, 89, 255, 0.15) 0 1px 2px, rgba(0, 2, 109, 0.15) 0 2px 4px, rgba(55, 0, 255, 0.15) 0 4px 8px, rgba(55, 0, 255, 0.15) 0 8px 16px, rgba(5, 2, 172, 0.15) 0 16px 32px;
+          box-shadow: rgba(0, 68, 255, 0.2) 0 -25px 18px -14px inset, rgba(0, 89, 255, 0.15) 0 1px 2px, rgba(0, 2, 109, 0.15) 0 2px 4px, rgba(55, 0, 255, 0.15) 0 4px 8px, rgba(55, 0, 255, 0.15) 0 8px 16px, rgba(5, 2, 172, 0.15) 0 16px 32px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 14px 50px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+  position: relative;
+  top: 190px;
+  left: 190px;
+}
