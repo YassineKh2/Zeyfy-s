@@ -1,7 +1,7 @@
 <?php
    
-    include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
-    include_once 'C:\xampp\htdocs\educaplay\model\joueur_score.php';
+    include_once 'C:\xampp\htdocs\educaplay\controller\JoueurScoreController.php';
+  
         $error = "";
     // create joueur_score_jeux
  $joueur_score_jeux = null;
@@ -24,7 +24,7 @@
 			
             );
             $joueur_score_jeuxC->ajouterscore($joueur_score_jeux);
-            header('Location:C:\xampp\htdocs\educaplay\levelpage\views\php\jouer.php');
+            header('location:jouer.php');
         }
         else
             $error = "Missing information";
@@ -36,7 +36,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="jouer.php">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/jouer.css">
     
     <title>User Display</title>
 </head>

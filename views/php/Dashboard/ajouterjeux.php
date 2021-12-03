@@ -43,7 +43,7 @@
                 );     
             $jeuxC->ajouterJeux($jeux);
             echo "controller read ?";
-            header('afficherjeux.php');
+            header('location:afficherjeux.php');
         }
         else
             $error = "Missing information";

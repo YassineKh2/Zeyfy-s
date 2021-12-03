@@ -15,6 +15,17 @@ class jeuxC{
             die('Erreur:' . $e->getMessage());
         }
      }
+     function afficherjeuxs($tem){
+        $sql="SELECT * FROM jeux WHERE question = '$tem' or filiere = '$tem' or titre_f = '$tem' or prix_f = '$tem' ";
+        $db = config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch(Exception $e){
+            die('Erreur:' . $e->getMessage());
+        }
+    }
 
      function supprimerJeux($idJeux){
 
