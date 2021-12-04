@@ -1,7 +1,7 @@
 <?php
    include_once 'C:\xampp\htdocs\educaplay\config.php';
    include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
-$sql= "SELECT * from cours";
+$sql= "SELECT * from cours where ";
   try {
 	$db=config::getConnexion();
 $liste=$db->query($sql);
@@ -58,7 +58,7 @@ $liste=$db->query($sql);
                         ?> 
      </pre>
    
-     <a href="templatequiz1.php" >  <button class="button-jouer" role="button">Commencez le quiz!</button>  </a>
+     <a href="templatequiz2.php" >  <button class="button-jouer" role="button">Commencez le quiz!</button>  </a>
 </div>
 
 

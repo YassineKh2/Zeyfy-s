@@ -16,6 +16,19 @@ class jeuxC{
         }
      }
 
+function afficherjeuxs($tem){
+        $sql="SELECT * FROM jeux WHERE question = '$tem'";
+        $db = config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch(Exception $e){
+            die('Erreur:' . $e->getMessage());
+        }
+    }
+
+
      function supprimerJeux($idJeux){
 
         $sql="DELETE FROM jeux where idJeux=:idJeux";

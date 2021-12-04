@@ -137,8 +137,8 @@ span a:hover {
   width: 90%;
   color: #f44336;;
   position: absolute;
-  top: 200px;
-  left: 53%;
+  top: 100px;
+  left: 70O0px;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   text-align: left;
@@ -154,7 +154,7 @@ span a:hover {
           transform: translate(-50%, -50%);
   text-align: left;
   top:200px;
-  left: 780px;
+  left: 990px;
 
 }
 
