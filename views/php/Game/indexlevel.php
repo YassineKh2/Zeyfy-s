@@ -4,7 +4,7 @@ include_once 'C:\xampp\htdocs\educaplay\config.php';
 include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 include_once 'C:\xampp\htdocs\educaplay\model\jeux.php'; 
 //   $sql= "SELECT  * from joueur_score  order by score  desc limit 3";
-$sql="SELECT utilisateurs.nomUtilisateur,utilisateurs.prenomUtilisateur,joueur_score.score
+$sql="SELECT utilisateurs.nomUtilisateur,utilisateurs.prenomUtilisateur, utilisateurs.sex ,joueur_score.score
  FROM utilisateurs JOIN joueur_score ON utilisateurs.idUtilisateur=joueur_score.idJoueur order by score  desc limit 3";
 
     try {
@@ -16,7 +16,7 @@ foreach($liste as $player){
     array_push($topPlayers,$player);
 }
     }
-                catch(Exeption $e)
+                catch(Exception $e)
                 {
                     die('Erreur:'.$e->getMessage());
                 
@@ -80,18 +80,38 @@ foreach($liste as $player){
 <!------------- top  players------------>
 <section class="formation">
 <h1>Top joueurs</h1>
-    <div class="row">
 
-    
-<div class="formation-col">
+    <div class="row">
+    <div class="formation-col">
+    <?php if ($topPlayers[0]["sex"]==0)
+    {
+     ?>
+    <img src="https://www.bootdey.com/img/Content/avatar/avatar3.png">
+    <?php }?>
+    <?php   if($topPlayers[0]["sex"]==1)  {?> 
     <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
+    <?php }?>
     <div class="layer">
      <h3>Player1 : <br> Prenom: <?php echo $topPlayers[0]["prenomUtilisateur"]?> <br> Name: <?php echo $topPlayers[0]["nomUtilisateur"]?> <br>score :<?php echo $topPlayers[0]["score"]?></h3>
     
     </div>
 </div>
 <div class="formation-col">
+<?php if ($topPlayers[1]["sex"]==1)
+    {
+     ?>
     <img src="https://www.bootdey.com/img/Content/avatar/avatar1.png">
+   
+  
+    <?php }?>
+    <?php if ($topPlayers[1]["sex"]==0)
+    {
+     ?>
+    <img src="https://www.bootdey.com/img/Content/avatar/avatar8.png">
+   
+  
+    <?php }?>
+
     <div class="layer">
         <!-- <h1>TESSSSSSSSSSSSSSSST</h1> -->
      <h3>player2 : <br> Prenom: <?php echo $topPlayers[1]["prenomUtilisateur"]?> <br>Name:<?php echo $topPlayers[1]["nomUtilisateur"]?><br> Score :<?php echo $topPlayers[1]["score"]?></h3>
@@ -99,7 +119,17 @@ foreach($liste as $player){
     </div>
 </div>
 <div class="formation-col">
+<?php if ($topPlayers[2]["sex"]==0)
+    {
+     ?>
     <img src="https://www.bootdey.com/img/Content/avatar/avatar8.png">
+    <?php }?>
+
+    <?php if ($topPlayers[2]["sex"]==1)
+    {
+     ?>
+    <img src="https://www.bootdey.com/img/Content/avatar/avatar7.png">
+    <?php }?>
     <div class="layer">
     <h3>player3 : <br> Prenom: <?php echo $topPlayers[2]["prenomUtilisateur"]?> <br>  Nom :<?php echo $topPlayers[2]["nomUtilisateur"]?> <br>  score :<?php echo $topPlayers[2]["score"]?></h3>
     </div>

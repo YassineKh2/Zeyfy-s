@@ -10,7 +10,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
     $listeCours=$db->query($sql1);
 
         }
-                    catch(Exeption $e)
+                    catch(Exception $e)
                     {
                         die('Erreur:'.$e->getMessage());
                     
@@ -56,7 +56,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                                 );
 
                                 $jeuxC->ajouterJeux($jeux);
-                                header('Location:C:\xampp\htdocs\educaplay\levelpage\views\php\indexlevel.php');
+                                header('indexlevel.php');
                             }
                             else
                                 $error = "Missing information";

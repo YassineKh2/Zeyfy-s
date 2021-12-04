@@ -7,7 +7,7 @@ $sql= "SELECT * from cours";
 $liste=$db->query($sql);
 
 }
-			catch(Exeption $e)
+			catch(Exception $e)
 			{
 				die('Erreur:'.$e->getMessage());
 			
