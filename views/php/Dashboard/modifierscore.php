@@ -1,6 +1,6 @@
 <?php
-       include_once 'C:\xampp\htdocs\educaplay\model\joueur_score.php';
-    include_once 'C:\xampp\htdocs\educaplay\controller\JoueurScoreController.php';
+       include_once '../../model/joueur_score.php';
+    include_once '../../controller/JoueurScoreController.php';
 
         $error = "";
     // create joueur_score_jeux
@@ -36,7 +36,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../../assets/css/jouer.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/jouer.css">
     
     <title>User Display</title>
 </head>

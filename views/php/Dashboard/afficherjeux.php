@@ -3,7 +3,6 @@
 include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 $jeuxC=new jeuxC();
 $listeJeux=$jeuxC->afficherJeux();
-
 ?>
  <!DOCTYPE html>
 <html lang="en">
@@ -72,10 +71,8 @@ $listeJeux=$jeuxC->afficherJeux();
                       <!---- search -->
                       <div class="search">
                         <label>
-                            <form action="chercherjeux.php" method="post">
-                            <input type="search" placeholder="Chercher ici" name="search">
-                           <button type="submit" value="submit"> <ion-icon name="search-outline"></ion-icon> </button>
-                           </form>
+                            <input type="text" placeholder="Chercher ici">
+                            <ion-icon name="search-outline"></ion-icon>
                         </label>
                     </div>
            

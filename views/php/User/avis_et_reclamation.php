@@ -1,4 +1,5 @@
 <?php
+include 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
 if($_SESSION['auth']==false)
 header('Location:..\Login\login.php');
 ?>

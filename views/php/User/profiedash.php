@@ -1,8 +1,10 @@
 <?php
- include 'C:\xampp\htdocs\Zeyfy-s-usercontrollers\controllers\utilisateursC.php';
+ include 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
+ include 'C:\xampp\htdocs\educaplay\controller\enseignantC.php';
  if($_SESSION['auth']==false)
  header('Location:..\Login\login.php');
  $utilisateurc = new utilisateurc();
+ $enseignantc= new enseignantc();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -72,11 +74,20 @@
            
         </div>
     <div class="wrapper">
-    <?php $utilisateur = $utilisateurc->recupererutilisateurinfo($_SESSION['user_id']);        
+    <?php $utilisateur = $utilisateurc->recupererutilisateurinfo($_SESSION['user_id']);   
+    $type="";
+    if($utilisateur['typee']==0)
+        $type="Etudiant";
+    else
+    {
+    $enseignant=$enseignantc->recupererenseignant($_SESSION['user_id']);
+$type=$enseignant['etude'];
+    }
+
      echo'    <div class="left">
-            <img src="Userpics/'.$utilisateur['photo'].'" alt="user" width="200">
+            <img src="../../assets/images/Userpics/'.$utilisateur['photo'].'" alt="user" width="200">
             <h4>'.$utilisateur['nomUtilisateur'].'<br>'.$utilisateur['prenomUtilisateur']. '</h4>
-             <p>UI Developer</p>
+             <p>'.$type.'</p>
         </div>  
         <div class="right">
             <div class="info">
@@ -100,7 +111,7 @@
                         <p>'.$utilisateur['Email'].'</p>
                      </div>
                      <div class="data">
-                        <h4>Mot De Pass</h4>
+                        <h4>Mot De Passe</h4>
                         <p>******************</p>   
                      </div>';
                      ?>

@@ -55,8 +55,8 @@
           <h2>LOGIN</h2>    
           <p>Email / Nom d'utilisateur</p>
         <input type="text" name='email' class='box' placeholder="Saiser votre email" >
-        <p>Mot De Pass</p>
-        <input type='password' name='password' class="box" placeholder="Saiser votre mot de pass" >
+        <p>Mot De Passe</p>
+        <input type='password' name='password' class="box" placeholder="Saiser votre mot de passe" >
         <input type="submit" value="LOGIN" id='submit' action="veriflog.php"> <p class='mochkla'><?php if($verif==2) echo'Information erroné !'; ?></p>
         <a href="#" class="k">Mot de pass oublié?</a><br>
     </form>

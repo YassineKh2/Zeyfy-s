@@ -10,12 +10,16 @@ class utilisateur{
     private $etat=null;
     private $date=null;
     private $img=null;
-    function __construct($nom, $prenom, $mdp, $email, $username){
+    private $sex=null;
+    private $typee=null;
+    function __construct($nom, $prenom, $mdp, $email, $username,$sex,$typee){
 		$this->nom=$nom;
 		$this->prenom=$prenom;
         $this->mdp=$mdp;
         $this->email=$email;
         $this->username=$username;
+        $this->sex=$sex;
+        $this->typee=$typee;
             }
 function getEmail(){
     return $this->email;
@@ -43,6 +47,12 @@ function getImg(){
 }
 function getDate(){
     return $this->date;
+}
+Function getSex(){
+    return $this->sex;
+}
+Function getTypee(){
+    return $this->typee;
 }
 }
 ?>

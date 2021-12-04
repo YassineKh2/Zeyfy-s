@@ -165,4 +165,22 @@ background-color: #FE7062;
     left: 70px;
     bottom: 521px;
 }
+     .radio{
+    position:relative;
+        top: 55px;
+        right: 20px;
+    }
+    
+    .radio2{
+        position:relative;
+        top: 55px;
+        right: 20px;
+        }
+
+.ra{
+    display:inline-flex;
+    position: absolute;
+    left: 350px;
+    bottom: 120px;
+}
 /****************************************************************************************************/

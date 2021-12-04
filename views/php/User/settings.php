@@ -1,7 +1,6 @@
 <?php
 
-    include 'C:\xampp\htdocs\Zeyfy-s-usercontrollers\controllers\utilisateursC.php';
-    include_once 'C:\xampp\htdocs\Zeyfy-s-usercontrollers\controllers\utilisateursC.php';
+    include 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
   
     $error = "";
 
@@ -45,7 +44,7 @@
     header('Location:..\Login\login.php');
 
     if (isset($_POST['upload'])){
-        $target= "Userpics/".basename($_FILES['image']['name']);
+        $target= "C:/xampp\htdocs/educaplay/views/assets/images/Userpics/".basename($_FILES['image']['name']);
         $image=$_FILES['image']['name'];
         $utilisateurc->modifierimage($image,$_SESSION['user_id']);
         move_uploaded_file($_FILES['image']['tmp_name'],$target);
@@ -143,19 +142,19 @@
                         <input type="text" name="email" id="email" value='.$utilisateur['Email'].'> <p id="errorEmail" class="em"></p>
                      </div>
                      <div class="data">
-                        <h4>Mot De Pass</h4>
+                        <h4>Mot De Passe</h4>
                         <input type="password" name="password" id="password" value="" onclick="ver()"> <p id="errorMdp" class="mdp"></p>
                         <ion-icon name="eye-outline" onclick="myFunction()" class="eyee"></ion-icon>
                         </div>
                      <div class="conf">
-                     <h4>Confirmer Mot De Pass</h4>
+                     <h4>Confirmer Mot De Passe</h4>
                      <input type="password" name="password2" id="passwordd" value=""> 
                      </div>
                 </div>
                 <button id="sure" class="btn">Desactiver</button>   
             </div>
             
-            <img  src="Userpics/'.$utilisateur['photo'].'" onclick="" class="pic" width="40%">
+            <img  src="../../assets/images/Userpics/'.$utilisateur['photo'].'" onclick="" class="pic" width="40%">
            ';
         ?>
         </div>

@@ -16,7 +16,7 @@ foreach($liste as $player){
     array_push($topPlayers,$player);
 }
     }
-                catch(Exception $e)
+                catch(Exeption $e)
                 {
                     die('Erreur:'.$e->getMessage());
                 

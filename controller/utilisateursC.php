@@ -15,8 +15,8 @@ class utilisateurc{
     
 }
 function ajouterutilisateur($utilisateur){
-    $sql="INSERT INTO utilisateurs (nomUtilisateur,prenomUtilisateur,mdpUtilisateur,Email,username) 
-    VALUES (:nomUtilisateur,:prenomUtilisateur,:mdpUtilisateur,:Email,:username)";
+    $sql="INSERT INTO utilisateurs (nomUtilisateur,prenomUtilisateur,mdpUtilisateur,Email,username,sex,typee) 
+    VALUES (:nomUtilisateur,:prenomUtilisateur,:mdpUtilisateur,:Email,:username,:sex,:typee)";
     $db = config::getConnexion();
     try{
         $query = $db->prepare($sql);
@@ -25,7 +25,10 @@ function ajouterutilisateur($utilisateur){
             'prenomUtilisateur' => $utilisateur->getPrenom(),
             'mdpUtilisateur' => $utilisateur->getmdp(), 
             'Email' => $utilisateur->getEmail(),
-            'username' => $utilisateur->getUsername()
+            'username' => $utilisateur->getUsername(),
+            'sex' => $utilisateur->getSex(),
+            'typee' => $utilisateur->getTypee()
+            
         ]);			
     }
     catch (Exception $e){

@@ -2,7 +2,7 @@
      include_once 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
      include_once 'C:\xampp\htdocs\educaplay\model\utilisateurs.php';
     $error = "";
-
+$sex=0;
     $k=0;
     $utilisateur=null;
     $utilisateurc= new utilisateurc;
@@ -12,7 +12,8 @@
         isset($_POST["prenom"]) &&
         isset($_POST["email"]) && 
         isset($_POST["password"]) && 
-        isset($_POST["username"])  
+        isset($_POST["username"]) 
+        
     ) {
         if (
 			!empty($_POST['nom']) &&
@@ -21,7 +22,7 @@
             !empty($_POST["password"])  && 
             !empty($_POST["username"]) 
         ) {
-            
+            $sex=$_POST['sex'];
     foreach ($listeutilisateurs as $utilisateur)
      {
           if($utilisateur['username']==$_POST['username']) {
@@ -36,7 +37,9 @@
                 $_POST['prenom'], 
                 password_hash($_POST['password'],PASSWORD_DEFAULT),
                 $_POST['email'],
-                $_POST['username']
+                $_POST['username'],
+                $sex,
+                $_POST['type']
             );
             $utilisateurc->ajouterutilisateur($utilisateur);
         }
@@ -49,7 +52,7 @@
 if((isset($_POST['type']))&&($k==0)){
     $fb=$utilisateurc->recupererdernierutilisateur();
     $kh=$fb['idUtilisateur'];
-   if($_POST['type']=='et'){
+   if($_POST['type']=='0'){
     $utilisateurc->ajouterjoueur($kh);
     header('Location:login.php');
    }
@@ -100,14 +103,18 @@ if((isset($_POST['type']))&&($k==0)){
         
         <input type="email" name="email" placeholder="Ecrire votre email" id="email">   <p id="errorEmail" class="em"></p>
         
-            <input type="password" name="password" placeholder="Ecrire votre mot de pass" id="password"> <p id="errorMdp" class="mdp"></p>
+            <input type="password" name="password" placeholder="Ecrire votre mot de passe" id="password"> <p id="errorMdp" class="mdp"></p>
          
-          <input type="password" name="password" placeholder="Confirmer votre mot de pass" id="password2">   <p id="errorMdp2"></p>
+          <input type="password" name="password" placeholder="Confirmer votre mot de passe" id="password2">   <p id="errorMdp2"></p>
         
           <select name='type' id="sel" >
-              <option value="et"><label>Etudient</label></option>
-              <option value="en"><label>Enseignant</label></option>
+              <option value="0"><label>Etudient</label></option>
+              <option value="1"><label>Enseignant</label></option>
           </select> <br></br>
+          <div class="ra">
+          <label  > <input type="radio" name="sex" value="1"  class="radio" selected> Homme</label> 
+         <label><input type="radio" name="sex" value="0"  class="radio2" >Femme </label> 
+         </div>
             <input type="submit" value="Confirmer" id="yes">
             <p>En appuiant sur Confirmer vous accepter nos <a href="../html/term.html">termes et conditions </a> et notre <a href="../html/politique.html">politique de confidentialité</a></p>
             </div>

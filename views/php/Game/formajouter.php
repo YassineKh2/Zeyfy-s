@@ -1,7 +1,7 @@
 <?php
 include_once 'C:\xampp\htdocs\educaplay\config.php';
 include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
-include_once 'C:\xampp\htdocs\educaplay\model\jeux.php'; 
+    include_once 'C:\xampp\htdocs\educaplay\model\jeux.php'; 
      $sql= "SELECT * from categorie";
      $sql1= "SELECT * from cours";
         try {
@@ -10,7 +10,7 @@ include_once 'C:\xampp\htdocs\educaplay\model\jeux.php';
     $listeCours=$db->query($sql1);
 
         }
-                    catch(Exception $e)
+                    catch(Exeption $e)
                     {
                         die('Erreur:'.$e->getMessage());
                     
@@ -56,7 +56,7 @@ include_once 'C:\xampp\htdocs\educaplay\model\jeux.php';
                                 );
 
                                 $jeuxC->ajouterJeux($jeux);
-                                header('location:indexlevel.php');
+                                header('Location:C:\xampp\htdocs\educaplay\levelpage\views\php\indexlevel.php');
                             }
                             else
                                 $error = "Missing information";
@@ -86,7 +86,7 @@ include_once 'C:\xampp\htdocs\educaplay\model\jeux.php';
     <li><a href=""> Plus d'information</a></li>
     <li><a href="">Reclamation</a></li>
     <li><a href="">Nous-contacter</a></li>
-    <li><a href="../../html/index.html">Quitter</a></li>
+    <li><a href="../html/index.html">Quitter</a></li>
 </ul>
     </div>
     <i class="fa fa-bars" onclick="showMenu()"></i>

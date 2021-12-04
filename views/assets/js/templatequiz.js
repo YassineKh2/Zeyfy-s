@@ -2,7 +2,7 @@
 
 var ajax= new XMLHttpRequest ();
 var method="GET";
-var url="../assets/js/getQuestion.php";
+var url="assets/js/getQuestion.php";
 var asynchronous =true;
 
 
