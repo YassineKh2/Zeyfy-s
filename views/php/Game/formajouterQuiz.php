@@ -41,7 +41,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                                  !empty($_POST["idCategorie"])  &&
                                  !empty($_POST["reponseD"]) 
 
-                            ) { echo "hello";
+                            ) { 
                                 $jeux = new jeux(
                                 
                                     $_POST['question'],
@@ -104,11 +104,12 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
     <!-- <h1>Quiz Data</h1> -->
 </div>
                 <tr>
-                    <td>
-                        
-                        <label for="idCategorie">NomCategorie:
-                        </label>
-                    </td>
+                 <br>
+                <h1 id='id'><center>Veuillez selectionner  les données de votre quiz !</center></h1>
+              <br><br>
+
+
+
                     <td><select name="idCategorie" id="NomCategorie">
                         <?php foreach($liste as $categorie)
                         { ?>
@@ -119,70 +120,46 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                     </td>
                 </tr>
 				<tr>
-                    <td>
-                        <label for="question">question:
-                        </label>
-                    </td>
-                    <td><input type="text" name="question" id="question" maxlength="20" class=""></td>
+               
+                    <td><input type="text" name="question" placeholder="Ecrire votre question" id="question" maxlength="20" class=""></td>
                 </tr>
                 <tr>
-                    <td>
-                        <label for="reponseA">reponseA:
-                        </label>
-                       
-                    </td>
+                   
                             
-                    <td><input type="text" name="reponseA" id="reponseA" maxlength="20"></td>
+                    <td><input type="text" name="reponseA"  placeholder="Ecrire votre Reponse A" id="reponseA" maxlength="20"></td>
                         
                     
 
                     </tr>
                     <tr>
-                    <td>
-                        <label for="reponseB">reponseB:
-                        </label>
-                        </td>
-                    <td><input type="text" name="reponseB" id="reponseB" maxlength="20"></td>   
+                   
+                    <td><input type="text" name="reponseB" placeholder="Ecrire votre reponse B" id="reponseB" maxlength="20"></td>   
                     
                         </tr>
 <tr>
-                    <td>
-                        <label for="reponseC">reponseC:
-                        </label>
-                        </td>
-                    <td><input type="text" name="reponseC" id="reponseC" maxlength="20"></td>   
+            
+                    <td><input type="text" name="reponseC" id="reponseC" placeholder="Ecrire votre reponseC" maxlength="20"></td>   
                     </td>
                         </tr>
                 <tr>
-                <td>
-                        <label for="reponseD">reponseD:
-                        </label>
-                        </td>
-                        <td><input type="text" name="reponseD" id="reponseD" maxlength="20"></td>   
+                
+                        <td><input type="text" name="reponseD" id="reponseD" placeholder="Ecrire votre reponseD" maxlength="20"></td>   
 
                       
                         </tr>
 
                         
     <tr>
-        <td>
-                <label for="correctAnswer">correctAnswer:
-            
-                </label>
-                </td>
+      
+
                
-                <td><input type="text" name="correctAnswer" id="correctAnswer" maxlength="20"></td>   
+                <td><input type="text" name="correctAnswer" id="correctAnswer"  placeholder="Ecrire votre réponse correcte "maxlength="20"></td>   
             
                 </tr>
               
 
-                <tr>
-                    <td>
-                        
-                        <label for="idCours"> Nom Cours:
-                        </label>
-                    </td>
-                    <td><select name="idCours" id="nomCours">
+                <tr>    
+         <td><select name="idCours" id="nomCours">
                         <?php foreach($listeCours as $contenuCours)
                         { ?>
                       <option value="<?php echo $contenuCours['idCours']?>"><?php echo $contenuCours['nomCours']?></option>
@@ -194,7 +171,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                 
                     <tr>
                     <td>
-                    <input type="submit" class="btn" value="Envoyer">
+                    <input type="submit" class="btn" id="envoyer" value="Envoyer">
                         <!-- <input type="reset"  class="btn" value="Annuler" > -->
                         </td>
                 </tr>
