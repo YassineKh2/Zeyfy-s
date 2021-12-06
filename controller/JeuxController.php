@@ -4,7 +4,8 @@ include_once 'C:\xampp\htdocs\educaplay\model\jeux.php';
 class jeuxC{
 
     function afficherJeux(){
-        $sql="SELECT * FROM jeux";
+        $sql="SELECT * FROM jeux
+        JOIN categorie JOIN cours ON jeux.idCategorie=jeux.idCategorie=jeux.idCours=cours.idCours";
         $db=config::getConnexion();
         try {
           $liste =$db->query($sql);
@@ -17,7 +18,7 @@ class jeuxC{
      }
 
 function afficherjeuxs($tem){
-        $sql="SELECT * FROM jeux WHERE question = '$tem'";
+        $sql="SELECT * FROM jeux  JOIN categorie JOIN cours ON jeux.idCategorie=jeux.idCategorie=jeux.idCours=cours.idCours where (question = '$tem')||(nomCours='$tem') || (nomCategorie='$tem')";
         $db = config::getConnexion();
         try{
             $liste = $db->query($sql);

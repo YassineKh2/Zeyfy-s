@@ -84,7 +84,7 @@ $listeJeux=$jeuxC->afficherjeuxs($tem);
                     <div class="recentorders">
                         <div class="cardheader">
                             <h2>Demande recente</h2>
-                            <a href="ajouterjeux.php" class="btn">ajouter </a>
+                            <a href="afficherjeux.php" class="btn">retour a la liste </a>
                         </div>
                         <table>
                             <thead>
@@ -96,8 +96,8 @@ $listeJeux=$jeuxC->afficherjeuxs($tem);
                                 <td>reponseC</td> 
                               
                                 <td>correctAnswer</td>
-                                <td>idCours</td>
-                                <td>idCategorie</td>
+                                <td>NomCours</td>
+                                <td>NomCategorie</td>
                                 <td>reponseD</td>
                                 <td>Modifer</td>
                                 <td>Supprimer</td>
@@ -117,8 +117,8 @@ $listeJeux=$jeuxC->afficherjeuxs($tem);
                              <td><?php echo $jeux['reponseB']; ?></td>
                              <td><?php echo $jeux['reponseC']; ?></td>
                              <td><?php echo $jeux['correctAnswer']; ?></td>
-                             <td><?php echo $jeux['idCours']; ?></td>
-                             <td><?php echo $jeux['idCategorie']; ?></td>
+                             <td><?php echo $jeux['nomCours']; ?></td>
+                             <td><?php echo $jeux['NomCategorie']; ?></td>
                              <td><?php echo $jeux['reponseD']; ?></td>
 
                     

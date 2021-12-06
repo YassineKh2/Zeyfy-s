@@ -84,7 +84,7 @@ $listeJeux2=$jeuxC->afficherJeux();
                     <div class="recentorders">
                         <div class="cardheader">
                             <h2>Demande recente</h2>
-                            <a href="ajouterjeux.php" class="btn">ajouter </a>
+                            <!-- <a href="ajouterjeux.php" class="btn">ajouter </a> -->
                             <button id="tr_button_afficher" class="btn">afficher plus.. </button>
                             <button id="tr_button_afficher_moins" style="display:none" class="btn">afficher moins.. </button>
                         </div>
@@ -97,8 +97,8 @@ $listeJeux2=$jeuxC->afficherJeux();
                                 <tr>
                                     <td>IdJeux</td>
                                     <td>Question</td> 
-                                    <td>idCours</td>
-                                    <td>idCategorie</td>
+                                    <td>Nom Cours</td>
+                                    <td>Nom Categorie</td>
                                
                                 
                                             
@@ -113,13 +113,11 @@ $listeJeux2=$jeuxC->afficherJeux();
                                 
                                     <td><?php echo $jeux['idJeux']; ?></td>
                                     <td><?php echo $jeux['question']; ?></td>
-                                    <td><?php echo $jeux['idCours']; ?></td>
-                                    <td><?php echo $jeux['idCategorie']; ?></td>
+                                    <td><?php echo $jeux['nomCours']; ?></td>
+                                    <td><?php echo $jeux['NomCategorie']?></td>
                             
                                     
-                                
-                                
-                                
+                
                                  </tr>
                                 <?php } ?>
                                 </tbody>
