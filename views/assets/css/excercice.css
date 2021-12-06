@@ -1,0 +1,29 @@
+.header {
+    min-height: 110vh;
+    width: 100%;
+    background-image: url(../images/without_blaka.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+#assignmentcontainer, #showcorrectanswercontainer {
+    background-color: #E7E9EB;
+    padding: 30px;
+    padding-top: 0;
+    padding-bottom: 90px;
+
+    min-height: 25spx;
+    font-family: Consolas,Menlo,"Courier New", Courier, monospace;
+    font-size: 120%;
+    line-height: 1.0px;
+    border-radius: -06,1px;
+}
+h1 {
+    font-size: 42px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Segoe UI",Arial,sans-serif;
+    font-weight: 400;
+    color: #220CB6;
+    margin: 10px 0;
+}
