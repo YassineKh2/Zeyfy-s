@@ -41,7 +41,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                                  !empty($_POST["idCategorie"])  &&
                                  !empty($_POST["reponseD"]) 
 
-                            ) { echo "hello";
+                            ) { 
                                 $jeux = new jeux(
                                 
                                     $_POST['question'],
@@ -56,7 +56,8 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                                 );
 
                                 $jeuxC->ajouterJeux($jeux);
-                                header('indexlevel.php');
+                                header('Location:indexlevel.php');
+                               
                             }
                             else
                                 $error = "Missing information";

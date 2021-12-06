@@ -37,13 +37,13 @@
                 $_POST['reponseB'],
                 $_POST['reponseC'],
                 $_POST['correctAnswer'],
-                (int)$_POST['idCours'],
-                (int)$_POST['idCategorie'],
+                $_POST['idCours'],
+                $_POST['idCategorie'],
                 $_POST['reponseD']
                 );     
             $jeuxC->ajouterJeux($jeux);
-            echo "controller read ?";
-            header('afficherjeux.php');
+    
+            header('location:afficherjeux.php');
         }
         else
             $error = "Missing information";

@@ -1,6 +1,6 @@
 <?php
-       include_once '../../model/jeux.php';
-    include_once '../../controller/JeuxController.php';
+       include_once 'C:\xampp\htdocs\educaplay\model\jeux.php';
+    include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
         $error = "";
     // create joueur_score_jeux

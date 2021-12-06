@@ -56,7 +56,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                                 );
 
                                 $jeuxC->ajouterJeux($jeux);
-                                header('indexlevel.php');
+                                header('location:indexlevel.php');
                             }
                             else
                                 $error = "Missing information";

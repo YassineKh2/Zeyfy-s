@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/css/templatequiz.css">
-    <link rel="stylesheet" href="../assets/css/customquiz.css">
+    <link rel="stylesheet" href="../../assets/css/templatequiz.css">
+    <link rel="stylesheet" href="../../assets/css/customquiz.css">
     <title>Document</title>
 </head>
 <body onload="NextQuestion(0)">
@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="modal-button-container">
-                   <a href="../php/Game/indexlevel.php">  <button onclick="closeScoreModal()">Continue</button></a>
+                   <a href="indexlevel.php">  <button onclick="closeScoreModal()">Continue</button></a>
                 </div>
 
             </div>
@@ -90,7 +90,7 @@
 
         </div>
     </main>
-    <script src="../assets/js/templatequiz.js">
+    <script src="../../assets/js/templatequiz.js">
         
     </script>
 </body>

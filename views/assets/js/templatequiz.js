@@ -2,7 +2,7 @@
 
 var ajax= new XMLHttpRequest ();
 var method="GET";
-var url="assets/js/getQuestion.php";
+var url="../../assets/js/getQuestion.php";
 var asynchronous =true;
 
 
@@ -12,7 +12,7 @@ ajax.onreadystatechange = function()
    if(this.readyState == 4 && this.status == 200)
    {
        // converting json back to array
-      alert(this.responseText);
+    //   alert(this.responseText);
      this.questions = JSON.parse(this.responseText);
     console.log(questions); //for debugging
 
@@ -30,7 +30,7 @@ ajax.send();
     
        if(this.readyState == 4 && this.status == 200)
        {
-        //   alert(this.responseText);
+         alert(this.responseText);
          questions = JSON.parse(this.responseText);
     
     

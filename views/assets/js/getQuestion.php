@@ -3,7 +3,7 @@
 $conn = mysqli_connect("localhost","root","","educaplay");
 
 //geting data from jeux table
-$result = mysqli_query($conn, "SELECT question,reponseA,reponseB,reponseC,reponseD,correctAnswer FROM `jeux`");
+$result = mysqli_query($conn, "SELECT question,reponseA,reponseB,reponseC,reponseD,correctAnswer FROM `jeux` where idCours='1'");
 // WHERE idCours=1
 //storing in array
 $data= array();
