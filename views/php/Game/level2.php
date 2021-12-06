@@ -79,7 +79,7 @@ $liste=$db->query($sql);
 					|
 					<a href="#">CONTACT</a>
 				</p>
-
+<!-- hahahahobjtibgjigrtjignr -->
 				<p class="footer-company-name">© 2021 Jeu éducatif en ligne.</p>
 			</div>
 
