@@ -1,6 +1,7 @@
 <?php
 include_once('C:\xampp\htdocs\formations\config.php');
 include 'C:\xampp\htdocs\formations\model\Formation.php';
+/*hhhhhhhhhhhhhhhhhhhhh*/
 class FormationC {
     function afficherformations(){
         $sql="SELECT * FROM formations order by date_c";
