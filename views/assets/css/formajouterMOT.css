@@ -1,0 +1,492 @@
+*{
+
+ 
+{
+
+    background-image: url(../images/without_blaka.png);
+
+}
+
+
+    font-family: 'Poppins',sans-serif;
+    }
+    nav{
+      display: flex;
+      padding: -2% 2%;
+    justify-content: space-between;
+    align-items:center;
+    }
+    nav img{
+      width: 150px;
+    
+    }
+    .nav-links{
+      flex: 1;
+      text-align:left;
+    
+    }
+    .nav-links ul li{
+      list-style:none;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+    }
+    .nav-links ul li a{
+    color: #FE7062;
+    text-decoration:none;
+    font-size: 20px;
+    }
+    .nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #220CB6;
+    display:block;
+    margin: auto;
+    transition: 0.5s;
+    }
+    .nav-links ul li:hover::after{
+    width: 100%;
+    }
+    
+    .header {
+      min-height: 110vh;
+      width: 100%;
+      background-image: url(../images/without_blaka.png);
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+    
+    #l1
+    {
+      position:relative;
+      top:-5px;
+      left : 200PX;
+    
+    
+    }
+    #i1
+    {
+    position:relative;
+      top:-5px;
+      left : 200PX;
+    
+    
+    }
+    
+    #l2
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+    
+    #i2
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+    
+    #l3
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+    
+    #i3
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+    
+    
+    
+    #l4
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+
+    }
+      
+    #i4
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200PX;
+    
+
+    }
+
+    #l5
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+    
+    #i5
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+
+
+    #l6
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+    
+    #i6
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+
+    #l7
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+    
+    #i7
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+
+    #l8
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+
+     #l7
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+    
+    #i7
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+    
+    #i8
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+
+    #l9
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+    
+    #i9
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+    #l10
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+    
+    #i10
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+    #l11
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+    
+    #i11
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+
+
+    #l12
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+    
+    #i12
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+
+    #l13
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+    
+    #i13
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+
+
+    #l14
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+    
+    #i14
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+
+    #l15
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+    
+    #i15
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+
+    #l16
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+    
+    #i16
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+    #nomCours
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800PX;
+    }
+
+    #envoyer
+    {
+     
+      position:relative;
+      top:-1300px;
+      left : 560px; 
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    #id{
+      position: absolute;
+    top: 140px;
+    left: 190px;
+      color:rgba(34, 12, 182, 0.81);
+     font-size: 30px;
+    }
+    
+    .h2{
+      position: absolute;
+      left: 260px;
+      top: -50px;
+     font-size: 50px;
+    }
+    
+    .h3{
+      position: absolute;
+      left: 260px;
+      top: -250px;
+     font-size: 50px;
+    }
+    
+    
+    
+    .singup input[type="text"],input[type="password"],input[type="email"]{
+      border: none;
+      border-bottom: 1px solid rgb(0, 0, 0);
+      background: transparent;
+      outline: none;
+      height: 40px;
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+      }
+    
+    
+      .singup input[type="submit"]{
+        border: none;
+        background: #F44336;
+        outline: none;
+        height: 40px;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        width: 250px;
+        margin-left: 250px;
+    }
+    .singup input[type="submit"]:hover{
+    
+    background-color: #FE7062;
+    }
+    .singup p{
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 13px;
+        margin-top: -10px;
+    }
+    
+    
+    .text-box{
+    
+    
+        top: 140px;
+      left: 80%;
+    }
+    input[type=text], select {
+       width: 100%; 
+      padding: 13px 20px;
+      margin: 8px 0;
+      top: 230px;
+      left : 40%;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    
+    
+    input[type=submit] {
+        width: 100%;
+        background-color: #220CB6;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type=reset] {
+        width: 100%;
+        background-color: #220CB6;
+        color: white;
+        top: 400px;
+        padding: 14px 10px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    
+      
