@@ -85,7 +85,7 @@
 			</div>
 		</footer>
 <!----------- Javascript for Toggle Menu ------------>
-   <script src="assets/js/indexlevel.js">
+   <script src="../../assets/js/indexlevel.js">
 
 
     </script>  

@@ -10,45 +10,48 @@
   background-size:cover;
   position: relative;
 }
-nav{
+*{
+
+  font-family: 'Poppins',sans-serif;
+  }
+  nav{
     display: flex;
     padding: -2% 2%;
-justify-content: space-between;
-align-items:center;
-}
-nav img{
+  justify-content: space-between;
+  align-items:center;
+  }
+  nav img{
     width: 150px;
-
-}
-.nav-links{
+  
+  }
+  .nav-links{
     flex: 1;
     text-align:left;
-
-}
-.nav-links ul li{
+  
+  }
+  .nav-links ul li{
     list-style:none;
     display: inline-block;
     padding: 8px 12px;
     position: relative;
-}
-.nav-links ul li a{
+  }
+  .nav-links ul li a{
   color: #FE7062;
   text-decoration:none;
   font-size: 20px;
-}
-.nav-links ul li::after{
-content:'';
-width: 0%;
-height: 2px;
-background: #220CB6;
-display:block;
-margin: auto;
-transition: 0.5s;
-}
-.nav-links ul li:hover::after{
+  }
+  .nav-links ul li::after{
+  content:'';
+  width: 0%;
+  height: 2px;
+  background: #220CB6;
+  display:block;
+  margin: auto;
+  transition: 0.5s;
+  }
+  .nav-links ul li:hover::after{
   width: 100%;
-}
-
+  }
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 span{
   position: relative;
