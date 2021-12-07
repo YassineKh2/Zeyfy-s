@@ -1,6 +1,4 @@
-*{
-
- 
+.header
 {
 
     background-image: url(../images/without_blaka.png);
@@ -8,6 +6,11 @@
 }
 
 
+
+
+*{
+
+ 
     font-family: 'Poppins',sans-serif;
     }
     nav{
@@ -52,7 +55,7 @@
     .header {
       min-height: 110vh;
       width: 100%;
-      background-image: url(../images/without_blaka.png);
+      background-image: url(../images/without_blaka.png) no-repeat center center fixed;;
       background-position: center;
       background-size: cover;
       position: relative;
