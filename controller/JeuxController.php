@@ -5,7 +5,7 @@ class jeuxC{
 
     function afficherJeux(){
         $sql="SELECT * FROM jeux
-        JOIN categorie JOIN cours ON jeux.idCategorie=jeux.idCategorie=jeux.idCours=cours.idCours";
+        JOIN categorie JOIN cours ON jeux.idCategorie=categorie.idCategorie and jeux.idCours=cours.idCours";
         $db=config::getConnexion();
         try {
           $liste =$db->query($sql);

@@ -1,13 +1,13 @@
 <?php
 include_once 'C:\xampp\htdocs\educaplay\config.php';
-include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
-    include_once 'C:\xampp\htdocs\educaplay\model\jeux.php'; 
-     $sql= "SELECT * from categorie";
-     $sql1= "SELECT * from cours";
+include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
+    include_once 'C:\xampp\htdocs\educaplay\model\motcroisee.php'; 
+     $sql= "SELECT * from jeux";
+   
         try {
             $db=config::getConnexion();
     $liste=$db->query($sql);
-    $listeCours=$db->query($sql1);
+    
 
         }
                     catch(Exception $e)
@@ -18,44 +18,122 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
 
                             $error = "";
-                             $jeux = null;
+                             $motcroisee = null;
                         // create an instance of the controller
-                        $jeuxC = new jeuxC();
+                        $motcroiseeC = new motcroiseeC();
                         if (
-                    		isset($_POST["question"]) &&		
-                            isset($_POST["reponseA"])  &&
-                            isset($_POST["reponseB"]) &&
-                    		isset($_POST["reponseC"]) &&
-                            isset($_POST["correctAnswer"]) &&
-                    		isset($_POST["idCours"]) &&
-                            isset($_POST["idCategorie"]) &&
-                    		isset($_POST["reponseD"]))
+                    		isset($_POST["l1"]) &&		
+                            isset($_POST["indice1"])  &&
+                            isset($_POST["l2"]) &&
+                    		isset($_POST["indice2"]) &&
+                            isset($_POST["l3"]) &&
+                    		isset($_POST["indice3"]) &&
+                            isset($_POST["l4"]) &&
+                    		isset($_POST["indice4"])&& 
+                            isset($_POST["l5"]) &&		
+                            isset($_POST["indice5"])  &&
+                            isset($_POST["l6"]) &&
+                    		isset($_POST["indice6"]) &&
+                            isset($_POST["l7"]) &&
+                    		isset($_POST["indice7"]) &&
+                            isset($_POST["l8"]) &&
+                    		isset($_POST["indice8"])&& 
+                            isset($_POST["l9"]) &&		
+                            isset($_POST["indice9"])  &&
+                            isset($_POST["l10"]) &&
+                    		isset($_POST["indice10"]) &&
+                            isset($_POST["l11"]) &&
+                    		isset($_POST["indice11"]) &&
+                            isset($_POST["l12"]) &&
+                    		isset($_POST["indice12"])&& 
+                            isset($_POST["l13"]) &&		
+                            isset($_POST["indice13"])  &&
+                            isset($_POST["l14"]) &&
+                    		isset($_POST["indice14"]) &&
+                            isset($_POST["l15"]) &&
+                    		isset($_POST["indice15"]) &&
+                            isset($_POST["l16"]) &&
+                    		isset($_POST["indice16"])&&
+                            isset($_POST["idJeux"])
+                            
+                            
+                            )
                              {
                             if (
-                    			 !empty($_POST["question"]) &&
-                                 !empty($_POST["reponseA"])  &&
-                                 !empty($_POST["reponseB"]) &&
-                                 !empty($_POST["reponseC"])  &&
-                                 !empty($_POST["correctAnswer"]) &&
-                    			 !empty($_POST["idCours"]) &&
-                                 !empty($_POST["idCategorie"])  &&
-                                 !empty($_POST["reponseD"]) 
+                    			 !empty($_POST["l1"]) &&
+                                 !empty($_POST["indice1"]) &&
+                                 !empty($_POST["l2"]) &&
+                                 !empty($_POST["indice2"])  &&
+                                 !empty($_POST["l3"]) &&
+                    			 !empty($_POST["indice3"])&&
+                                 !empty($_POST["l4"])  &&
+                                 !empty($_POST["indice4"])&&
+                                 !empty($_POST["l5"]) &&
+                                 !empty($_POST["indice5"]) &&
+                                 !empty($_POST["l6"]) &&
+                                 !empty($_POST["indice6"])  &&
+                                 !empty($_POST["l7"]) &&
+                    			 !empty($_POST["indice7"])&&
+                                 !empty($_POST["l8"])  &&
+                                 !empty($_POST["indice8"])&&
+                                 !empty($_POST["l9"]) &&
+                                 !empty($_POST["indice9"]) &&
+                                 !empty($_POST["l10"]) &&
+                                 !empty($_POST["indice10"])  &&
+                                 !empty($_POST["l11"]) &&
+                    			 !empty($_POST["indice11"])&&
+                                 !empty($_POST["l12"])  &&
+                                 !empty($_POST["indice12"])&&
+                                 !empty($_POST["l13"]) &&
+                                 !empty($_POST["indice13"]) &&
+                                 !empty($_POST["l14"]) &&
+                                 !empty($_POST["indice14"])  &&
+                                 !empty($_POST["l15"]) &&
+                    			 !empty($_POST["indice15"])&&
+                                 !empty($_POST["l16"])  &&
+                                 !empty($_POST["indice16"])&&
+                                 !empty($_POST["IDJEUX"])
 
                             ) { 
-                                $jeux = new jeux(
+                                $motcroisee = new motcroisee(
                                 
-                                    $_POST['question'],
-                                    $_POST['reponseA'],
-                                    $_POST['reponseB'],
-                                    $_POST['reponseC'],
-                                    $_POST['correctAnswer'],
-                                    $_POST['idCours'],
-                                    $_POST['idCategorie'],
-                                    $_POST['reponseD']
+                                    $_POST['l1'],
+                                    $_POST['indice1'],
+                                    $_POST['l2'],
+                                    $_POST['indice2'],
+                                    $_POST['l3'],
+                                    $_POST['indice3'],
+                                    $_POST['l4'],
+                                    $_POST['indice4'],
+                                    $_POST['l5'],
+                                    $_POST['indice5'],
+                                    $_POST['l6'],
+                                    $_POST['indice6'],
+                                    $_POST['l7'],
+                                    $_POST['indice7'],
+                                    $_POST['l8'],
+                                    $_POST['indice8'],
+                                    $_POST['l9'],
+                                    $_POST['indice9'],
+                                    $_POST['l10'],
+                                    $_POST['indice10'],
+                                    $_POST['l11'],
+                                    $_POST['indice11'],
+                                    $_POST['l12'],
+                                    $_POST['indice12'],
+                                    $_POST['l13'],
+                                    $_POST['indice13'],
+                                    $_POST['l14'],
+                                    $_POST['indice14'],
+                                    $_POST['l15'],
+                                    $_POST['indice15'],
+                                    $_POST['l16'],
+                                    $_POST['indice16'],
+                                    $_POST['IDJEUX']
                                 
                                 );
 
-                                $jeuxC->ajouterJeux($jeux);
+                                $motcroiseeC->ajoutermot($motcroisee);
                                 header('location:indexlevel.php');
                             }
                             else
@@ -118,7 +196,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                 </tr>
                 <tr>
                
-                    <td><input type="text" name="i1" placeholder="Ecrire votre indice 1" id="i1" maxlength="20" class=""></td>
+                    <td><input type="text" name="indice1" placeholder="Ecrire votre indice 1" id="indice1" maxlength="20" class=""></td>
                 </tr>
                 <tr>
                    
@@ -131,7 +209,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                     <tr>
                    
                             
-                   <td><input type="text" name="i2"  placeholder="Ecrire votre indice 2" id="i2" maxlength="20"></td>
+                   <td><input type="text" name="indice2"  placeholder="Ecrire votre indice 2" id="indice2" maxlength="20"></td>
                   
                    </tr>
                     <tr>
@@ -141,7 +219,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                         </tr>
                         <tr>
                    
-                   <td><input type="text" name="i3" placeholder="Ecrire votre indice 3" id="i3" maxlength="20"></td>   
+                   <td><input type="text" name="indice3" placeholder="Ecrire votre indice 3" id="indice3" maxlength="20"></td>   
                    
                        </tr>
 <tr>
@@ -154,7 +232,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
                         <tr>
                    
-                   <td><input type="text" name="i4" placeholder="Ecrire votre indice 4" id="i4" maxlength="20"></td>   
+                   <td><input type="text" name="indice4" placeholder="Ecrire votre indice 4" id="indice4" maxlength="20"></td>   
                    
                        </tr>
                 <tr>
@@ -164,7 +242,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                       
                         </tr>
                     <tr>
-                        <td><input type="text" name="i5" placeholder="Ecrire votre indice 5" id="i5" maxlength="20"></td>   
+                        <td><input type="text" name="i5" placeholder="Ecrire votre indice 5" id="indice5" maxlength="20"></td>   
                    
                    </tr>
 
@@ -178,7 +256,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                     </tr>
 
 <tr>
-                    <td><input type="text" name="i6" placeholder="Ecrire votre indice 6" id="i6" maxlength="20"></td>   
+                    <td><input type="text" name="indice6" placeholder="Ecrire votre indice 6" id="indice6" maxlength="20"></td>   
                     </tr>
 
                     <tr>
@@ -190,7 +268,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
                         <tr>
                    
-                   <td><input type="text" name="i7" placeholder="Ecrire votre indice 7" id="i7" maxlength="20"></td>   
+                   <td><input type="text" name="indice7" placeholder="Ecrire votre indice 7" id="indice7" maxlength="20"></td>   
                    
                     </tr>
 
@@ -203,7 +281,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
                         <tr>
                    
-                   <td><input type="text" name="i4" placeholder="Ecrire votre indice 8" id="i8" maxlength="20"></td>   
+                   <td><input type="text" name="indice4" placeholder="Ecrire votre indice 8" id="indice8" maxlength="20"></td>   
                    
                        </tr>
 
@@ -218,7 +296,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
                         <tr>
                    
-                   <td><input type="text" name="i9" placeholder="Ecrire votre indice 9" id="i9" maxlength="20"></td>   
+                   <td><input type="text" name="indice9" placeholder="Ecrire votre indice 9" id="indice9" maxlength="20"></td>   
                    
                        </tr>
 
@@ -231,7 +309,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
                         <tr>
                    
-                   <td><input type="text" name="i10" placeholder="Ecrire votre indice 10" id="i10" maxlength="20"></td>   
+                   <td><input type="text" name="indice10" placeholder="Ecrire votre indice 10" id="indice10" maxlength="20"></td>   
                    
                        </tr>
 
@@ -245,7 +323,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
                         <tr>
                    
-                   <td><input type="text" name="i11" placeholder="Ecrire votre indice 11" id="i11" maxlength="20"></td>   
+                   <td><input type="text" name="indice11" placeholder="Ecrire votre indice 11" id="indice11" maxlength="20"></td>   
                    
                        </tr>
 
@@ -258,7 +336,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
                         <tr>
                    
-                   <td><input type="text" name="i12" placeholder="Ecrire votre indice 12" id="i12" maxlength="20"></td>   
+                   <td><input type="text" name="indice12" placeholder="Ecrire votre indice 12" id="indice12" maxlength="20"></td>   
                    
                        </tr>
 
@@ -271,7 +349,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
                         <tr>
                    
-                   <td><input type="text" name="i13" placeholder="Ecrire votre indice 13" id="i13" maxlength="20"></td>   
+                   <td><input type="text" name="indice13" placeholder="Ecrire votre indice 13" id="indice13" maxlength="20"></td>   
                    
                        </tr>
 
@@ -285,7 +363,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
                         <tr>
                    
-                   <td><input type="text" name="i14" placeholder="Ecrire votre indice 14" id="i14" maxlength="20"></td>   
+                   <td><input type="text" name="indice14" placeholder="Ecrire votre indice 14" id="indice14" maxlength="20"></td>   
                    
                        </tr>
 
@@ -299,7 +377,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
                         <tr>
                    
-                   <td><input type="text" name="i15" placeholder="Ecrire votre indice 15" id="i15" maxlength="20"></td>   
+                   <td><input type="text" name="indice15" placeholder="Ecrire votre indice 15" id="indice15" maxlength="20"></td>   
                    
                        </tr>
                 <tr>    
@@ -314,23 +392,20 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 
                         <tr>
                    
-                   <td><input type="text" name="i16" placeholder="Ecrire votre indice 16" id="i16" maxlength="20"></td>   
+                   <td><input type="text" name="indice16" placeholder="Ecrire votre indice 16" id="indice16" maxlength="20"></td>   
                    
                        </tr>
-                <tr>    
+              
 
 
 
-
-         <td><select name="idCours" id="nomCours">
-                        <?php foreach($listeCours as $contenuCours)
-                        { ?>
-                      <option value="<?php echo $contenuCours['idCours']?>"><?php echo $contenuCours['nomCours']?></option>
-                      <?php 
-                        } 
-                        ?>
-                    </td>
-                </tr>
+                <tr>
+                   
+                   <td><input type="text" name="IDJEUX" placeholder="Ecrire votre ID JEUX" id="IDJEUX" maxlength="20"></td>   
+                   
+                       </tr>
+      
+            
                 
                     <tr>
                     <td>

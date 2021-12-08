@@ -327,6 +327,15 @@ public function getindice16(){
 public function setindice16($indice16){
     $this->indice16 = $indice16 ;
 }
+
+
+public function getidjeux(){
+    return $this->IDJEUX;
+}
+
+public function setidjeux($IDJEUX){
+    $this->IDJEUX=$IDJEUX ;
+}
 }
 
 
