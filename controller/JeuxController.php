@@ -18,7 +18,7 @@ class jeuxC{
      }
 
 function afficherjeuxs($tem){
-        $sql="SELECT * FROM jeux  JOIN categorie JOIN cours ON jeux.idCategorie=jeux.idCategorie=jeux.idCours=cours.idCours where (question = '$tem')||(nomCours='$tem') || (nomCategorie='$tem')";
+        $sql="SELECT * FROM jeux  JOIN categorie JOIN cours ON jeux.idCategorie=jeux.idCategorie and jeux.idCours=cours.idCours where (question = '$tem')||(nomCours='$tem') || (nomCategorie='$tem')";
         $db = config::getConnexion();
         try{
             $liste = $db->query($sql);
