@@ -1,6 +1,4 @@
-*{
-
- 
+.header
 {
 
     background-image: url(../images/without_blaka.png);
@@ -8,6 +6,11 @@
 }
 
 
+
+
+*{
+
+ 
     font-family: 'Poppins',sans-serif;
     }
     nav{
@@ -52,7 +55,7 @@
     .header {
       min-height: 110vh;
       width: 100%;
-      background-image: url(../images/without_blaka.png);
+      background-image: url(../images/without_blaka.png) no-repeat center center fixed;;
       background-position: center;
       background-size: cover;
       position: relative;
@@ -66,7 +69,7 @@
     
     
     }
-    #i1
+    #indice1
     {
     position:relative;
       top:-5px;
@@ -84,7 +87,7 @@
     
     }
     
-    #i2
+    #indice2
     {
     
       position:relative;
@@ -102,7 +105,7 @@
     
     }
     
-    #i3
+    #indice3
     {
     
       position:relative;
@@ -123,7 +126,7 @@
 
     }
       
-    #i4
+    #indice4
     {
     
       position:relative;
@@ -142,7 +145,7 @@
     
     }
     
-    #i5
+    #indice5
     {
     
       position:relative;
@@ -161,7 +164,7 @@
     
     }
     
-    #i6
+    #indice6
     {
     
       position:relative;
@@ -179,7 +182,7 @@
     
     }
     
-    #i7
+    #indice7
     {
     
       position:relative;
@@ -206,7 +209,7 @@
     
     }
     
-    #i7
+    #indice7
     {
     
       position:relative;
@@ -215,7 +218,7 @@
     
     }
     
-    #i8
+    #indice8
     {
     
       position:relative;
@@ -233,7 +236,7 @@
     
     }
     
-    #i9
+    #indice9
     {
     
       position:relative;
@@ -250,7 +253,7 @@
     
     }
     
-    #i10
+    #indice10
     {
     
       position:relative;
@@ -267,7 +270,7 @@
     
     }
     
-    #i11
+    #indice11
     {
     
       position:relative;
@@ -286,7 +289,7 @@
     
     }
     
-    #i12
+    #indice12
     {
     
       position:relative;
@@ -304,7 +307,7 @@
     
     }
     
-    #i13
+    #indice13
     {
     
       position:relative;
@@ -323,7 +326,7 @@
     
     }
     
-    #i14
+    #indice14
     {
     
       position:relative;
@@ -341,7 +344,7 @@
     
     }
     
-    #i15
+    #indice15
     {
     
       position:relative;
@@ -359,7 +362,7 @@
     
     }
     
-    #i16
+    #indice16
     {
     
       position:relative;
@@ -374,6 +377,14 @@
       top:-1591px;
       left : 800PX;
     }
+    #IDJEUX
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800PX;
+    }
+
 
     #envoyer
     {
