@@ -190,10 +190,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
 
                   
                 </tr>
-				<tr>
-               
-                    <td><input type="text" name="l1" placeholder="Ecrire votre lettre 1" id="l1" maxlength="1" class=""></td>
-                </tr>
+				
                 <tr>
                
                     <td><input type="text" name="indice1" placeholder="Ecrire votre indice 1" id="indice1" maxlength="20" class=""></td>
@@ -206,45 +203,29 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
                     
 
                     </tr>
-                    <tr>
                    
-                            
-                   <td><input type="text" name="indice2"  placeholder="Ecrire votre indice 2" id="indice2" maxlength="20"></td>
-                  
-                   </tr>
                     <tr>
                    
                     <td><input type="text" name="l3" placeholder="Ecrire votre mot 3" id="l3" maxlength="7"></td>   
                     
                         </tr>
-                        <tr>
-                   
-                   <td><input type="text" name="indice3" placeholder="Ecrire votre indice 3" id="indice3" maxlength="20"></td>   
-                   
-                       </tr>
+                       
 <tr>
-            <tr>
+         
                     <td><input type="text" name="l4" id="l4" placeholder="Ecrire votre mot 4" maxlength="5"></td>   
                     </td>
                         </tr>
 
 
 
-                        <tr>
-                   
-                   <td><input type="text" name="indice4" placeholder="Ecrire votre indice 4" id="indice4" maxlength="20"></td>   
-                   
-                       </tr>
+                      
                 <tr>
                 
                         <td><input type="text" name="l5" id="l5" placeholder="Ecrire votre mot 5" maxlength="3"></td>   
 
                       
                         </tr>
-                    <tr>
-                        <td><input type="text" name="i5" placeholder="Ecrire votre indice 5" id="indice5" maxlength="20"></td>   
                    
-                   </tr>
 
                         
                   <tr>
@@ -255,9 +236,6 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
             
                     </tr>
 
-<tr>
-                    <td><input type="text" name="indice6" placeholder="Ecrire votre indice 6" id="indice6" maxlength="20"></td>   
-                    </tr>
 
                     <tr>
                     <td><input type="text" name="l7" id="l7" placeholder="Ecrire votre lettre 7" maxlength="2"></td>   
@@ -266,12 +244,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
 
 
 
-                        <tr>
                    
-                   <td><input type="text" name="indice7" placeholder="Ecrire votre indice 7" id="indice7" maxlength="20"></td>   
-                   
-                    </tr>
-
                     <tr>
                     <td><input type="text" name="l8" id="l8" placeholder="Ecrire votre mot 8" maxlength="5"></td>   
                     </td>
@@ -279,11 +252,6 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
 
 
 
-                        <tr>
-                   
-                   <td><input type="text" name="indice4" placeholder="Ecrire votre indice 8" id="indice8" maxlength="20"></td>   
-                   
-                       </tr>
 
 
 
@@ -294,11 +262,6 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
 
 
 
-                        <tr>
-                   
-                   <td><input type="text" name="indice9" placeholder="Ecrire votre indice 9" id="indice9" maxlength="20"></td>   
-                   
-                       </tr>
 
                        <tr>
                     <td><input type="text" name="l10" id="l10" placeholder="Ecrire votre mot 10" maxlength="2"></td>   
@@ -307,11 +270,6 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
 
 
 
-                        <tr>
-                   
-                   <td><input type="text" name="indice10" placeholder="Ecrire votre indice 10" id="indice10" maxlength="20"></td>   
-                   
-                       </tr>
 
 
                        <tr>
@@ -321,11 +279,6 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
 
 
 
-                        <tr>
-                   
-                   <td><input type="text" name="indice11" placeholder="Ecrire votre indice 11" id="indice11" maxlength="20"></td>   
-                   
-                       </tr>
 
                        <tr>
                     <td><input type="text" name="l12" id="l12" placeholder="Ecrire votre mot 12" maxlength="3"></td>   
@@ -334,11 +287,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
 
 
 
-                        <tr>
-                   
-                   <td><input type="text" name="indice12" placeholder="Ecrire votre indice 12" id="indice12" maxlength="20"></td>   
-                   
-                       </tr>
+                      
 
                        <tr>
                     <td><input type="text" name="l13" id="l13" placeholder="Ecrire votre mot 13" maxlength="9"></td>   
@@ -347,11 +296,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
 
 
 
-                        <tr>
                    
-                   <td><input type="text" name="indice13" placeholder="Ecrire votre indice 13" id="indice13" maxlength="20"></td>   
-                   
-                       </tr>
 
 
                        <tr>
@@ -361,11 +306,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
 
 
 
-                        <tr>
-                   
-                   <td><input type="text" name="indice14" placeholder="Ecrire votre indice 14" id="indice14" maxlength="20"></td>   
-                   
-                       </tr>
+                     
 
 
                        <tr>
@@ -375,12 +316,8 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
 
 
 
-                        <tr>
-                   
-                   <td><input type="text" name="indice15" placeholder="Ecrire votre indice 15" id="indice15" maxlength="20"></td>   
-                   
-                       </tr>
-                <tr>    
+                       
+                
 
 
                 <tr>
@@ -390,12 +327,6 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
 
 
 
-                        <tr>
-                   
-                   <td><input type="text" name="indice16" placeholder="Ecrire votre indice 16" id="indice16" maxlength="20"></td>   
-                   
-                       </tr>
-              
 
 
 
@@ -407,12 +338,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\motcroiseeC.php';
       
             
                 
-                    <tr>
-                    <td>
-                    <input type="submit" class="btn" id="envoyer" value="Envoyer">
-                        <!-- <input type="reset"  class="btn" value="Annuler" > -->
-                        </td>
-                </tr>
+                   
             </table>
     
     </form>

@@ -49,12 +49,12 @@ body {
       .h3 {
         left:20PX;
         top:20px;
-        color: #f57200;
+        color: #220CB6;
       }
     
       .h4 {
         margin-left: 10%;
-        color: #f57200;
+        color: #220CB6;
           }
     
       img {
@@ -531,7 +531,169 @@ body {
         top: 270PX;
         text-align: center;
      }
+
+
+     #indice1
+     {
+     position:relative;
+       top:10PX;;
+       left : 2PX;
      
+     
+     }
+     #indice2
+     {
+     
+       position:relative;
+       top:10px;
+       left : 2px;
+     
+     }
+    
+     
+    
+     #indice3
+     {
+     
+       position:relative;
+       top:10PX;
+       left : 2px;
+     
+     }
+     
+     
+     
+     
+       
+     #indice4
+     {
+     
+       position:relative;
+       top:10PX;
+       left : 2PX;
+     
+ 
+     }
+ 
+    
+     #indice5
+     {
+     
+       position:relative;
+       top:10PX;
+       left : 2px;
+     
+     }
+ 
+     
+     #indice6
+     {
+     
+       position:relative;
+       top:54PX;
+       left : -896px;
+     
+     }
+ 
+    
+     #indice7
+     {
+     
+       position:relative;
+       top:54Px;
+       left : -896px;
+     
+     }
+     
+     #indice8
+     {
+     
+       position:relative;
+       top:54Px;
+       left : -896px;
+     
+     }
+ 
+     
+     
+     #indice9
+     {
+     
+       position:relative;
+       top:10Px;
+       left : 543px;
+     
+     }
+   
+     #indice10
+     {
+     
+       position:relative;
+       top:10Px;
+       left : 543px;
+     
+     }
+     
+     #indice11
+     {
+     
+       position:relative;
+       top:54Px;
+       left : -358px;
+     
+     }
+ 
+ 
+    
+     #indice12
+     {
+     
+       position:relative;
+       top:54Px;
+       left : -358px;
+     
+     }
+  
+    
+     
+     #indice13
+     {
+     
+       position:relative;
+       top:54px;
+       left : -358px;
+     
+     } 
+ 
+ 
+     
+     #indice14
+     {
+     
+       position:relative;
+       top:54px;
+       left : -358px;
+     
+     } 
+     
+     #indice15
+     {
+     
+       position:relative;
+       top:54px;
+       left : -356px;
+     
+     }
+ 
+     
+     #indice16
+     {
+     
+       position:relative;
+       top:92px;
+       left : -1255px;
+     
+     }
      .numberBOX2 {
       background-color: #220CB6;
       color:black;
@@ -712,6 +874,20 @@ body {
     border-radius: 10px 08px 10px 08px;
     }
     
+    input[type=longtext], select {
+      width: 176px;  
+    padding: 13px 20px;
+    margin: 8px 0;
+    top: 230px;
+    left : 40%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+    
+
+
     .botoes {
     margin-top: -600px;
     margin-left: 580px;
