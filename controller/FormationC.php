@@ -1,6 +1,7 @@
 <?php
-include_once('C:\xampp\htdocs\formations\config.php');
-include 'C:\xampp\htdocs\formations\model\Formation.php';
+include_once('C:\xampp\htdocs\educaplay\config.php');
+include 'C:\xampp\htdocs\educaplay\model\Formation.php';
+/*hhhhhhhhhhhhhhhhhhhhh*/
 /*hhhhhhhhhhhhhhhhhhhhh*/
 class FormationC {
     function afficherformations(){

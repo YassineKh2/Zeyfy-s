@@ -1,23 +1,23 @@
 <?php
-include 'C:\xampp\htdocs\formations\controller\FormationC.php';
+include 'C:\xampp\htdocs\educaplay\controller\FormationC.php';
 $formationC=new FormationC();
 $tem=$_GET['tem'];
 if(
-    isset($_POST['sel']) && isset($_POST['sel1'])
+    isset($_POST['formatt']) && isset($_POST['format'])
 ){
-    $formation = new Formation('','',$_POST['sel1'],'','',$_POST['sel'],'');
-    if($_POST['sel']=='tout'&&$_POST['sel1']=='tout')
+    $formation = new Formation('','',$_POST['format'],'','',$_POST['formatt'],'');
+    if($_POST['format']=='tout'&&$_POST['format']=='tout')
     {
         $formationC->afficherformations();
-        $statut=$_POST['sel'];
-        $categ=$_POST['sel1'];
-        header("Location: index.php?statut=$statut&categ=$categ&tem=$tem");
+        $statut=$_POST['formatt'];
+        $categ=$_POST['format'];
+        header("Location: profile.php?statut=$statut&categ=$categ&tem=$tem");
     }
     else{
-        $formationC->afficherformationss($_POST['sel'],$_POST['sel1']);
-        $statut=$_POST['sel'];
-        $categ=$_POST['sel1'];
-        header("Location: index.php?statut=$statut&categ=$categ&tem=$tem");
+        $formationC->afficherformationss($_POST['formatt'],$_POST['format']);
+        $statut=$_POST['formatt'];
+        $categ=$_POST['format'];
+        header("Location: profile.php?statut=$statut&categ=$categ&tem=$tem");
     }
 
 }

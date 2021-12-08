@@ -1,6 +1,6 @@
 <?php
-	include_once 'C:\xampp\htdocs\formation\config.php';
-	include_once 'C:\xampp\htdocs\formation\model\Categorie.php';
+	include_once 'C:\xampp\htdocs\educaplay\config.php';
+	include_once 'C:\xampp\htdocs\educaplay\model\Categorie.php';
 	class CategorieC {
 		function afficherCategorie(){
 			$sql="SELECT * FROM categorie";
