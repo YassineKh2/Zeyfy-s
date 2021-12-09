@@ -3,7 +3,7 @@ class DB{
     private $host ='localhost' ;
 	private $username='root';
 	private $password='';
-	private $database='educaplayy';
+	private $database='educaplay';
 	private $db ;
 	private static $instance = NULL;
 
@@ -27,8 +27,8 @@ class DB{
 
     public function query($sql,$data = array())
 	{
-		$req = $this->db->prepare($sql) ;
-		$req->execute($data) ;
+		$req = $this->db->prepare($sql);
+		$req->execute($data);
 		return $req->fetchAll(PDO::FETCH_OBJ) ;
 	}
 }
