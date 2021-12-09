@@ -1,5 +1,5 @@
 <?php 
-class DB{
+class DB {
     private $host ='localhost' ;
 	private $username='root';
 	private $password='';
@@ -27,8 +27,8 @@ class DB{
 
     public function query($sql,$data = array())
 	{
-		$req = $this->db->prepare($sql) ;
-		$req->execute($data) ;
-		return $req->fetchAll(PDO::FETCH_OBJ) ;
+		$req = $this->db->prepare($sql);
+		$req->execute($data);
+		return $req->fetchAll(PDO::FETCH_OBJ);
 	}
 }
