@@ -1,20 +1,19 @@
 
-
 const crosswords = [
     {
-        word: "CPU",
+        word:"tes",
         ids: [
             1, 2, 3
         ]
     },
     {
-        word: "ULA",
+        word: "YFY",
         ids: [
             3, 4, 5
         ]
     },
     {
-        word: "REGISTRADORES",
+        word: "Helllo world",
         ids: [
             6, 7, 8, 9, 10, 11, 12, 5, 13, 14, 15, 16, 17
         ]
@@ -26,7 +25,7 @@ const crosswords = [
         ]
     },
     {
-        word: "ROM",
+        word: "ROh",
         ids: [
           15,  22, 23
         ]
