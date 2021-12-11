@@ -1,0 +1,1086 @@
+.header
+{
+
+    background-image: url(../images/without_blaka.png);
+
+}
+
+
+body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: small;
+    background: url(../images/without_blaka.png) no-repeat center center fixed;
+    }
+    
+     .div_body {
+      width: 90%;
+      height: 1%;
+    } 
+    .containerdicas {
+    width: 900px;
+    height: 900px;
+    }
+    
+    .palavra, .dica, .lineNum{
+        display: inline-block;
+        height: 1.4em;  
+        padding: 0 5px;
+      }
+    
+      .palavra{
+        text-align: left;  
+        width: 122px;
+        margin: 0 20px 0 0;
+      }
+    
+      .dica{
+        width: 570px;
+        margin: 0 0 4px 0;
+        
+      }
+    
+      .lineNum{
+        font: 1em calibri;
+        line-height: 1.8em;
+      }
+      
+      .h3 {
+        left:20PX;
+        top:20px;
+        color: #f57200;
+      }
+    
+      .h4 {
+        margin-left: 10%;
+        color: #f57200;
+          }
+    
+      img {
+        height: 100px;
+        float: right;
+      }
+    
+      .dicaBlock{
+        /*position: relative;*/
+        margin-bottom: 2OPX;
+      }
+    
+      .char {
+        font-size: 20px;
+        outline: 0;
+        border: 0;
+        padding: 0;
+        margin: 1px 0 0 -1px;
+        width: 1.25em;
+        height: 1.25em;
+        text-align: center;
+        background-color:#d9d9d9;
+      }
+      
+      .box1 {
+        height: 625px;
+        width: 500px;
+        top: 30px;
+        left: 90px;
+        position: relative;
+      }
+    
+      input {
+        width: 21px;
+        height: 21px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+      }
+    
+      /* CPU */
+    .cpu-1 {
+      left: 45%;
+      top: 16%
+    }
+    
+    .cpu-2 {
+      left: 50%;
+      top: 16%
+    }
+    
+    .cpu-3 {
+      left: 55%;
+      top: 16%
+    }
+    
+      /* FIM DA CPU */
+    
+    /* ULA */
+    
+    .ula-2 {
+      left: 55%;
+      top: 20%
+    }
+    
+    .ula-3 {
+      left: 55%;
+      top: 24%
+    }
+    
+      /* FIM DA ULA */
+    
+      /* INICIO REGISTRADORES */
+    
+    .registradores-1 {
+      left: 24%;
+      top: 24%
+    }
+    
+    .registradores-2 {
+      left: 28%;
+      top: 24%
+    }
+    
+    .registradores-3 {
+      left: 32%;
+      top: 24%
+    }
+    
+    .registradores-4 {
+      left: 36%;
+      top: 24%
+    }
+    
+    .registradores-5 {
+      left: 40%;
+      top: 24%
+    }
+    
+    .registradores-6 {
+      left: 45%;
+      top: 24%
+    }
+    
+    .registradores-7 {
+      left: 50%;
+      top: 24%
+    }
+    
+    .registradores-9 {
+      left: 60%;
+      top: 24%
+    }
+    
+    .registradores-10 {
+      left: 65%;
+      top: 24%
+    }
+    
+    .registradores-11 {
+      left: 70%;
+      top: 24%
+    }
+    
+    .registradores-12 {
+      left: 75%;
+      top: 24%
+    }
+    
+    .registradores-13 {
+      left: 80%;
+      top: 24%
+    }
+    
+      /* FIM REGISTRADORES */
+    
+      /*  FLASH */
+      .flash-1 {
+        left: 80%;
+        top: 12%
+      }
+    
+      .flash-2 {
+        left: 80%;
+        top: 16%
+      }
+    
+      .flash-3 {
+        left: 80%;
+        top: 20%
+      }
+    
+      .flash-5 {
+        left: 80%;
+        top: 28%
+      }
+      /*  FIM FLASH */
+    
+      /* RAM */
+    .ram-2 {
+      left: 50%;
+      top: 28%
+    }
+    
+    .ram-3 {
+      left: 50%;
+      top: 32%
+    }
+      /* FIM RAM */
+    
+      /* EPROM */
+      .eprom-2 {
+        left: 27%;
+        top: 28%
+      }
+    
+      .eprom-3 {
+        left: 27%;
+        top: 32%
+      }
+    
+      .eprom-4 {
+        left: 27%;
+        top: 36%
+      }
+    
+      .eprom-5 {
+        left: 27%;
+        top: 40%
+      }
+     /* FIM EPROM */
+    
+     /* MEMORIA DE MASSA */
+     .memoriamassa-2 {
+      left: 32%;
+      top: 40%
+    }
+    
+    .memoriamassa-3 {
+      left: 37%;
+      top: 40%
+    }
+    
+    .memoriamassa-4 {
+      left: 42%;
+      top: 40%
+    }
+    
+    .memoriamassa-5 {
+      left: 47%;
+      top: 40%
+    }
+    
+    .memoriamassa-6 {
+      left: 52%;
+      top: 40%
+    }
+    
+    .memoriamassa-7{
+      left: 57%;
+      top: 40%
+    }
+    
+    .memoriamassa-8{
+      left: 62%;
+      top: 40%
+    }
+    
+    .memoriamassa-9{
+      left: 67%;
+      top: 40%
+    }
+    
+    .memoriamassa-10{
+      left: 72%;
+      top: 40%
+    }
+    
+    .memoriamassa-11{
+      left: 77%;
+      top: 40%
+    }
+    
+    .memoriamassa-12{
+      left: 82%;
+      top: 40%
+    }
+    
+    .memoriamassa-13{
+      left: 87%;
+      top: 40%
+    }
+    
+    .memoriamassa-14{
+      left: 92%;
+      top: 40%
+    }
+     /* FIM MEMORIA DE MASSA */
+    
+     /* ROM */
+     .rom-2{
+      left: 70%;
+      top: 28%
+    }
+    
+    .rom-3{
+      left: 70%;
+      top: 32%
+    }
+     /* FIM ROM */
+    
+     /* CS */
+     .cs-1{
+      left: 87%;
+      top: 36%
+    }
+     /* FIM CS */
+    
+     /* ADRESS BUS */
+     .addressbus-2{
+      left: 92%;
+      top: 44%
+    }
+    
+    .addressbus-3{
+      left: 92%;
+      top: 48%
+    }
+    
+    .addressbus-4{
+      left: 92%;
+      top: 52%
+    }
+    
+    .addressbus-5{
+      left: 92%;
+      top: 56%
+    }
+    
+    .addressbus-6{
+      left: 92%;
+      top: 60%
+    }
+    
+    .addressbus-7{
+      left: 92%;
+      top: 64%
+    }
+    
+    .addressbus-8{
+      left: 92%;
+      top: 68%
+    }
+    
+    .addressbus-9{
+      left: 92%;
+      top: 72%
+    }
+    
+    .addressbus-10{
+      left: 92%;
+      top: 76%
+    }
+     /* FIM ADRESS BUS */
+    
+     /* DMA */
+     .dma-2{
+      left: 62%;
+      top: 44%
+    }
+    
+    .dma-3{
+      left: 62%;
+      top: 48%
+    }
+     /* FIM DMA */
+    
+     /* i5 */
+     .i5-2 {
+      left: 36%;
+      top: 28%
+     }
+     /* FIM i5 */
+    
+     /* DUAL CORE */
+     .dual-1{
+      left: 87%;
+      top: 72%
+     }
+    
+     .dual-3{
+      left: 97%;
+      top: 72%
+     }
+    
+     .dual-4{
+      left: 102%;
+      top: 72%
+     }
+    
+     .dual-5{
+      left: 107%;
+      top: 72%
+     }
+    
+     .dual-6{
+      left: 112%;
+      top: 72%
+     }
+    
+     .dual-7{
+      left: 117%;
+      top: 72%
+     }
+    
+     .dual-8{
+      left: 122%;
+      top: 72%
+     }
+     /* FIM DUAL CORE */
+    
+     /* DATA BUS */
+     .databus-6{
+      left: 87%;
+      top: 60%
+     }
+     
+     .databus-5{
+      left: 82%;
+      top: 60%
+     }
+     
+     .databus-4{
+      left: 77%;
+      top: 60%
+     }
+     
+     .databus-3{
+      left: 72%;
+      top: 60%
+     }
+    
+     .databus-2{
+      left: 67%;
+      top: 60%
+     }
+     
+     .databus-1{
+      left: 62%;
+      top: 60%
+     }
+    
+     /* FIM DATA BUS */
+    
+     /* QUAD CORE */
+     .quad-1{
+      left: 67%;
+      top: 52%
+     }
+    
+     .quad-2{
+      left: 67%;
+      top: 56%
+     }
+    
+     .quad-3{
+      left: 67%;
+      top: 60%
+     }
+    
+     .quad-4{
+      left: 67%;
+      top: 64%
+     }
+    
+     .quad-5{
+      left: 67%;
+      top: 68%
+     }
+    
+    
+     .quad-6{
+      left: 67%;
+      top: 72%
+     }
+    
+     .quad-7{
+      left: 67%;
+      top: 76%
+     }
+    
+     .quad-8{
+      left: 67%;
+      top: 80%
+     }
+     /* FIM QUAD CORE */
+    
+     /* i7 */
+    
+     .i7-2 {
+      left: 52%;
+      top: 44%
+     }
+    
+    
+     /* INDICADORES DAS PALAVRAS */
+     .numberBOX1 {
+       background-color: #220CB6;
+       color:black;
+        border: #220CB6 1px solid;
+        width: 21px;
+        height: 23px;
+        left: 290PX;
+        top: 270PX;
+        text-align: center;
+     }
+     
+     .numberBOX2 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 23px;
+       height: 23px;
+       left: 365PX;
+       top: 230PX;
+       text-align: center;
+    }
+    
+    .numberBOX3 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 23px;
+       height: 23px;
+       left: 179PX;
+       top: 298PX;
+       text-align: center;
+    }
+    
+    .numberBOX4 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       left: 490PX;
+       top: 200PX;
+       text-align: center;
+    }
+    
+    .numberBOX5 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       height: 23px;
+       left: 440PX;
+       top: 280PX;
+       text-align: center;
+    }
+    
+    .numberBOX6 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       height: 23px;
+       left: 340PX;
+       top: 280PX;
+       text-align: center;
+    }
+    
+    .numberBOX7 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       height: 23px;
+       left: 270PX;
+       top: 280PX;
+       text-align: center;
+    }
+    
+    .numberBOX8 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       height: 23px;
+       left: 230PX;
+       top: 280PX;
+       text-align: center;
+    }
+    
+    .numberBOX9 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       height: 23px;
+       left: 200PX;
+       top: 398PX;
+       text-align: center;
+    }
+    
+    
+    .numberBOX10 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       height: 23px;
+       left: 524PX;
+       top: 350PX;
+       text-align: center;
+    }
+    
+    .numberBOX11 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       height: 23px;
+       left: 350PX;
+       top: 375PX;
+       text-align: center;
+    }
+    
+    .numberBOX12 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       height: 23px;
+       left: 400PX;
+       top: 375PX;
+       text-align: center;
+    }
+    
+    .numberBOX13 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       height: 23px;
+       left: 554PX;
+       top: 374PX;
+       text-align: center;
+    }
+    
+    .numberBOX14 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       height: 23px;
+       left: 425PX;
+       top: 449PX;
+       text-align: center;
+    }
+    
+    .numberBOX15 {
+      background-color: #220CB6 ;
+      color:black;
+       border: #220CB6 ;
+       width: 21px;
+       height: 23px;
+       left: 380PX;
+       top: 526PX;
+       text-align: center;
+    }
+    
+     .numberBOX16 {
+      background-color: #220CB6;
+      color:black;
+       border: #220CB6 1px solid;
+       width: 21px;
+       height: 23px;
+       left: 1499PX;
+       top: 602PX;
+       text-align: center;
+    }
+     
+     ::-webkit-input-placeholder {
+      color: #f57200;
+    }
+    
+    button {
+      background-color: #220CB6;
+    border: transparent;
+    color: white;
+    height: 30px;
+    width: 110px;
+    top:300px;
+    left: 20px;
+    border-radius: 10px 08px 10px 08px;
+    }
+    
+    .botoes {
+    margin-top: -600px;
+    margin-left: 580px;
+    }
+    
+    .tips{
+    margin-top:600PX;
+    margin-left: 1%;
+    position: fixed;
+    }
+    
+    .footer-distributed {
+        background-color: #220CB6;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        width: 100%;
+        text-align: left;
+        font: bold 16px sans-serif;
+        padding: 50px 50px 60px 50px;
+        margin-top: 80px;
+        position: relative;
+        top: 740px;
+    }
+    
+
+
+.header
+{
+
+    background-image: url(../images/without_blaka.png);
+
+}
+
+
+
+
+*{
+
+ 
+    font-family: 'Poppins',sans-serif;
+    }
+    nav{
+      display: flex;
+      padding: -2% 2%;
+    justify-content: space-between;
+    align-items:center;
+    }
+    nav img{
+      width: 150px;
+    
+    }
+    .nav-links{
+      flex: 1;
+      text-align:left;
+    
+    }
+    .nav-links ul li{
+      list-style:none;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+    }
+    .nav-links ul li a{
+    color: #FE7062;
+    text-decoration:none;
+    font-size: 20px;
+    }
+    .nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #220CB6;
+    display:block;
+    margin: auto;
+    transition: 0.5s;
+    }
+    .nav-links ul li:hover::after{
+    width: 100%;
+    }
+    
+    .header {
+      min-height: 110vh;
+      width: 100%;
+      background-image: url(../images/without_blaka.png) no-repeat center center fixed;;
+      background-position: center;
+      background-size: cover;
+      position: relative;
+    }
+    
+   
+    
+    #indice1
+    {
+    position:relative;
+      top:-5px;
+      left : 200PX;
+    
+    
+    }
+    
+    
+/*     
+    #indice2
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+    
+   
+    #indice3
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+    
+    
+    
+    
+      
+    #indice4
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200PX;
+    
+
+    }
+
+   
+    #indice5
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+
+    
+    #indice6
+    {
+    
+      position:relative;
+      top:-5px;
+      left : 200px;
+    
+    }
+
+   
+    #indice7
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+    
+    #indice8
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+
+    
+    
+    #indice9
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+  
+    #indice10
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+    
+    #indice11
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+
+
+   
+    #indice12
+    {
+    
+      position:relative;
+      top:-799px;
+      left : 500px;
+    
+    }
+
+   
+    
+    #indice13
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+
+
+    
+    #indice14
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+
+    
+    #indice15
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+
+    
+    #indice16
+    {
+    
+      position:relative;
+      top:-1591px;
+      left : 800px;
+    
+    }
+     */
+
+    #envoyer
+    {
+     
+      position:relative;
+      top:-1300px;
+      left : 560px; 
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    #id{
+      position: absolute;
+    /* top: 140px;
+    left: 190px; */
+      color:rgba(34, 12, 182, 0.81);
+     font-size: 30px;
+    }
+    
+    /* .h2{
+      position: absolute;
+      left: 260px;
+      top: -50px;
+     font-size: 50px;
+    } */
+    
+    /* .h3{
+      position: absolute;
+      left: 260px;
+      top: -250px;
+     font-size: 50px;
+    }
+     */
+    
+    
+    .singup input[type="text"],input[type="password"],input[type="email"]{
+      border: none;
+      border-bottom: 1px solid rgb(0, 0, 0);
+      background: transparent;
+      outline: none;
+      height: 40px;
+      color: rgb(0, 0, 0);
+      font-size: 16px;
+      }
+    
+    
+      .singup input[type="submit"]{
+        border: none;
+        background: #F44336;
+        outline: none;
+        height: 40px;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 20px;
+        width: 250px;
+        margin-left: 250px;
+    }
+    .singup input[type="submit"]:hover{
+    
+    background-color: #FE7062;
+    }
+    .singup p{
+        text-align: center;
+        color: rgb(0, 0, 0);
+        font-size: 13px;
+        margin-top: -10px;
+    }
+    
+    
+    /* .text-box{
+    
+    
+        top: 140px;
+      left: 80%;
+    } */
+    input[type=text], select {
+        width: 11%;  
+      padding: 13px 20px;
+      margin: 8px 0;
+      top: 230px;
+      left : 40%;
+      display: inline-block;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+   
+    
+    input[type=submit] {
+        width: 100%;
+        background-color: #220CB6;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+      input[type=reset] {
+        width: 100%;
+        background-color: #220CB6;
+        color: white;
+        top: 400px;
+        padding: 14px 10px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    
+      

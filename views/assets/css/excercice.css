@@ -6,6 +6,50 @@
     background-size: cover;
     position: relative;
   }
+
+
+  *{
+
+    font-family: 'Poppins',sans-serif;
+    }
+    nav{
+      display: flex;
+      padding: -2% 2%;
+    justify-content: space-between;
+    align-items:center;
+    }
+    nav img{
+      width: 150px;
+    
+    }
+    .nav-links{
+      flex: 1;
+      text-align:left;
+    
+    }
+    .nav-links ul li{
+      list-style:none;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+    }
+    .nav-links ul li a{
+    color: #FE7062;
+    text-decoration:none;
+    font-size: 20px;
+    }
+    .nav-links ul li::after{
+    content:'';
+    width: 0%;
+    height: 2px;
+    background: #220CB6;
+    display:block;
+    margin: auto;
+    transition: 0.5s;
+    }
+    .nav-links ul li:hover::after{
+    width: 100%;
+    }
 #assignmentcontainer, #showcorrectanswercontainer {
     background-color: #E7E9EB;
     padding: 30px;

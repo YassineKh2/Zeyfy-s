@@ -14,7 +14,7 @@
             <ul>
                 <li>
                     <a href="../Mainpage/indexa.php">
-                        <span class="icon"><ion-icon name="albums-outline"></ion-icon></span>
+                        <span class="icon"><img src="..\..\images\logo.png" class="piccc" width="150%"></ion-icon></span>
                         <span class="title">Educaplay</span>
                     </a>
                 </li>
@@ -25,29 +25,43 @@
                     </a>
                 </li>
                 <li>
-                    <a href="../../users/utilisateur.php">
+                    <a href="users/utilisateur.php">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                        <span class="title">Consumers</span>
+                        <span class="title">Utilisateurs</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="afficherjeux.php">
                         <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
-                        <span class="title">Message</span>
+                        <span class="title">Les Jeux</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
-                        <span class="title">Help</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
+                    <a href="chercherjeux.php">
                         <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                        <span class="title">Settings</span>
+                        <span class="title">Chercher jeux</span>
                     </a>
                 </li>
+                <li>
+                    <a href="jouer.php">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title">Jouer</span>
+                    </a>
+                </li>
+                <li>
+                <li>
+                    <a href="dashavis.php">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title">Les Avis</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="dashreclamation.php">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title">Les Reclamation</span>
+                    </a>
+                </li>
+                <li>
                 <li>
                     <a href="..\User\singout.php">
                         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>

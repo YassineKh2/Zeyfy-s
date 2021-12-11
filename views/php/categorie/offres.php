@@ -1,5 +1,6 @@
 <?php 
-require '../../../model/db.class.php';
+require 'C:\xampp\htdocs\Zeyfy-s-educaplay\model\db.class.php';
+$DB= new DB();
 ?>
 
 <html lang="en">
@@ -38,7 +39,7 @@ require '../../../model/db.class.php';
 
     <div class="row">
 <div class="formation-col">
-    <img src="images/black_friday.jpg">
+    <img src="images/<?php echo $offres->idOffre; ?>.jpg">
     <div class="layer">
 		<h3><?php echo $offres->NomOffre; ?></h3>
 		<h4><?php echo $offres->pourcentageOffre; ?></h4>

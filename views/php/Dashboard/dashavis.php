@@ -1,49 +1,32 @@
 <?php
-   
-    include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
-    include_once 'C:\xampp\htdocs\educaplay\model\joueur_score.php';
-        $error = "";
-    // create joueur_score_jeux
- $joueur_score_jeux = null;
-    // create an instance of the controller
-    $joueur_score_jeuxC = new joueur_score_jeuxC();
-    if (
-        isset($_POST["idJeux"]) &&
-		isset($_POST["idJoueur"]) &&		
-        isset($_POST["score"]) ) 
-        {
-        if (
-            !empty($_POST["idJeux"]) && 
-			!empty($_POST['idJoueur']) &&
-            !empty($_POST["score"])  
-        ) {
-            $joueur_score_jeux = new joueur_score_jeux(
-                $_POST['idJoueur'],
-                $_POST['idJeux'],
-                $_POST['score'] 
-			
-            );
-            $joueur_score_jeuxC->ajouterscore($joueur_score_jeux);
-            header('Location:C:\xampp\htdocs\educaplay\levelpage\views\php\jouer.php');
-        }
-        else
-            $error = "Missing information";
-    }
+include 'C:\xampp\htdocs\educaplay\controller\avisC.php';
 
-    
+
+$avisC=new avisC();
+$listeavis=$avisC->afficheravis(); 
+
+
+
 ?>
+
+
+
+
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="jouer.php">
+    <title>Dashavisr</title>
+    <link rel="stylesheet" type="text/css" href="\educaplay\views\assets\css\Dashavis.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     
-    <title>User Display</title>
+    
 </head>
-    <body>
-        <hr>
-        
-        <div class="container">
+<body>
+<div class="container">
         <div class="navigation">
             <ul>
                 <li>
@@ -105,6 +88,7 @@
                 
             </ul>
         </div>
+     
         <div class="main">
             <div class="topbar">
                 <div class="toggle">
@@ -117,55 +101,61 @@
                             <ion-icon name="search-outline"></ion-icon>
                         </label>
                     </div>
+
            
                 
               <div class="details">
                     <div class="recentorders">
                         <div class="cardheader">
-                            <h2>Demande recente</h2>
-                            <a href="#" class="btn">Tout voir</a>
-                            </div>
-        
-        <form action="" method="POST">
-            <div>
-            <button class="btn"><a href="jouer.php">Retour à la liste des score</a></button>
-</div>
-            <table>
-                <thead>
-                <tr>
-                    <td>
+                            <h2>Avis recent</h2>
+                      
+                        </div>
+                        <table>
+                            <thead>
+                            <tr>
+                                <td>Avis</td>
+                                <td>Utilisateur</td>
+                                <td>Date D'ajout</td>
+            
+                                <td>Note</td>
+                            </tr>
+                        </thead> 
+                        <tbody>
+                        <?php 
+                                                $nbr=0;
+
+                         foreach ($listeavis as $avis){
+                             if($avis['reclamation']==''){
+                          
+                        echo '
+                            <tr>
+                                <td>'.$avis['contenu'].'</td>
+                                <td></td>
+                                <td>'.$avis['dateAvis'].'</td>
+                                <td>'.$avis['note'].'</td>
+                                
+                            </tr>';
+                            if($avis['nbrN']==0){
+                                $nbr+=1;
+                            }
+                        }
+                                  
                         
-                        <label for="IdJeux">id  jeux:
-                        </label>
-                    </td>
-                    <td><input type="text" name="idJeux" id="idJeux" maxlength="20"></td>
-                </tr>
-				<tr>
-                    <td>
-                        <label for="IdJoueur">idJoueur:
-                        </label>
-                    </td>
-                    <td><input type="text" name="idJoueur" id="idJoueur" maxlength="20"></td>
-                </tr>
-                <tr>
-                    <td>
-                        <label for="score">score:
-                        </label>
-                       
-                    </td>
-                   
-                
-                    <td><input type="text" name="score" id="score" maxlength="20"></td>
-                        
-                    </td>
-                    <tr>
-                    <td>
-                    <input type="submit" class="btn" value="Envoyer">
-                        <input type="reset"  class="btn" value="Annuler" >
-                        </td>
-                </tr>
-            </table>
-        </form>
+                     } ?>
+                        </tbody>
+                        </table>
+                        <form action="../avis/modifnot.php">
+                        <button type="submit" class="icon-button">
+    <span class="material-icons">notifications</span>
+
+  
+    <span class="icon-button__badge"><?php echo $nbr?></span>
+                            
+  </button>
+  </form>
+                    </div>  
+            </div>'
+            
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         
@@ -191,5 +181,5 @@
             list.forEach((item)=> 
             item.addEventListener('mouseover',activeLink));
         </script>
-    </body>
+</body>
 </html>

@@ -1,17 +1,37 @@
+<!-- <?php
+   include_once 'C:\xampp\htdocs\educaplay\config.php';
+   include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
+$sql= "SELECT * from cours";
+  try {
+	$db=config::getConnexion();
+$liste=$db->query($sql);
+
+}
+			catch(Exception $e)
+			{
+				die('Erreur:'.$e->getMessage());
+			
+			}
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Excercice</title>
-    <link rel="stylesheet" href="../../assets/css/style.css">
-<link rel="stylesheet" href="../../assets/css/excercice.css">
+    <title>EDUCAPLAY - by the ZEYFY's</title>
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../../assets/css/level1.css">
 </head>
 <body>
-<section class="header">
+    <section class="header">
 <nav>
-    <a href="index.html"> <img src="../../assets/images/logo.png"> </a>
+    <a href="../../html/index.html"> <img src="../../assets/images/logo.png"> </a>
     <div class="nav-links" id="navLinks">
         <i class="fa fa-times" onclick="hideMenu()"></i>
 <ul>
@@ -19,28 +39,35 @@
    
     <li><a href=""> Plus d'information</a></li>
     <li><a href="">Reclamation</a></li>
-    <li><a href="">Nous-contacter</a></li>
-    <li><a href="../html/index.html">Quitter</a></li>
+    <li><a href="">Nous-contacter</li></a>
+    <a href="../html/index.html"><li>Quitter</li></a>
 </ul>
     </div>
     <i class="fa fa-bars" onclick="showMenu()"></i>
 
 </nav>
 
+<div class="text-box">
+    <h1 id="titreCours1">Cours Javascript</h1>
 
-    <h1>Exercise:</h1>
-    
-
-    <p></p>
-
-<div id="assignmentcontainer">
-
+	<?php foreach($liste as $cours)
+                        { ?>
+    <pre id ="contenuDuCours" value=<?php echo $cours['idCours']?>><?php echo $cours['contenuCours']?>
+	<?php 
+                        } 
+                        ?> 
+     </pre>
+   
+     <a href="templatequiz1.php" >  <button class="button-jouer" role="button">Commencez le quiz!</button>  </a>
 </div>
+
+
+    </section>
 
 <footer class="footer-distributed">
 
 			<div class="footer-left">
-          <img src="../../assets/images/logo.png">
+          <img src="../assets/images/logo.png">
 				<h3>EDUCAPLAY</h3>
 
 				<p class="footer-links">
@@ -84,13 +111,14 @@
 				</div>
 			</div>
 		</footer>
-<!----------- Javascript for Toggle Menu ------------>
-   <script src="../../assets/js/indexlevel.js">
+<!------------ Javascript for Toggle Menu ------------>
+    <script src="../../assets/js/indexlevel.js">
 
 
-    </script>  
+    </script>
+
 
 
 
 </body>
-</html>
+</html> -->

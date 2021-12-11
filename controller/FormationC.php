@@ -18,7 +18,7 @@ class FormationC {
     function afficherformationss($sta,$categ){
         $sql="SELECT * FROM formations WHERE statut = '$sta' AND filiere = '$categ'";
         $db = config::getConnexion();
-        try{
+        try{                                                                                   
             $liste = $db->query($sql);
             return $liste;
         }

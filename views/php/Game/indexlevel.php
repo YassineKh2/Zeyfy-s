@@ -65,9 +65,9 @@ foreach($liste as $player){
 
      <a href="level1.php"> <button class="button-l1" id="b1" role="button" >Level 1 </button></a>
      <a href="level2.php">   <button class="button-l2" id="b2" role="button" >Level 2</button></a>
-      <button class="button-l3" id="b3" role="button" >Level 3</button>
+     <a href="level3.php"> <button class="button-l3" id="b3" role="button" >Level 3</button></a>
       <button class="button-l4" id="b4" role="button" >Level 4</button>
-      <button class="button-l5" id="b5" role="button" >Level 5</button>
+     <a href="level5.php"> <button class="button-l5" id="b5" role="button" >Level 5</button></a>
       <!-- <button class="button-jouer" role="button">Jouez!</button> -->
     </section>
 
