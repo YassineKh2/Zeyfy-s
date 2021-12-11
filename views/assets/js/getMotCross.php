@@ -3,7 +3,6 @@ $conn = mysqli_connect("localhost","root","","educaplay");
 
 
 $qty=76;
-echo $_POST["1"];
 // $arr=array($qty);
 //  for($j=1;$j<=$qty;$j++){
 //      array_push($arr,$_POST[$j]);
@@ -18,9 +17,12 @@ foreach($_POST as $key => $val) {
 $output=json_encode($data);
 echo $output;
 for($i=1;$i<= $qty;$i++){
-    $sql = "INSERT INTO `crossword` (idLettre,lettre) VALUES($i,'$data[$i]') ";
+    $ind="${i}i";
+    $sql = "INSERT INTO `crossword` (idLettre,lettre,idIndice,Indice) VALUES($i,'$data[$i]' ,$i, '$data[$ind]') ";
     $result=mysqli_query($conn,$sql);
  }
+$x=1;
+echo "${x}i";
 echo "$qty";
 echo "$sql";
 ?>

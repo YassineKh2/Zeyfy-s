@@ -50,86 +50,86 @@
         
             <tr>
                
-               <td><input type="longtext" name="indice1" placeholder="Ecrire votre indice 1" id="indice1" maxlength="30" class=""></td>
+               <td><input type="longtext" name="indice1" placeholder="Ecrire votre indice 1" id="indice1" maxlength="30" class="indice" ></td>
            </tr>
            <tr>
                    
                             
-                   <td><input type="longtext" name="indice2"  placeholder="Ecrire votre indice 2" id="indice2" maxlength="20"></td>
+                   <td><input type="longtext" name="indice2" class="indice" placeholder="Ecrire votre indice 2" id="indice2" maxlength="20"></td>
                   
                    </tr>
                    <tr>
                    
-                   <td><input type="longtext" name="indice3" placeholder="Ecrire votre indice 3" id="indice3" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice3" class="indice" placeholder="Ecrire votre indice 3" id="indice3" maxlength="20"></td>   
                    
                        </tr>
                        <tr>
                    
-                   <td><input type="longtext" name="indice4" placeholder="Ecrire votre indice 4" id="indice4" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice4" class="indice" placeholder="Ecrire votre indice 4" id="indice4" maxlength="20"></td>   
                    
                        </tr>
                        <tr>
-                        <td><input type="longtext" name="i5" placeholder="Ecrire votre indice 5" id="indice5" maxlength="20"></td>   
+                        <td><input type="longtext" name="i5"  class="indice"placeholder="Ecrire votre indice 5" id="indice5" maxlength="20"></td>   
                    
                    </tr>
                    <tr>
-                    <td><input type="longtext" name="indice6" placeholder="Ecrire votre indice 6" id="indice6" maxlength="20"></td>   
+                    <td><input type="longtext" name="indice6" class="indice" placeholder="Ecrire votre indice 6" id="indice6" maxlength="20"></td>   
                     </tr>
 
                     <tr>
                    
-                   <td><input type="longtext" name="indice7" placeholder="Ecrire votre indice 7" id="indice7" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice7" class="indice" placeholder="Ecrire votre indice 7" id="indice7" maxlength="20"></td>   
                    
                     </tr>
 
             
                     <tr>
                    
-                   <td><input type="longtext" name="indice8" placeholder="Ecrire votre indice 8" id="indice8" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice8"  class="indice" placeholder="Ecrire votre indice 8" id="indice8" maxlength="20"></td>   
                    
                        </tr>
        
                        <tr>
                    
-                   <td><input type="longtext" name="indice9" placeholder="Ecrire votre indice 9" id="indice9" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice9" class="indice" placeholder="Ecrire votre indice 9" id="indice9" maxlength="20"></td>   
                    
                        </tr>
             
                        <tr>
                    
-                   <td><input type="longtext" name="indice10" placeholder="Ecrire votre indice 10" id="indice10" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice10" class="indice" placeholder="Ecrire votre indice 10" id="indice10" maxlength="20"></td>   
                    
                        </tr>
         
                        <tr>
                    
-                   <td><input type="longtext" name="indice11" placeholder="Ecrire votre indice 11" id="indice11" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice11" class="indice" placeholder="Ecrire votre indice 11" id="indice11" maxlength="20"></td>   
                    
                        </tr>
                        <tr>
                    
-                   <td><input type="longtext" name="indice12" placeholder="Ecrire votre indice 12" id="indice12" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice12" class="indice" placeholder="Ecrire votre indice 12" id="indice12" maxlength="20"></td>   
                    
                        </tr>
                        <tr>
                    
-                   <td><input type="longtext" name="indice13" placeholder="Ecrire votre indice 13" id="indice13" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice13" class="indice"  placeholder="Ecrire votre indice 13" id="indice13" maxlength="20"></td>   
                    
                        </tr>
                        <tr>
                    
-                   <td><input type="longtext" name="indice14" placeholder="Ecrire votre indice 14" id="indice14" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice14" class="indice" placeholder="Ecrire votre indice 14" id="indice14" maxlength="20"></td>   
                    
                        </tr>
                        <tr>
                    
-                   <td><input type="longtext" name="indice15" placeholder="Ecrire votre indice 15" id="indice15" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice15" class="indice" placeholder="Ecrire votre indice 15" id="indice15" maxlength="20"></td>   
                    
                        </tr>
            
                        <tr>
                    
-                   <td><input type="longtext" name="indice16" placeholder="Ecrire votre indice 16" id="indice16" maxlength="20"></td>   
+                   <td><input type="longtext" name="indice16" class="indice" placeholder="Ecrire votre indice 16" id="indice16" maxlength="20"></td>   
                    
                        </tr>
        
@@ -250,22 +250,22 @@
         </div>
 
      
-        <input type="text" class="numberBOX1" placeholder="01"></input>
-        <input type="text" class="numberBOX2" placeholder="02"></input>
-        <input type="text" class="numberBOX3" placeholder="03"></input>
-        <input type="text" class="numberBOX4" placeholder="04"></input>
-        <input type="text" class="numberBOX5" placeholder="05"></input>
-        <input type="text" class="numberBOX6" placeholder="06"></input>
-        <input type="text" class="numberBOX7" placeholder="07"></input>
-        <input type="text" class="numberBOX8" placeholder="08"></input>
-        <input type="text" class="numberBOX9" placeholder="09"></input>
-        <input type="text" class="numberBOX10" placeholder="10"></input>
-        <input type="text" class="numberBOX11" placeholder="11"></input>
-        <input type="text" class="numberBOX12" placeholder="12"></input>
-        <input type="text" class="numberBOX13" placeholder="13"></input>
-        <input type="text" class="numberBOX14" placeholder="14"></input>
-        <input type="text" class="numberBOX15" placeholder="15"></input>
-        <input type="text" class="numberBOX16" placeholder="16"></input>
+        <input type="text" class="numberBOX1 " placeholder="01" disabled></input>
+        <input type="text" class="numberBOX2 " placeholder="02"disabled></input>
+        <input type="text" class="numberBOX3 " placeholder="03"disabled></input>
+        <input type="text" class="numberBOX4 " placeholder="04"disabled></input>
+        <input type="text" class="numberBOX5 " placeholder="05"disabled></input>
+        <input type="text" class="numberBOX6 " placeholder="06"disabled></input>
+        <input type="text" class="numberBOX7 " placeholder="07"disabled></input>
+        <input type="text" class="numberBOX8 " placeholder="08"disabled></input>
+        <input type="text" class="numberBOX9 " placeholder="09"disabled></input>
+        <input type="text" class="numberBOX10 " placeholder="10"disabled></input>
+        <input type="text" class="numberBOX11 " placeholder="11"disabled></input>
+        <input type="text" class="numberBOX12 " placeholder="12"disabled></input>
+        <input type="text" class="numberBOX13 " placeholder="13"></input>
+        <input type="text" class="numberBOX14 " placeholder="14"></input>
+        <input type="text" class="numberBOX15 " placeholder="15"></input>
+        <input type="text" class="numberBOX16 " placeholder="16"></input>
         <!-- FIM INDICADORES -->
 
         <div class="botoes">
