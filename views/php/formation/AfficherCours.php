@@ -228,7 +228,7 @@ $listeCours = $coursC->affichercours();
 
                                 <div class="instructor-profile_courses_list1">
                                     <div class="course_align_v1">
-                                        <img src="../../assets/images/img_profil.jpg" alt="Profile" class="courses_list_img">
+                                        <img src="uploads/<?php echo $cours['image']?>" alt="Profile" class="courses_list_img">
                                         <div class="course_align1">
 
                                             <h1 class="course_title"><?php echo $cours['nomCours']; ?></h1>

@@ -210,7 +210,7 @@
                                                         </label>
                                                     </td>
                                                     <td>
-                                                        <input type="file" id="file" name="file1" class="custom-file-input" required minlength="3" maxlength="20" size="10" accept=".jpg, .jpeg, .png,.txt,">
+                                                        <input type="file" id="file" name="file1" class="custom-file-input" required minlength="3" maxlength="20" size="10" accept=".pdf, .docx">
                                                         <span class="error" id="errorfile"></span>
 
                                                     </td>
@@ -280,7 +280,7 @@
                                                         </label>
                                                     </td>
                                                     <td>
-                                                        <input type="file" id="file" name="file2" class="custom-file-input" required minlength="3" maxlength="20" size="10" accept=".jpg, .jpeg, .png,.txt">
+                                                        <input type="file" id="file" name="file2" class="custom-file-input" required minlength="3" maxlength="20" size="10" accept=".pdf, .docx">
                                                         <span class="error" id="errorfile"></span>
 
                                                     </td>
@@ -353,7 +353,7 @@
                                                         </label>
                                                     </td>
                                                     <td>
-                                                        <input type="file" id="file" name="file3" class="custom-file-input" required minlength="3" maxlength="20" size="10" accept=".jpg, .jpeg, .png,.txt">
+                                                        <input type="file" id="file" name="file3" class="custom-file-input" required minlength="3" maxlength="20" size="10" accept=".pdf, .docx">
                                                         <span class="error" id="errorfile"></span>
 
                                                     </td>
@@ -425,7 +425,7 @@
                                                         </label>
                                                     </td>
                                                     <td>
-                                                        <input type="file" id="file" name="file4" class="custom-file-input" required minlength="3" maxlength="20" size="10" accept=".jpg, .jpeg, .png,.txt">
+                                                        <input type="file" id="file" name="file4" class="custom-file-input" required minlength="3" maxlength="20" size="10" accept=".pdf, .docx">
                                                         <span class="error" id="errorfile"></span>
 
                                                     </td>

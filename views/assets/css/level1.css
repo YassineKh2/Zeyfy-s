@@ -51,6 +51,92 @@ left: -100px;
   -ms-touch-action: manipulation;
       touch-action: manipulation;
   position: relative;
-  top: 190px;
-  left: 190px;
+  top: 350px;
+  left: -270px;
 }
+
+.button-telecharger{
+  background-color: #220cb6;
+  border-radius: 100px;
+  -webkit-box-shadow: #f44336 0 -25px 18px -14px inset, rgba(0, 89, 255, 0.15) 0 1px 2px, rgba(0, 2, 109, 0.15) 0 2px 4px, rgba(55, 0, 255, 0.15) 0 4px 8px, rgba(55, 0, 255, 0.15) 0 8px 16px, rgba(5, 2, 172, 0.15) 0 16px 32px;
+          box-shadow: rgba(0, 68, 255, 0.2) 0 -25px 18px -14px inset, rgba(0, 89, 255, 0.15) 0 1px 2px, rgba(0, 2, 109, 0.15) 0 2px 4px, rgba(55, 0, 255, 0.15) 0 4px 8px, rgba(55, 0, 255, 0.15) 0 8px 16px, rgba(5, 2, 172, 0.15) 0 16px 32px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 14px 50px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      position: relative;
+      left: -630px;
+      margin: 0rem 0rem 0rem 0rem;
+      padding: 0.5rem 3rem 0.5rem 3rem;
+}
+.button-ouvrire{
+  background-color: #220cb6;
+  border-radius: 100px;
+  -webkit-box-shadow: #f44336 0 -25px 18px -14px inset, rgba(0, 89, 255, 0.15) 0 1px 2px, rgba(0, 2, 109, 0.15) 0 2px 4px, rgba(55, 0, 255, 0.15) 0 4px 8px, rgba(55, 0, 255, 0.15) 0 8px 16px, rgba(5, 2, 172, 0.15) 0 16px 32px;
+          box-shadow: rgba(0, 68, 255, 0.2) 0 -25px 18px -14px inset, rgba(0, 89, 255, 0.15) 0 1px 2px, rgba(0, 2, 109, 0.15) 0 2px 4px, rgba(55, 0, 255, 0.15) 0 4px 8px, rgba(55, 0, 255, 0.15) 0 8px 16px, rgba(5, 2, 172, 0.15) 0 16px 32px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+  padding: 14px 50px;
+  text-align: center;
+  text-decoration: none;
+  -webkit-transition: all 250ms;
+  transition: all 250ms;
+  border: 0;
+  font-size: 16px;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+      touch-action: manipulation;
+      position: relative;
+      left: -630px;
+      width: 17rem;
+      margin: 0rem 1.5rem 0rem 0rem;
+      padding: 0.5rem 0rem 0.5rem 0rem;
+}
+.div_tel{
+  width: 20rem;
+  height: 15rem;
+  background-color: #f44336;
+  border-radius: 1rem;
+  position: relative;
+  top: -120px;
+}
+.text_tel{
+ font-size: small;
+ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+ font-style: inherit;
+ color: aliceblue;
+
+}
+.div_tel1{
+  width: 20rem;
+  height: 15rem;
+  background-color: #f44336;
+  border-radius: 1rem;
+  position: relative;
+  top: -428px;
+  left: 450px;
+}
+.text_tel1{
+  font-size: small;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-style: inherit;
+  color: aliceblue;
+ }
