@@ -5,7 +5,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
 //Load Composer's autoloader
-require '../vendor/autoload.php';
+require 'C:\xampp\htdocs\educaplay\vendor\autoload.php';
          function sendemail($email ,$email_content){
             $mail = new PHPMailer(true);
 
@@ -13,13 +13,13 @@ require '../vendor/autoload.php';
             $mail->isSMTP();                                            //Send using SMTP
             $mail->Host       = 'smtp.gmail.com';                       //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-            $mail->Username   = 'guetat1youssef@gmail.com';          //SMTP username
-            $mail->Password   = '13500875wiemlove';                            //SMTP password
+            $mail->Username   = 'educaplay2022@gmail.com';          //SMTP username
+            $mail->Password   = 'zeyfy2022';                            //SMTP password
             $mail->SMTPSecure = "ssl";                                  //Enable implicit TLS encryption
             $mail->Port       = 465;                                    //TCP port to connect to; use 587 if you have set SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS
         
             //Recipients
-            $mail->setFrom('guetat1youssef@gmail.com', "guetatyoussef");
+            $mail->setFrom('educaplay2022@gmail.com', "EDUCAPLAY");
             $mail->addAddress($email);                     //Add a recipient
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML

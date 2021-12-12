@@ -10,7 +10,7 @@ $listeFormations=$formationC->afficherformationsd();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../controller/css/dashboard.css">
+    <link rel="stylesheet" type="text/css" href="../../assets/css/dashboardyo.css">
     <title>Document</title>
 </head>
 <body>
@@ -115,10 +115,10 @@ $listeFormations=$formationC->afficherformationsd();
                                         <td><?php echo $formation['filiere']; ?></td>
                                         <td><?php echo $formation['titre_f']; ?></td>
                                         <td><?php echo $formation['prix_f']; ?> Dinar</td>
-                                        <td><?php echo $formation['descriptions']; ?></td>
+                                        <td><?php echo $formation['descreptions']; ?></td>
                                         <td><ion-icon name="download-outline"></td>
                                         <td>
-                                            <form action="modifierStatut.php" method="POST">
+                                        <form action="modifierStatut.php" method="POST">
                                         <div class="container">
                                         <div class="radio">
                                         <input id="radio-1" name="radioo" type="radio" value="acceptée">

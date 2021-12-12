@@ -1,5 +1,6 @@
 <?php
 include 'C:\xampp\htdocs\educaplay\model\enseignant.php';
+include_once 'C:\xampp\htdocs\educaplay\config.php';
 class enseignantc{
 function ajouterenseignant($enseignant){
     $sql="INSERT INTO enseignant (idEnseignant,Cv,etude) 

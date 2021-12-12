@@ -30,7 +30,7 @@
                 $_POST['prenom'], 
 				password_hash($_POST['password'],PASSWORD_DEFAULT),
                 $_POST['email'],
-                $_POST['username']
+                $_POST['username'],'',''
             );
             $utilisateurc->modifierutilisateur($utilisateur,$_SESSION['user_id']);
             header('Location:profiedash.php');

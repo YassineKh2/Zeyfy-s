@@ -18,7 +18,8 @@
     $_SESSION['user_name']=$utilisateur['nomUtilisateur'];
     $_SESSION['user_id']=$utilisateur['idUtilisateur'];
     $_SESSION['etat']=$utilisateur['admin'];
-    header('Location:log.php');
+    $type=$utilisateur['typee'];
+    header('Location:log.php?type='.$type.'');
     }
     else
     $verif=2;
