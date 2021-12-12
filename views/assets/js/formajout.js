@@ -1,10 +1,7 @@
 //your javascript goes here
 var currentTab = 0;
 document.addEventListener("DOMContentLoaded", function(event) {
-
-
 showTab(currentTab);
-
 });
 
 function showTab(n) {
