@@ -1,10 +1,10 @@
 <?php
-session_start();
-include_once('C:\xampp\htdocs\formations\config.php');
-include 'C:\xampp\htdocs\formations\model\Formation.php';
+
+include_once('C:\xampp\htdocs\educaplay\config.php');
+include 'C:\xampp\htdocs\educaplay\model\cours.php';
 class CoursC {
-    function affichercours($idF){
-        $sql="SELECT * FROM cours where idFormation='$idF'";
+    function affichercours(){
+        $sql="SELECT * FROM cours";
         $db = config::getConnexion();
         try{
             $liste = $db->query($sql);
@@ -14,5 +14,28 @@ class CoursC {
             die('Erreur:' . $e->getMessage());
         }
     }
+    function ajoutercours($cours){
+
+        $sql = "INSERT INTO cours (nomCours,dateCreationCours, dateModificationCours, url,contenuCours,image)
+                  VALUES (:nomCours, :dateCreationCours, :dateModificationCours, :url, :contenuCours, :image)";
+     $db = config::getConnexion();
+     try{
+         $query = $db->prepare($sql);
+         $query->execute([
+             'nomCours'=> $cours->getnomCours(),
+             'dateCreationCours'=> $cours->getdateCreationCours(),
+             'dateModificationCours'=> $cours->getdateModificationCours(),
+             'url'=> $cours->geturl(),
+             'contenuCours'=> $cours->getcontenuCours(),
+             'image'=> $cours->getimage()
+         ]);
+         $_SESSION['error']="data add seccsesfuly";
+         header("Location:profile.php?statut=tout&categ=tout&tem=0");
+ } catch (Exception $e){
+     $e->getMessage();
+ }
+ 
+     }
 }
+
 ?>

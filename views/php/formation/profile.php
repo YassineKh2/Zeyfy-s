@@ -1,10 +1,15 @@
 <?php
-include 'C:\xampp\htdocs\formations\controller\FormationC.php';
+include 'C:\xampp\htdocs\educaplay\controller\FormationC.php';
 
 $formationC = new FormationC();
-
-$listeFormations = $formationC->afficherformations();
-
+if ($_GET['statut'] == 'tout' && $_GET['categ'] == 'tout' && $_GET['tem']=='0') {
+  $listeFormations = $formationC->afficherformations();
+} else if($_GET['tem']=='0'){
+  $listeFormations = $formationC->afficherformationss($_GET['statut'], $_GET['categ']);
+}
+else
+$listeFormations = $formationC->afficherformationsss($_GET['tem']);
+?>
 ?>
 
 <html>
@@ -125,6 +130,7 @@ $listeFormations = $formationC->afficherformations();
             <li class="nav-item">
                 <span>
                     <div class="filtre_ic">
+                        <form action="filtre.php?tem=0" method="POST">
                         <div class="select">
                             <select name="format" id="format">
                                 <option selected disabled>sélecter une catégorie</option>
@@ -136,7 +142,7 @@ $listeFormations = $formationC->afficherformations();
                         </div>
                         <br>
                         <div class="select">
-                            <select name="format" id="format">
+                            <select name="formatt" id="formatt">
                                 <option selected disabled>sélecter une status</option>
                                 <option value="acceptée">Acceptée</option>
                                 <option value="refusée">Refusée</option>
@@ -145,14 +151,15 @@ $listeFormations = $formationC->afficherformations();
                             </select>
                         </div>
                         <button class="btnf">Filtrer</button>
+                        </form>
                     </div>
                 </span>
 
             </li><!-- End Dashboard Nav -->
             <br><br>
             <li class="nav-item">
-                <span>
                     <span>
+                    <form action="search.php?statut=0&categ=0" method="POST">
                         <div class="filtre_ic">
                             <div class="Card">
                                 <div class="CardInner">
@@ -165,12 +172,14 @@ $listeFormations = $formationC->afficherformations();
                                             </svg>
                                         </div>
                                         <div class="InputContainer">
-                                            <input type="search" placeholder="recherche" />
+                                            <input type="search" name="search" placeholder="recherche" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <button type= "submit">search</button>
+                        <form action=""></form>
                     </span>
 
             </li><!-- End Forms Nav -->
@@ -208,7 +217,7 @@ $listeFormations = $formationC->afficherformations();
     <main id="main" class="main">
 
         <div class="" style="padding: 1rem 0rem 2rem 0rem; margin:0rem 0rem 1rem 0rem">
-            <a class="add_course_button" href="">Add New Course</a>
+            <a class="add_course_button" href="FormAjoutFormation.php">Add New Course</a>
         </div>
         <?php
         foreach ($listeFormations as $formation) {
@@ -226,10 +235,10 @@ $listeFormations = $formationC->afficherformations();
                             <div class="col-9">
 
 
-                                <div class="instructor-profile_courses_list">
+                                <div class="instructor-profile_courses_list1">
                                     <div class="course_align_v1">
-                                        <img src="../../assets/images/avecfarah.jpg" alt="Profile" class="courses_list_img">
-                                        <div class="course_align">
+                                        <img src="../../assets/images/img_profil.jpg" alt="Profile" class="courses_list_img">
+                                        <div class="course_align1">
 
                                             <h1 class="course_title"><?php echo $formation['titre_f']; ?></h1>
                                             <?php if (strcmp($formation['statut'], "acceptée") == 0) { ?>
@@ -260,7 +269,7 @@ $listeFormations = $formationC->afficherformations();
 
                                     </div>
 
-                                    <div class="course_align">
+                                    <div class="course_align1">
 
                                         <div class="course_v3">
                                             <div class="course_categorie"><?php echo $formation['filiere']; ?></div>
@@ -270,12 +279,16 @@ $listeFormations = $formationC->afficherformations();
 
                                         <div class="course_button">
                                             <!--show button -->
-                                            <a class="course_button_v2"><i class="fal fa-eye"></i></a>
+                                            <form action="afficherCours.php">
+                                            <button class="course_button_v2"><i class="fal fa-eye"></i></button>
+                                            </form>
                                             <!--update button-->
-                                            <a class="course_button_v2"><i class="far fa-edit"></i></a>
+                                           
+                                           <a href="FormModifierFormation.php?id_formation=<?php echo $formation['id_formation'];?>"><button class="course_button_v2"><i class="far fa-edit"></i></button>
+                                           </a>
                                             <!--delete button -->
+                                            <form action="">
                                             <button class="course_button_v2" style="margin-right:1rem" onclick="delete_show(x = <?php echo 1; ?>)"><i class="far fa-trash-alt"></i></button>
-
                                             <div class="delete_button" id="delete_button<?php echo 1; ?>" style="display:none">
                                                 <div class="delete_button-v1">
                                                     <h4>Are you sure you want to delete this course ?</h4>
@@ -285,6 +298,7 @@ $listeFormations = $formationC->afficherformations();
                                                     </div>
                                                 </div>
                                             </div>
+                                            </form>
                                         </div>
 
 

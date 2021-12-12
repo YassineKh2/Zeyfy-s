@@ -1,5 +1,5 @@
 <?php
-class Formation
+class cours
 { 
     private string $idCours ;
     private string $nomCours;
@@ -7,7 +7,6 @@ class Formation
     private string $dateModificationCours;
     private string $url;
     private string $contenuCours;
-    private string $statut;
     private string $image;
 public function __construct($d,$f,$t,$de,$p,$i){
     $this->nomCours = $d;

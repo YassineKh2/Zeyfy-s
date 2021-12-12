@@ -1,291 +1,329 @@
 <?php
-/*
-include_once("../config.php");
-include '../controller/EnseigantC.php';
-$enseigantC = new EnseigantC();
-$listeEnseignants = $enseigantC->afficherenseignants();
-*/
-?>
-<?php
-include '../../../controller/coursC.php';
-$id=$_GET['id_formation'];
+include 'C:\xampp\htdocs\educaplay\controller\coursC.php';
+
 $coursC = new CoursC();
-/*if ($_GET['statut'] == 'tout' && $_GET['categ'] == 'tout' && $_GET['tem']=='0') {*/
-  $listeCours = $coursC->affichercours($id);
-/*} else if($_GET['tem']=='0'){
-  $listeFormations = $coursC->afficherformationss($_GET['statut'], $_GET['categ']);
-}
-else
-$listeFormations = $coursC->afficherformationsss($_GET['tem']);*/
+
+$listeCours = $coursC->affichercours();
+
 ?>
+
 <html>
 
 <head>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons">
-  <link rel="stylesheet" href="https://unpkg.com/bootstrap-material-design@4.1.1/dist/css/bootstrap-material-design.min.css" integrity="sha384-wXznGJNEXNG1NFsbm0ugrLFMQPWswR3lds2VeinahP8N0zJw9VWSopbjv2x7WCvX" crossorigin="anonymous">
-  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons">
-  <link rel="stylesgeet" href="https://rawgit.com/creativetimofficial/material-kit/master/assets/css/material-kit.css">
-  <link rel="stylesheet" href="../../assets/css/profileens.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EDUCAPLAY - by the ZEYFY's</title>
 
-  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="../../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../assets/bootstrap-icons/bootstrap-icons.css">
+    <!-- Latest compiled and minified CSS -->
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <link rel="stylesheet" href="../../assets/instructor-profile.css">
 
-  <link rel="stylesheet" href="../../assets/css/style1.css">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 
 </head>
 
-<body class="profile-page">
-  <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100" id="sectionsNav">
-    <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html" target="_blank">EducaPlay </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      </div>
+<body>
 
-      <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
-          <li class="dropdown nav-item">
-            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown" aria-expanded="false">
-              <i class="material-icons">apps</i> Components
-            </a>
-            <div class="dropdown-menu dropdown-with-icons">
-              <a href="../index.html" class="dropdown-item">
-                <i class="material-icons">layers</i> All Components
-              </a>
+    <header id="header" class="header fixed-top d-flex align-items-center">
 
-              <a href="https://demos.creative-tim.com/material-kit/docs/2.0/getting-started/introduction.html" class="dropdown-item">
-                <i class="material-icons">content_paste</i> Documentation
-              </a>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">
-              <i class="material-icons">cloud_download</i> Download
+        <div class="d-flex align-items-center justify-content-between">
+            <a href="index.html" class="logo d-flex align-items-center">
+                <img src="../../assets/images/logo.png" width="">
+                <span class="d-none d-lg-block">EducaPlay</span>
             </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://twitter.com/CreativeTim" target="_blank">
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.facebook.com/CreativeTim" target="_blank">
-              <i class="fa fa-facebook-square"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="https://www.instagram.com/CreativeTimOfficial" target="_blank">
-              <i class="fa fa-instagram"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+        </div><!-- End Logo -->
 
-  <div class="page-header header-filter" data-parallax="true" style="background-image:url('http://wallpapere.org/wp-content/uploads/2012/02/black-and-white-city-night.png');"></div>
-  <div class="main main-raised">
-    <div class="profile-content">
-      <?php
-     /* foreach ($listeEnseignants as $enseigant) {*/
-      ?>
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6 ml-auto mr-auto">
-              <div class="profile">
-                <div class="avatar">
-                  <img src="https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTU0NjQzOTk4OTQ4OTkyMzQy/ansel-elgort-poses-for-a-portrait-during-the-baby-driver-premiere-2017-sxsw-conference-and-festivals-on-march-11-2017-in-austin-texas-photo-by-matt-winkelmeyer_getty-imagesfor-sxsw-square.jpg" alt="Circle Image" class="img-raised rounded-circle img-fluid">
-                </div>
-                <div class="name">
-                  <h3 class="title">youssef guetat</h3>
-                  <h6>deseigner</h6>
-                  <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-dribbble"></i></a>
-                  <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
-                  <a href="#pablo" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-pinterest"></i></a>
-                </div>
-              </div>
-            <?php
-          /*}*/
+        <!--  <div class="search-bar">
+            <form class="search-form d-flex align-items-center" method="POST" action="#">
+                <input type="text" name="query" placeholder="Search" title="Enter search keyword">
+                <button type="submit" title="Search"><i class="bi bi-search"></i></button>
+            </form>
+        </div>-->
+        <!-- End Search Bar -->
 
-            ?>
-            </div>
-          </div>
-          <div class="description text-center">
-            <p>An artist of considerable range, Chet Faker — the name taken by Melbourne-raised, Brooklyn-based Nick Murphy — writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
-          </div>
-          <div class="row">
-            <div class="col-md-6 ml-auto mr-auto">
-              <div class="profile-tabs">
-                <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link " href="index1.php">
-                      <i class="material-icons">home</i>
-                      Profile
+        <nav class="header-nav ms-auto ">
+            <ul class="d-flex align-items-center">
+
+                <li class="nav-item d-block d-lg-none">
+                    <a class="nav-link nav-icon search-bar-toggle " href="#">
+                        <i class="bi bi-search"></i>
                     </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link active" href="#works" role="tab" data-toggle="tab">
-                      <i class="material-icons">book</i>
-                      Formations
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="index2.php">
-                      <i class="material-icons">try</i>
-                      Ajouter
-                      formation
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
+                </li><!-- End Search Icon-->
 
-          <div class="tab-content tab-space">
 
-            <div class="tab-pane active text-center gallery" id="works">
+                <li class="nav-item dropdown pe-3">
 
-              <div class="row">
-                <div>
-                  <section class="ftco-section">
-                    <div class="container">
-                      <div class="row justify-content-center">
-                        <div class="col-md-6 text-center mb-4">
-                          <h2 class="heading-section">Votre Formations</h2>
+                    <a class="nav-link nav-profile d-flex align-items-center pe-3 py-1" href="#" data-bs-toggle="dropdown">
+                        <img src="../../assets/images/img_profil.jpg" alt="Profile" class="rounded-circle" style="max-height: 45px;width:45px">
+                        <span class="d-none d-md-block dropdown-toggle ps-2 py-0">GUETAT Youssef</span>
+                    </a><!-- End Profile Iamge Icon -->
+
+                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                        <li class="dropdown-header">
+                            <h6>GUETAT Youssef</h6>
+                            <span>Engineer</span>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-person"></i>
+                                <span>My Profile</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                                <i class="bi bi-gear"></i>
+                                <span>Account Settings</span>
+                            </a>
+                        </li>
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <!--      <li>
+                            <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                                <i class="bi bi-question-circle"></i>
+                                <span>Need Help?</span>
+                            </a>
+                        </li>  -->
+                        <li>
+                            <hr class="dropdown-divider">
+                        </li>
+
+                        <li>
+                            <a class="dropdown-item d-flex align-items-center" href="#">
+                                <i class="bi bi-box-arrow-right"></i>
+                                <span>Sign Out</span>
+                            </a>
+                        </li>
+
+                    </ul><!-- End Profile Dropdown Items -->
+                </li><!-- End Profile Nav -->
+
+            </ul>
+        </nav><!-- End Icons Navigation -->
+
+    </header><!-- End Header -->
+
+    <!-- ======= Sidebar ======= -->
+    <aside id="sidebar" class="sidebar">
+
+        <ul class="sidebar-nav" id="sidebar-nav">
+
+            <li class="nav-item">
+                <span>
+                    <div class="filtre_ic">
+                        <div class="select">
+                            <select name="format" id="format">
+                                <option selected disabled>sélecter une catégorie</option>
+                                <option value="programmation">programmation</option>
+                                <option value="mathématiques">mathématiques</option>
+                                <option value="réseaux">réseaux</option>
+                                <option value="tout">tout</option>
+                            </select>
                         </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-md-12">
-                          <div class="table-wrap">
-
-                            <table class="table">
-                              <thead class="thead-primary">
-                                <tr>
-                                  <form action="filtre.php?tem=0" method="POST">
-                                    <th>
-                                      <div class="select_c">
-                                        <select name="sel" id="sel" class='sel'>
-                                          <option value="acceptée">Acceptées</option>
-                                          <option value="refusée">Refusées</option>
-                                          <option value="en coure">En coures</option>
-                                          <option value="tout">Tout</option>
-                                        </select>
-                                      </div>
-                                    </th>
-                                    <th>
-                                      <div class="select_c1">
-                                        <select name="sel1" id="sel1" class='sel1'>
-                                          <option value="Programmation">Programmation</option>
-                                          <option value="Mathématiques">Mathématiques</option>
-                                          <option value="Réseaux">Réseaux</option>
-                                          <option value="tout">Tout</option>
-                                        </select>
-                                      </div>
-                                    </th>
-                                    <th>
-                                      <button type="submit" value="Submit">Filtrer</button>
-
-                                    </th>
-                                  </form>
-                                  <form action="search.php?statut='0'&categ='0'" method="POST">
-                                  <th><label for="site-search"></label>
-                                    <input type="search" id="site-search" name="search">
-                                  </th>
-                                  <th><button type="submit" value="Submits">Search</button></th>
-                                  </form>
-                                  <th>Quantity</th>
-                                  <th>total</th>
-                                  <th>&nbsp;</th>
-                                </tr>
-                              </thead>
-                              <tbody>
-                                  
-                                <?php
-                                foreach ($listeCours as $cours) {
-                                ?>
-                                  <tr class="alert" role="alert">
-                                    <td>
-                                      <?php
-                                      try {
-                                        $conn = new PDO("mysql:host=localhost;dbname=educaplay;charset=UTF8", 'root', '');
-                                        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); //pour activer l'affichage des erreurs pdo
-                                      } catch (PDOException $e) {
-                                        echo 'ERROR: ' . $e->getMessage();
-                                      }
-                                      $a = $cours['idCours'];
-                                      $sql = "SELECT idCours, image FROM cours WHERE idCours = $a";
-                                      $q = $conn->prepare($sql);
-                                      try {
-                                        $q->execute();
-                                      } catch (Exception $e) {
-                                        die('Erreur:' . $e->getMessage());
-                                      }
-                                      $q->bindColumn(1, $idCours);
-                                      $q->bindColumn(2, $cover, PDO::PARAM_LOB);
-                                      while ($q->fetch()) {
-                                        file_put_contents($idCours . ".jpg", $cover);
-
-
-                                      ?>
-                                        <a href="#" data-toggle="collapse" data-target=".forum-content"> <?php echo "<image src='" . $idCours . ".jpg' class='mr-3 rounded-circle' width='1%' alt='User'>"; ?> </a>
-                                      <?php
-                                      }
-                                      ?>
-                                    </td>
-                                    <td>
-                                      <div class="email">
-                                        <span><?php echo $cours['nomCours']; ?> </span>
-                                        <span><?php echo $cours['url']; ?></span>
-                                      </div>
-                                    </td>
-                                    <td><?php echo $cours['dateCreationCours']; ?></td>
-                                    <td><?php echo $cours['dateModificationCours']; ?></td>
-                                    <td>
-                                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                                        <span aria-hidden="true"><i class="fa fa-close"></i></span>
-                                      </button>
-                                    </td>
-                                  </tr>
-
-                                <?php
-                                }
-                                ?>
-                                
-                              </tbody>
-                            </table>
-                          </div>
+                        <br>
+                        <div class="select">
+                            <select name="format" id="format">
+                                <option selected disabled>sélecter une status</option>
+                                <option value="acceptée">Acceptée</option>
+                                <option value="refusée">Refusée</option>
+                                <option value="en coure">EN Coure</option>
+                                <option value="tout">tout</option>
+                            </select>
                         </div>
-                      </div>
+                        <button class="btnf">Filtrer</button>
                     </div>
-                  </section>
-                </div>
-              </div>
-            </div>
+                </span>
 
-          </div>
+            </li><!-- End Dashboard Nav -->
+            <br><br>
+            <li class="nav-item">
+                <span>
+                    <span>
+                        <div class="filtre_ic">
+                            <div class="Card">
+                                <div class="CardInner">
+                                    <label>Taper un mot clé</label>
+                                    <div class="container">
+                                        <div class="Iconn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                                                <circle cx="11" cy="11" r="8" />
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                            </svg>
+                                        </div>
+                                        <div class="InputContainer">
+                                            <input type="search" placeholder="recherche" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+
+            </li><!-- End Forms Nav -->
+            <br><br>
+            <li class="nav-item">
+                <span>
+                    <span>
+                        <div class="filtre_ic">
+                            <div class="Card">
+                                <div class="CardInner">
+                                    <label>Taper un mot clé</label>
+                                    <div class="container">
+                                        <div class="Iconn">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+                                                <circle cx="11" cy="11" r="8" />
+                                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                                            </svg>
+                                        </div>
+                                        <div class="InputContainer">
+                                            <input type="search" placeholder="recherche" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </span>
+
+            </li><!-- End Forms Nav -->
 
 
+        </ul>
+
+    </aside><!-- End Sidebar-->
+
+    <main id="main" class="main">
+
+        <div class="" style="padding: 1rem 0rem 2rem 0rem; margin:0rem 0rem 1rem 0rem">
+            <a class="add_course_button" href="FormAjoutFormation.php">Add New Course</a>
         </div>
+        <?php
+        foreach ($listeCours as $cours) {
+        ?>
+
+            <section class="section dashboard">
+                <div class="row">
+
+                    <!-- Left side columns -->
+                    <div class="col-lg-12">
+                        <div class="row">
+
+
+                            <!-- Top Selling -->
+                            <div class="col-9">
+
+
+                                <div class="instructor-profile_courses_list1">
+                                    <div class="course_align_v1">
+                                        <img src="uploads/<?php echo $cours['image']?>" alt="Profile" class="courses_list_img">
+                                        <div class="course_align1">
+
+                                            <h1 class="course_title"><?php echo $cours['nomCours']; ?></h1>
+                                           
+                                                <div class="course_status_button ">
+                                                    <?php echo $cours['dateCreationCours']; ?>
+                                                </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="course_align1">
+
+                                        <div class="course_v3">
+                                            <div class="course_categorie"><?php echo $cours['nomCours']; ?></div>
+                                            <div class="course_categorie" style="margin-left:1rem"><?php echo $cours['nomCours']; ?></div>
+
+                                        </div>
+
+                                        <div class="course_button">
+                                            <!--show button -->
+                                            <form action="afficherCours.php">
+                                            <button class="course_button_v2"><i class="fal fa-eye"></i></button>
+                                            </form>
+                                            <!--update button-->
+                                            <form action="modifierFormationA.php">
+                                            <button class="course_button_v2"><i class="far fa-edit"></i></button>
+                                            </form>
+                                            <!--delete button -->
+                                            <form action="">
+                                            <button class="course_button_v2" style="margin-right:1rem" onclick="delete_show(x = <?php echo 1; ?>)"><i class="far fa-trash-alt"></i></button>
+                                            <div class="delete_button" id="delete_button<?php echo 1; ?>" style="display:none">
+                                                <div class="delete_button-v1">
+                                                    <h4>Are you sure you want to delete this course ?</h4>
+                                                    <div class="delete_button-line">
+                                                        <button id="cancel_btn_id<?php echo 1; ?>" onclick="cancel_hide(x = <?php echo 1; ?>)" class="cancel_button">Non, annuler</button>
+                                                        <a id="delete_btn_id" class="delet_button_p" href="">Oui, supprimer </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            </form>
+                                        </div>
+
+
+                                    </div>
+
+
+
+
+
+                                </div>
+
+
+
+
+
+                            </div>
+
+                        </div>
+                    </div><!-- End Top Selling -->
+
+                </div>
+                </div><!-- End Left side columns -->
+
+
+                </div>
+            </section>
+        <?php } ?>
+    </main><!-- End #main -->
+
+    <!--
+<main class=" card-body pb-0">
+    <div class="instructor-profile_courses_list">
+    <div style="color: black;font-size:4rem">sdjkvbhskdvbhsdbv</div>
     </div>
-  </div>
 
-  <footer class="footer text-center ">
-  </footer>
-
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://unpkg.com/popper.js@1.12.6/dist/umd/popper.js" integrity="sha384-fA23ZRQ3G/J53mElWqVJEGJzU0sTs+SvzG8fXVWP+kJQ1lwFAOkcUOysnlKJC33U" crossorigin="anonymous"></script>
-  <script src="https://unpkg.com/bootstrap-material-design@4.1.1/dist/js/bootstrap-material-design.js" integrity="sha384-CauSuKpEqAFajSpkdjv3z9t8E7RlpJ1UP0lKM/+NdtSarroVKu069AlsRPKkFBz9" crossorigin="anonymous"></script>
-  <script scr="../../assets/js/profileens.js"></script>
+</main> -->
 
 
 
+
+    <script src="../../assets/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+    <script>
+        function cancel_hide(x) {
+            $("#delete_button" + x).hide(0)
+        }
+
+        function delete_show(x) {
+            $("#delete_button" + x).show(0)
+        }
+    </script>
 
 </body>
 

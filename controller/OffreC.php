@@ -1,6 +1,6 @@
 <?php
-	include 'C:\xampp\htdocs\formation\config.php';
-	include_once 'C:\xampp\htdocs\formation\model\Offre.php';
+	include 'C:\xampp\htdocs\educaplay\config.php';
+	include_once 'C:\xampp\htdocs\educaplay\model\Offre.php';
 	class OffreC {
 		function afficherOffre(){
 			$sql="SELECT * FROM offres";

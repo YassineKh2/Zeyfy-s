@@ -1,12 +1,22 @@
 .instructor-profile_courses_list{
     min-width: 60rem;
     max-width: 60rem;
-    max-height: 9.83rem;
+    max-height: 300rem;
     background-color: white;
     -webkit-box-shadow: 0 0.2rem 2rem rgb(0 0 0 / 9%);
     box-shadow: 0 0.2rem 2rem rgb(0 0 0 / 9%);
     border-radius: 1rem;
     margin-bottom: 1.5rem;
+}
+.instructor-profile_courses_list1{
+  min-width: 60rem;
+  max-width: 60rem;
+  max-height: 9.9rem;
+  background-color: white;
+  -webkit-box-shadow: 0 0.2rem 2rem rgb(0 0 0 / 9%);
+  box-shadow: 0 0.2rem 2rem rgb(0 0 0 / 9%);
+  border-radius: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .courses_list_img{
@@ -18,6 +28,19 @@ border-radius: 1rem;
     display: flex;
     justify-content: space-between;
     width: 100%;
+    margin: 1rem 1rem 1rem 10rem;
+}
+.course_align1{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: -0.5rem 1rem 1rem 0.5rem;
+}
+.course_alignp{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin: 1rem 1rem 1rem 1rem;
 }
 
 .course_align_v1{
@@ -294,6 +317,7 @@ select {
     margin: 1.4rem 1rem 0rem 0rem;
     padding: 0.25rem 1rem;
     border: none;
+
   }
   .btnf:hover{
       background-color: #002461;
@@ -387,6 +411,11 @@ input {
   -webkit-appearance: none;
   transition: all 240ms ease-out;
   width: 100%;
+  position: relative;
+  left: 18px;
+  margin: 1rem;
+  border-radius: 1rem;
+
 }
 input::placeholder {
   color: #6d7f8f;
@@ -419,4 +448,80 @@ input:focus {
 }
 .InputContainer:after {
   box-shadow: var(--top-shadow);
+}
+.long{
+  border-radius: 1rem;
+  margin: 1rem 1rem 1rem 1rem;
+
+}
+.longn{
+  border-radius: 1rem;
+  margin: 1rem 1rem 1rem 1rem;
+  max-width: 10rem;
+  max-height: 10rem;
+  position: relative;
+  right: 1000px;
+}
+.long-field-textarea {
+  max-width: 10000px;
+  max-height:inherit;
+  padding: 12px 20px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  background-color: #e3edf7;
+  font-size: 16px;
+  resize: none;
+  position: relative;
+  left: 36px;
+  padding: 1rem 1rem 1rem 1rem;
+}
+.cattd{
+position: relative;
+left: 36px;
+}
+.custom-file-input {
+  color: transparent;
+}
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Select some files';
+  color: black;
+  display: inline-block;
+  background: -webkit-linear-gradient(top, #f9f9f9, #e3e3e3);
+  border: 1px solid #999;
+  border-radius: 3px;
+  padding: 5px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active {
+  outline: 0;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9); 
+}
+.placenum{
+  position: relative;
+  right: 250px;
+  top: -17px;
+}
+.posbnt{
+  position:relative;
+  left: 20px;
+}
+.posbnt1{
+  position:relative;
+  left: 300px;
+    top: -52.5px;
 }
