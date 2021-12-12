@@ -1,18 +1,5 @@
 <?php
-/*
-$url = 'C:\Users\Dell\Desktop\front\cvyoussef.docx'; 
-$fichier_nom = basename($url);
-$fichier_contenu = file_get_contents($url);
-$dossier_enregistrement = "level1";
 
-if(file_put_contents($dossier_enregistrement.'.docx', $fichier_contenu)) 
-{ 
-    echo "Fichier téléchargé avec succès"; 
-} 
-else 
-{ 
-    echo "Fichier non téléchargé"; 
-} */
 
 include_once 'C:\xampp\htdocs\educaplay\config.php';
 include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
@@ -69,22 +56,6 @@ try {
 				<pre id="contenuDuCours" value=<?php //echo $cours['idCours']
 												?>><?php //echo $cours['contenuCours']
 																				?>
-	
-	<?php
-				/*
-$url = '../formation/uploads/'.$cours['contenuCours']; 
-$fichier_nom = basename($url);
-$fichier_contenu = file_get_contents($url);
-$dossier_enregistrement = "level1";
-
-if(file_put_contents($dossier_enregistrement.$fichier_nom, $fichier_contenu)) 
-{ 
-    
-} 
-*/
-
-
-	?>
 	<?php
 			}
 	?> 
@@ -92,7 +63,7 @@ if(file_put_contents($dossier_enregistrement.$fichier_nom, $fichier_contenu))
 
 				<a href="templatequiz1.php"> <button class="button-jouer" role="button">Commencez le quiz!</button> </a>
 				<div class="div_tel">
-					<a href="telechargerCours.php"> <button class="button-telecharger" role="button">Télécharger le contenue</button></a>
+					<a href="telechargerCours.php?url=../formation/uploads/<?php echo $cours['contenuCours'];?>"> <button class="button-telecharger" role="button">Télécharger le contenue</button></a>
 					<p class="text_tel">                                      Possibilité1:
 
                 Avec EDUCAPLAY il est possible de
