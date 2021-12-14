@@ -76,14 +76,7 @@ $listejoueurs = $utilisateurc->count_jouer();
                         <span class="title">Chercher jeux</span>
                     </a>
                 </li>
-                <li>
-                    <a href="../Dashboard/jouer.php">
-                        <span class="icon">
-                            <ion-icon name="settings-outline"></ion-icon>
-                        </span>
-                        <span class="title">Jouer</span>
-                    </a>
-                </li>
+              
                 <li>
                 <li>
                     <a href="../Dashboard/dashavis.php">

@@ -53,11 +53,9 @@ foreach($liste as $player){
         <i class="fa fa-times" onclick="hideMenu()"></i>
 <ul>
 
-   
-    <li><a href=""> Plus d'information</a></li>
-    <li><a href="">Reclamation</a></li>
-    <li><a href="">Nous-contacter</a></li>
-    <li><a href="../../html/index.html">Quitter</a></li>
+<li><a href="">ACCUEIL</a></li>
+                    <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
+                    <li><a href="../avis/index.php">CONTACT</a></li>
 </ul>
     </div>
     <i class="fa fa-bars" onclick="showMenu()"></i>

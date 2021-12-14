@@ -54,12 +54,7 @@ $listeJeux=$jeuxC->afficherjeuxs($tem);
                         <span class="title">Chercher jeux</span>
                     </a>
                 </li>
-                <li>
-                    <a href="jouer.php">
-                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                        <span class="title">Jouer</span>
-                    </a>
-                </li>
+                
                 <li>
                 <li>
                     <a href="dashavis.php">

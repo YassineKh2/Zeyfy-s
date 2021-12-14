@@ -34,9 +34,9 @@ $listeFormations = $formationC->afficherformationsc($_GET['categ']);
                 <i class="fa fa-times" onclick="hideMenu()"></i>
                 <ul>
                     <li><a href="">ACCUEIL</a></li>
-                    <li><a href="">PLANS</a></li>
                     <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
                     <li><a href="../avis/index.php">CONTACT</a></li>
+                  
                     
                 </ul>
             </div>

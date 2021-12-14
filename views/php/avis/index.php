@@ -42,6 +42,13 @@ $error = "";
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" href="\educaplay\views\assets\images\logo.png">
   <link rel="stylesheet" href="\educaplay\views\assets\css\main.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../../assets/css/level1.css">
+    <script src="https://kit.fontawesome.com/56a94e38db.js" crossorigin="anonymous"></script>
+
+
+    <link rel="stylesheet" href="../../assets/css/userd.css">
 
 
  
@@ -58,10 +65,9 @@ $error = "";
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
     <ul>
-        <li><a href="">ACCUEIL</a></li>
-        <li><a href="">PLANS</a></li>
-        <li><a href="">FONCTIONNALITES</a></li>
-        <li><a href="">CONTACT</a></li>
+    <li><a href="">ACCUEIL</a></li>
+                    <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
+                    <li><a href="../avis/index.php">CONTACT</a></li>
     </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>

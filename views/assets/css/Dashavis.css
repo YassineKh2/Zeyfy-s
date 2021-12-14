@@ -5,6 +5,11 @@
     box-sizing: border-box;
     font-family: 'Ubuntu',sans-serif;
 }
+.piccc{
+    position:absolute;
+    right: -20px;
+    top: -15px;
+    }
 :root{
     --blue: #287bff;
     --white: #fff;
