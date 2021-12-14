@@ -3,6 +3,9 @@
 include_once 'C:\xampp\htdocs\educaplay\config.php';
 include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
 include_once 'C:\xampp\htdocs\educaplay\model\jeux.php'; 
+include_once 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
+$utilisateurc = new utilisateurc;
+
 //   $sql= "SELECT  * from joueur_score  order by score  desc limit 3";
 $sql="SELECT utilisateurs.nomUtilisateur,utilisateurs.prenomUtilisateur, utilisateurs.sex ,joueur_score.score
  FROM utilisateurs JOIN joueur_score ON utilisateurs.idUtilisateur=joueur_score.idJoueur order by score  desc limit 3";
@@ -22,7 +25,8 @@ foreach($liste as $player){
                 
                 }
 
-
+            //   $_SESSION['user_id']; 
+                
 
 ?>
 
@@ -35,7 +39,11 @@ foreach($liste as $player){
     <title>EDUCAPLAY - by the ZEYFY's</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://kit.fontawesome.com/56a94e38db.js" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/forrr.css">
+    <link rel="stylesheet" href="../../assets/css/userd.css">
 </head>
 <body>
     <section class="header">
@@ -55,7 +63,27 @@ foreach($liste as $player){
     <i class="fa fa-bars" onclick="showMenu()"></i>
 
 </nav>
-
+<?php
+        if ($_SESSION['auth'] == false)
+            echo '<span><a href="../Login/login.php"></a></span>';
+        else {
+            $utilisateur = $utilisateurc->recupererutilisateurinfo($_SESSION['user_id']);
+            echo '<div class="action">
+      <div class="profile" onclick="drop();">
+          <img src="../../assets/images/Userpics/' . $utilisateur['photo'] . '" width="300">
+      </div>
+      <div class="menu">
+          <h3>' . $utilisateur['username'] . '<br><p class="a">Etudient</p></h3>
+         <ul>
+              <li class="fas fa-user"><a href="..\User\profiedash.php">Mon Profile</a></li><br>
+              <li class="far fa-clipboard"><a href="#">Mes Formation</a></li><br>
+              <li class="fas fa-edit"><a href="..\User\settings.php">Paramétres</a></li><br>
+              <li class="fas fa-sign-out-alt"><a href="..\User\singout.php">Deconnection</a></li>
+         </ul>
+      </div>
+  </div>';
+        }
+        ?>
 <div class="text-box">
     <h1>veuillez choisir votre level</h1>
 </div>
@@ -185,6 +213,13 @@ foreach($liste as $player){
 			</div>
 		</footer>
 <!------------ Javascript for Toggle Menu ------------>
+<script>
+        function drop() {
+            const dropmenu = document.querySelector(".menu");
+            dropmenu.classList.toggle('active');
+        }
+    </script>
+
     <script src="../../assets/js/indexlevel.js">
 
 

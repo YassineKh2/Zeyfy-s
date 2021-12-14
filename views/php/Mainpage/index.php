@@ -9,7 +9,7 @@ $formationC = new FormationC();
 if(strcmp($_GET['categ'],'')!=0)
 $listeFormations = $formationC->afficherformationsc($_GET['categ']);
 ?>
-?>
+
 <html lang="en">
 
 <head>
@@ -35,8 +35,9 @@ $listeFormations = $formationC->afficherformationsc($_GET['categ']);
                 <ul>
                     <li><a href="">ACCUEIL</a></li>
                     <li><a href="">PLANS</a></li>
-                    <li><a href="">FONCTIONNALITES</a></li>
-                    <li><a href="">CONTACT</a></li>
+                    <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
+                    <li><a href="../avis/index.php">CONTACT</a></li>
+                    
                 </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
@@ -55,7 +56,7 @@ $listeFormations = $formationC->afficherformationsc($_GET['categ']);
         </div>
         <?php
         if ($_SESSION['auth'] == false)
-            echo '<span><a href="../../Login/login.php"></a></span>';
+            echo '<span><a href="../Login/login.php"></a></span>';
         else {
             $utilisateur = $utilisateurc->recupererutilisateurinfo($_SESSION['user_id']);
             echo '<div class="action">
@@ -74,7 +75,12 @@ $listeFormations = $formationC->afficherformationsc($_GET['categ']);
   </div>';
         }
         ?>
-        <button class="button-get" role="button">GET START</button>
+        <?php  
+         if ($_SESSION['auth'] == false)   
+       echo'<a href="../Login/login.php"> <button class="button-get" role="button">Jouez !</button></a>';
+       else
+       echo'<a href="../Game/indexlevel.php"> <button class="button-get" role="button">Jouez !</button></a>';
+       ?>
     </section>
     <!------------- formation------------>
     <section class="formation">
@@ -153,7 +159,7 @@ $listeFormations = $formationC->afficherformationsc($_GET['categ']);
                 |
                 <a href="#">FONCTIONNALITES</a>
                 |
-                <a href="#">CONTACT</a>
+                <a href="../avis/index.php">CONTACT</a>
             </p>
 
             <p class="footer-company-name">© 2021 Jeu éducatif en ligne.</p>
