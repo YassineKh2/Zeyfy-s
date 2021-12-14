@@ -2,7 +2,11 @@
 include_once 'C:\xampp\htdocs\educaplay\model\avis.php';
 include_once 'C:\xampp\htdocs\educaplay\controller\avisC.php';
 include'C:\xampp\htdocs\educaplay\controller\mail.php';
+include_once 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
+$utilisateurc = new utilisateurc;
+
 $error = "";
+
 
  // create adherent
  $avis = null;
@@ -51,7 +55,10 @@ sendemail($email,$email_content);
   <link rel="stylesheet" href="\educaplay\views\assets\css\main.css">
 
  
- 
+  <script src="https://kit.fontawesome.com/56a94e38db.js" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" href="../../assets/css/userd.css">
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
 
   <title>Reclamation</title>
@@ -64,15 +71,38 @@ sendemail($email,$email_content);
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
     <ul>
-        <li><a href="">ACCUEIL</a></li>
-        <li><a href="">PLANS</a></li>
-        <li><a href="">FONCTIONNALITES</a></li>
-        <li><a href="">CONTACT</a></li>
+    <li><a href="../Mainpage/index.php">ACCUEIL</a></li>
+                    <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
+                    <li><a href="../avis/index.php">CONTACT</a></li>
     </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>
     
     </nav>
+
+    <?php
+        if ($_SESSION['auth'] == false)
+            echo '<span><a href="../Login/login.php"></a></span>';
+        else {
+            $utilisateur = $utilisateurc->recupererutilisateurinfo($_SESSION['user_id']);
+            echo '<div class="action">
+      <div class="profile" onclick="drop();">
+          <img src="../../assets/images/Userpics/' . $utilisateur['photo'] . '" width="300">
+      </div>
+      <div class="menu">
+          <h3>' . $utilisateur['username'] . '<br><p class="a">Etudient</p></h3>
+         <ul>
+              <li class="fas fa-user"><a href="..\User\profiedash.php">Mon Profile</a></li><br>
+              <li class="far fa-clipboard"><a href="#">Mes Formation</a></li><br>
+              <li class="fas fa-edit"><a href="..\User\settings.php">Paramétres</a></li><br>
+              <li class="fas fa-sign-out-alt"><a href="..\User\singout.php">Deconnection</a></li>
+         </ul>
+      </div>
+  </div>';
+        }
+        ?>
+
+
   	<!-- Contact -->
 		<section id="contact">
       <div class="container">
@@ -88,3 +118,12 @@ sendemail($email,$email_content);
      </div>
       
 		</section>
+  <!----------------- script for drop donw menu---------------------->
+  <script>
+        function drop() {
+            const dropmenu = document.querySelector(".menu");
+            dropmenu.classList.toggle('active');
+        }
+    </script>
+    </body>
+    </html>

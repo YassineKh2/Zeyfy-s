@@ -39,7 +39,14 @@ width: 100%;
 }
 
 
-
+.action .menu ul li a{
+  display: inline;
+  text-decoration: none;
+  color: #555;
+   margin-left: 7px;
+   font-weight: 500;
+   transition: 0.5s;
+}
 /*--Contact--*/
 section#contact {
   background-color:#88c3f3;

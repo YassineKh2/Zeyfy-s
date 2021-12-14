@@ -1,6 +1,9 @@
 <?php 
 include_once 'C:\xampp\htdocs\educaplay\model\avis.php';
 include_once 'C:\xampp\htdocs\educaplay\controller\avisC.php';
+
+include_once 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
+$utilisateurc = new utilisateurc;
 $error = "";
 
  // create adherent
@@ -44,11 +47,13 @@ $error = "";
   <link rel="stylesheet" href="\educaplay\views\assets\css\main.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="../../assets/css/level1.css">
+
     <script src="https://kit.fontawesome.com/56a94e38db.js" crossorigin="anonymous"></script>
 
+  <link rel="stylesheet" href="../../assets/css/userd.css">
 
-    <link rel="stylesheet" href="../../assets/css/userd.css">
+
+
 
 
  
@@ -59,13 +64,33 @@ $error = "";
 
 <body>
   <img class="logo" src="\educaplay\views\assets\images\logo.png" alt="">
-  
+  <?php
+        if ($_SESSION['auth'] == false)
+            echo '<span><a href="../Login/login.php"></a></span>';
+        else {
+            $utilisateur = $utilisateurc->recupererutilisateurinfo($_SESSION['user_id']);
+            echo '<div class="action">
+      <div class="profile" onclick="drop();">
+          <img src="../../assets/images/Userpics/' . $utilisateur['photo'] . '" width="300">
+      </div>
+      <div class="menu">
+          <h3>' . $utilisateur['username'] . '<br><p class="a">Etudient</p></h3>
+          <ul>
+          <li class="fas fa-user" aria-hidden="true"><a href="..\User\profiedash.php">Mon Profile</a></li><br>
+          <li class="far fa-clipboard" aria-hidden="true"><a href="#">Mes Formation</a></li><br>
+          <li class="fas fa-edit" aria-hidden="true"><a href="..\User\settings.php">Paramétres</a></li><br>
+          <li class="fas fa-sign-out-alt" aria-hidden="true"><a href="..\User\singout.php">Deconnection</a></li>
+     </ul>
+      </div>
+  </div>';
+        }
+        ?>
   <nav>
         
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
     <ul>
-    <li><a href="">ACCUEIL</a></li>
+    <li><a href="../Mainpage/index.php">ACCUEIL</a></li>
                     <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
                     <li><a href="../avis/index.php">CONTACT</a></li>
     </ul>
@@ -74,7 +99,7 @@ $error = "";
     
     </nav>
 
-
+    
   
   <!-- chiffres -->
   <section id="facts">
@@ -171,7 +196,13 @@ $error = "";
       </div>
     </div>
   </section>
- 
+  <script>
+        function drop() {
+            const dropmenu = document.querySelector(".menu");
+            dropmenu.classList.toggle('active');
+        }
+    </script>
+
 </body>
 
 </html>
