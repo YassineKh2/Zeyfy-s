@@ -48,6 +48,17 @@ class FormationC {
             die('Erreur:' . $e->getMessage());
         }
     }
+    function afficherformationsc($categ){
+        $sql="SELECT * FROM formations WHERE filiere='$categ'";
+        $db = config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch(Exception $e){
+            die('Erreur:' . $e->getMessage());
+        }
+    }
     function supprimerformations($id_formation){
         $sql=" DELETE FROM formations WHERE id_formation=:id_formation";
         $db = config::getConnexion();

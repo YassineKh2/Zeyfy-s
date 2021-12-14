@@ -16,53 +16,67 @@ $listeFormations=$formationC->afficherformationsd();
 <body>
     <div class="container">
         <div class="navigation">
-            <ul>
+        <ul>
                 <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="albums-outline"></ion-icon></span>
+                    <a href="../Mainpage/indexa.php">
+                        <span class="icon"><img src="..\..\images\logo.png" class="piccc" width="150%"></ion-icon></span>
                         <span class="title">Educaplay</span>
                     </a>
                 </li>
                 <li>
-                    <a href="dashboard.php">
+                    <a href="">
                         <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
                         <span class="title">Dashboard</span>
                     </a>
                 </li>
                 <li>
-                    <a href="consumers.php">
+                    <a href="../formation/dashFormation.php">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
-                        <span class="title">Consumers</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
                         <span class="title">Formations</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../Dashboard/users/utilisateur.php">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="title">Utilisateurs</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../Dashboard/afficherjeux.php">
                         <span class="icon"><ion-icon name="chatbubble-outline"></ion-icon></span>
-                        <span class="title">Message</span>
+                        <span class="title">Les Jeux</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
-                        <span class="title">Help</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
+                    <a href="../Dashboard/chercherjeux.php">
                         <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                        <span class="title">Settings</span>
+                        <span class="title">Chercher jeux</span>
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../Dashboard/jouer.php">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title">Jouer</span>
+                    </a>
+                </li>
+                <li>
+                <li>
+                    <a href="../Dashboard/dashavis.php">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title">Les Avis</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../Dashboard/dashreclamation.php">
+                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                        <span class="title">Les Reclamation</span>
+                    </a>
+                </li>
+                <li>
+                <li>
+                    <a href="..\User\singout.php">
                         <span class="icon"><ion-icon name="log-out-outline"></ion-icon></span>
-                        <span class="title">Sing Out</span>
+                        <span class="title">Sign Out</span>
                     </a>
                 </li>
                 
@@ -116,7 +130,7 @@ $listeFormations=$formationC->afficherformationsd();
                                         <td><?php echo $formation['titre_f']; ?></td>
                                         <td><?php echo $formation['prix_f']; ?> Dinar</td>
                                         <td><?php echo $formation['descreptions']; ?></td>
-                                        <td><ion-icon name="download-outline"></td>
+                                        <td><a href="telechargerCours.php?id=<?php $formation['id_formation'];?>"><ion-icon name="download-outline"></td></a>
                                         <td>
                                         <form action="modifierStatut.php" method="POST">
                                         <div class="container">

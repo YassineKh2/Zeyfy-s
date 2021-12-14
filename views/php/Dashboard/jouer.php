@@ -30,6 +30,12 @@ $listeScore=$joueur_score_jeuxC->afficherscore();?>
                     </a>
                 </li>
                 <li>
+                    <a href="../formation/dashFormation.php">
+                        <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
+                        <span class="title">Formations</span>
+                    </a>
+                </li>
+                <li>
                     <a href="users/utilisateur.php">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                         <span class="title">Utilisateurs</span>

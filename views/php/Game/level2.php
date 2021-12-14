@@ -58,7 +58,25 @@ $liste=$db->query($sql);
                         ?> 
      </pre>
    
-     <a href="templatetequiz2.php" >  <button class="button-jouer" role="button">Commencez le quiz!</button>  </a>
+	 <a href="templatequiz1.php"> <button class="button-jouer" role="button">Commencez le quiz!</button> </a>
+				<div class="div_tel">
+					<a href="telechargerCours.php?url=../formation/uploads/<?php echo $cours['contenuCours'];?>"> <button class="button-telecharger" role="button">Télécharger le contenue</button></a>
+					<p class="text_tel">                                      Possibilité1:
+
+                Avec EDUCAPLAY il est possible de
+            télécharger le fichier de cours et terminer 
+                votre lecture sur votre ordinateur.
+					</p>
+				</div>
+				<div class="div_tel1">
+					<a href="telechargerCours.php"> <button class="button-ouvrire" role="button">Ouvrir le contenue avec google docs</button></a>
+					<p class="text_tel1">                                     Possibilité2:
+						
+                    Avec EDUCAPLAY il est possible 
+	  aussi d'ouvrire le fichier de cours et terminer 
+                    votre lecture avec google Docs.
+					</p>
+				</div>
 </div>
 
 
