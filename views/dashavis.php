@@ -21,15 +21,19 @@ $listeavis=$avisC->afficheravis();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashavisr</title>
     <link rel="stylesheet" type="text/css" href="Dashavis.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+    
 </head>
 <body>
     <div class="container">
+
         <div class="navigation">
             <ul>
                 <li>
                     <a href="#">
                         <span class="icon"><ion-icon name="albums-outline"></ion-icon></span>
-                        <span class="title">Educaplay</span>
+                        <span class="title">EducaPlay</span>
                     </a>
                 </li>
                 <li>
@@ -84,13 +88,14 @@ $listeavis=$avisC->afficheravis();
                             <ion-icon name="search-outline"></ion-icon>
                         </label>
                     </div>
+
            
                 
               <div class="details">
                     <div class="recentorders">
                         <div class="cardheader">
-                            <h2>Avis recente</h2>
-                            <a href="#" class="btn">Tout voir</a>
+                            <h2>Avis recent</h2>
+                      
                         </div>
                         <table>
                             <thead>
@@ -98,27 +103,43 @@ $listeavis=$avisC->afficheravis();
                                 <td>Avis</td>
                                 <td>Utilisateur</td>
                                 <td>Date D'ajout</td>
-                                <td>Supprimer</td>
+            
+                                <td>Note</td>
                             </tr>
                         </thead> 
                         <tbody>
-                        <?php // hné t7ot el boucle ely taffichi mté3ek ex foreach hné 7atit for just bech nwarik
+                        <?php 
+                                                $nbr=0;
+
                          foreach ($listeavis as $avis){
                              if($avis['reclamation']==''){
-
-                             
+                          
                         echo '
                             <tr>
                                 <td>'.$avis['contenu'].'</td>
-                                <td>'.$avis['typeAvis'].'</td>
+                                <td></td>
                                 <td>'.$avis['dateAvis'].'</td>
-                                <td><a href="supprimeravis.php?idAvis='.$avis['idAvis'].'" class="btn">Supprimer</a></td>
+                                <td>'.$avis['note'].'</td>
+                                
                             </tr>';
+                            if($avis['nbrN']==0){
+                                $nbr+=1;
+                            }
                         }
+                                  
+                        
                      } ?>
                         </tbody>
                         </table>
-                    
+                        <form action="modifnot.php">
+                        <button type="submit" class="icon-button">
+    <span class="material-icons">notifications</span>
+
+  
+    <span class="icon-button__badge"><?php echo $nbr?></span>
+                            
+  </button>
+  </form>
                     </div>  
             </div>'
             

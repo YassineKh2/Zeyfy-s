@@ -4,8 +4,8 @@
 
 class avisC{
     function ajouteravis($avis){
-        $sql="INSERT INTO avis (contenu,reclamation,dateAvis,typeAvis) 
-        VALUES (:contenu,:reclamation,:dateAvis,:typeAvis)";
+        $sql="INSERT INTO avis (contenu,reclamation,dateAvis,nbrN,note) 
+        VALUES (:contenu,:reclamation,:dateAvis,:nbrN,:note)";
         $db = config::getConnexion();
         try{
             $query = $db->prepare($sql);
@@ -13,9 +13,10 @@ class avisC{
                
                 'contenu' => $avis->getcontenu(),
                 'reclamation' => $avis->getreclamation(),
-                'dateAvis' => $avis->getdateAvis(),
-                'typeAvis' => $avis->gettypeAvis(),
-                
+                /*'dateAvis' => $avis->getdateAvis(),*/
+                'dateAvis' => date("Y/m/d"),
+                'nbrN' => 0,
+                'note'=>$avis->getnote(),
 
             ]);			
         }
@@ -25,7 +26,7 @@ class avisC{
     }
 
     function afficheravis(){
-        $sql="SELECT * FROM avis";
+        $sql="SELECT * FROM avis ORDER BY 	idAvis  DESC";
         $db = config::getConnexion();
         try{
             $liste = $db->query($sql);
@@ -37,8 +38,9 @@ class avisC{
     }
 
 
-    function supprimeravis($idAvis){
-        $sql="DELETE FROM avis WHERE idAvis=:idAvis";
+    function repondreavis($idAvis){
+        //$sql="DELETE FROM avis WHERE idAvis=:idAvis";
+        $sql="UPDATE avis SET repondre = 1 WHERE idAvis='$idAvis'";
         $db = config::getConnexion();
         $req=$db->prepare($sql);
         $req->bindValue(':idAvis', $idAvis);

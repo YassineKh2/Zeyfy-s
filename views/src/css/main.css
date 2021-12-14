@@ -1,3 +1,49 @@
+/*navigateur barre menu*/
+
+nav{
+ 
+  background-color:#88c3f3;
+    display: flex;
+    padding: -2% 2%;
+justify-content: space-between;
+align-items:center;
+left: 200px;
+}
+
+.nav-links{
+    flex: 1;
+    text-align:center;
+    left: 200px;
+    
+
+}
+.nav-links ul li{
+    list-style:none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.nav-links ul li a{
+  color: #FE7062;
+  text-decoration:none;
+  font-size: 20px;
+}
+.nav-links ul li::after{
+content:'';
+width: 0%;
+height: 2px;
+background: #220CB6;
+display:block;
+margin: auto;
+transition: 0.5s;
+}
+.nav-links ul li:hover::after{
+  width: 100%;
+}
+
+
+
+
 
 /*--Contact--*/
 section#contact {
@@ -218,9 +264,18 @@ section#facts .container .avis .bloc:hover {
   color: #f29838;
 }
 
+  /*--logo--*/
+body{
+  position: relative;
+}
+.logo {
+  position: absolute;
+  top: 0 ;
+  left: 0;
+  width: 170px;
 
-
-
+  z-index: 500;
+}
 
 
 

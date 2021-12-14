@@ -9,23 +9,25 @@ $error = "";
  // create an instance of the controller
  $avisC = new avisC();
  if (
-     isset($_POST["contenu"])
+     isset($_POST["contenu"]) && isset($_POST["note"])
       
  
  ) {
      if (
-         !empty($_POST["contenu"])
+         !empty($_POST["contenu"]) && !empty($_POST["note"])
      ) {
          $avis = new avis(
              $_POST['contenu'],
-             '',22/01/2021,''
+             '',22/01/2021,0,
+             $_POST['note']
+
            
          );
          $avisC->ajouteravis($avis);
          
+         
      }
-     else
-         $error = "Missing information";
+     
  }
 
 
@@ -49,53 +51,30 @@ $error = "";
 </head>
 
 <body>
+  <img class="logo" src=".\src\images\logo.png" alt="">
   
-
-  	<!-- Contact -->
-		<section id="contact">
-      <div class="container">
-        <div class="title">
-          <h6>Une question ? un conseil ?</h6>
-          <h3>Contactez-nous</h3>
-        </div>
-        <form  method="POST">
-          
-          <textarea name="contenu" placeholder="Entrer votre avis"></textarea>
-
-          
-              
-       
-          <button type="submit">Envoyer</button>  
-
-        </form>
-      </div>
-      
+  <nav>
         
-     
-  
-      
-      
-		</section>
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+    <ul>
+        <li><a href="">ACCUEIL</a></li>
+        <li><a href="">PLANS</a></li>
+        <li><a href="">FONCTIONNALITES</a></li>
+        <li><a href="">CONTACT</a></li>
+    </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
     
-<!-- checkboxs -->
-<section id="contact">
-<div class="container">
-    <div class="title">
-            <h6>Vous avez une Reclamation ?</h6>
-      </div>
-                      <form  method="POST">
-          
-                         <button type="submit"><a href="reclamation.php">Reclamation</button> <a>
-                         
-                    </form>
-                
-  </div>    
-</section >        
-<!-- chiffres -->
-		<section id="facts">
+    </nav>
+
+
+  
+  <!-- chiffres -->
+  <section id="facts">
 			
 			<div class="container">
-				<h3>Eduplay en quelques chiffres</h3>
+				<h3>EducaPlay en quelques chiffres</h3>
 				<div class="avis">
 					<div class="bloc">
 						<h3>28K+</h3>
@@ -112,6 +91,40 @@ $error = "";
 		</section>
 		
     
+  	<!-- Contact -->
+
+		<section id="contact">
+      <div class="container">
+        <div class="title">
+          <h6>Une question ? un conseil ?</h6>
+          <h3>Contactez-nous</h3>
+        </div>
+        <form  method="POST">
+          
+          <textarea name="contenu" placeholder="Entrer votre avis"></textarea>
+         
+
+          <select name="note" >
+              <option value=""selected hidden>Donner nous un score sur 5</option>
+              <option value="0">0</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+               <option value="3">3</option>
+               <option value="4">4</option>
+              <option value="5">5</option>
+              
+          </select>
+
+
+          <button type="submit">Envoyer</button>  
+          
+        </form>
+      </div>
+      
+		</section>
+    
+       
+
 		
  	<!-- les avis des clients -->
   <section id="reviews" class="container">
@@ -121,7 +134,7 @@ $error = "";
         <header>
           <img src="https://picsum.photos/300/300?random=1" alt="person-1">
           <div>
-            <h3 class="title-3">Ahmed jrd</h3>
+            
             
           </div>
         </header>
@@ -132,7 +145,7 @@ $error = "";
         <header>
           <img src="https://picsum.photos/300/300?random=2" alt="person-2">
           <div>
-            <h3 class="title-3">Maryem ded</h3>
+           
             
           </div>
         </header>
@@ -143,7 +156,7 @@ $error = "";
         <header>
           <img src="https://picsum.photos/300/300?random=3" alt="person-3">
           <div>
-            <h3 class="title-3">Mohamed arr</h3>
+        
            
           </div>
         </header>

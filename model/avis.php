@@ -5,14 +5,16 @@ class avis
     private string $contenu;
     private string $reclamation;
     private string $dateAvis;
-    private string $typeAvis;
+    private string $nbrN;
     private string $idUtilisateur;
-public function __construct($n,$p,$m,$f){
+    private $note;
+public function __construct($n,$p,$m,$f,$s){
    
     $this->contenu = $n;
     $this->reclamation = $p;
     $this->dateAvis = $m;
-    $this->typeAvis = $f;
+    $this->nbrN = $f;
+    $this->note = $s;
    
 }
 public function getidAvis(){
@@ -27,11 +29,14 @@ public function getreclamation(){
 public function getdateAvis(){
     return $this->dateAvis ;
 }
-public function gettypeAvis(){
-    return $this->typeAvis ;
+public function getnbrN(){
+    return $this->nbrN ;
 }
 public function getidUtilisateur(){
     return $this->idUtilisateur ;
+}
+public function getnote(){
+    return $this->note ;
 }
 
 
@@ -48,11 +53,14 @@ public function setreclamation(){
 public function setdateAvis(){
     $this->dateAvis = $dateAvis ;
 }
-public function settypeAvis(){
-    $this->typeAvis = $typeAvis ;
+public function setnbrN(){
+    $this->nbrN = $nbrN ;
 }
 public function setidUtilisateur(){
     $this->idUtilisateur = $idUtilisateur ;
+}
+public function setnote(){
+    $this->note = $note ;
 }
 }
 ?>

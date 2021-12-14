@@ -19,6 +19,7 @@ $listeavis=$avisC->afficheravis();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashreclamation</title>
     <link rel="stylesheet" type="text/css" href="Dashavis.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <div class="container">
@@ -87,36 +88,72 @@ $listeavis=$avisC->afficheravis();
               <div class="details">
                     <div class="recentorders">
                         <div class="cardheader">
-                            <h2>reclamation recente</h2>
-                            <a href="#" class="btn">Tout voir</a>
+                            <h2>Reclamation recente</h2>
+                            
                         </div>
                         <table>
                             <thead>
                             <tr>
-                                <td>reclamation</td>
+                                <td>Reclamation</td>
                                 <td>Utilisateur</td>
                                 <td>Date D'ajout</td>
-                                <td>Supprimer</td>
+                                <td>Traitement</td>
+                                <td>Action</td>
                             </tr>
                         </thead> 
                         <tbody>
-                        <?php // hné t7ot el boucle ely taffichi mté3ek ex foreach hné 7atit for just bech nwarik
-                         foreach ($listeavis as $avis){
-                            if($avis['contenu']==''){
-                        echo '
-                            <tr>
-                                <td>'.$avis['reclamation'].'</td>
-                                <td>'.$avis['typeAvis'].'</td>
-                                <td>'.$avis['dateAvis'].'</td>
-                                <td><a href="supprimerReclamation.php?idAvis='.$avis['idAvis'].'" class="btn">Supprimer</a></td>
-                            </tr>';
-                        }
-                     } ?>
+                    
+            <?php  
+            $nbr=0;
+            foreach ($listeavis as $avis){
+                if($avis['contenu']==''){
+            ?>
+                                <tr>
+                                <td><?php echo $avis['reclamation'];?></td>
+                                <td></td>
+                                <td><?php echo $avis['dateAvis'];?></td>
+                                <?php 
+                                    if($avis['repondre'] == 0){
+                                ?>
+                                <td><a href="" class="btn">En cours</a></td>
+
+                                <?php }else{?>
+                                    <td><a href="" class="btn">Traiter</a></td>
+
+                                <?php } ?>
+                                <td><a href="supprimerReclamation.php?idAvis=<?php echo $avis['idAvis'];?>" class="btn">repondre</a></td>
+                               
+                                
+                            </tr>
+
+                
+            <?php
+                if($avis['nbrN']==0){
+                    $nbr+=1;
+                }
+            }
+            } ?>
+               
                         </tbody>
                         </table>
-                    
+                        <form action="modifrec.php">
+                        <button type="submit" class="icon-button">
+    <span class="material-icons">notifications</span>
+
+  
+    <span class="icon-button__badge"><?php echo $nbr?></span>
+                            
+  </button>
+  </form>
                     </div>  
             </div>'
+
+
+
+
+
+
+
             
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

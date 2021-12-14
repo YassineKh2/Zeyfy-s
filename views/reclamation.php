@@ -1,6 +1,7 @@
 <?php 
 include_once 'C:\xampp\htdocs\projet\model\avis.php';
 include_once 'C:\xampp\htdocs\projet\controller\avisC.php';
+include'../controller/mail.php';
 $error = "";
 
  // create adherent
@@ -17,15 +18,23 @@ $error = "";
          !empty($_POST["reclamation"])
      ) {
          $avis = new avis(
-             '',$_POST['reclamation'],22/01/2021,''
+             '',$_POST['reclamation'],22/01/2021,0,''
            
          );
          $avisC->ajouteravis($avis);
-         
+        
      }
-     else
-         $error = "Missing information";
+  
  }
+ $email='ziedghanem30@gmail.com';
+ $email_content = array(
+    'Subject' => 'IMPORTANT!! ETUDIER RECLAMATION by EDUCAPLAY',
+    'body' => "Bonjour Mr/Mme zied,
+    votre réclamation est en coure de traitement.
+    cordialement,
+    EDUCAPLAY"
+);
+sendemail($email,$email_content);
 
 
 
@@ -49,7 +58,21 @@ $error = "";
 </head>
 
 <body>
-
+       <img class="logo" src=".\src\images\logo.png" alt="">
+       <nav>
+        
+        <div class="nav-links" id="navLinks">
+            <i class="fa fa-times" onclick="hideMenu()"></i>
+    <ul>
+        <li><a href="">ACCUEIL</a></li>
+        <li><a href="">PLANS</a></li>
+        <li><a href="">FONCTIONNALITES</a></li>
+        <li><a href="">CONTACT</a></li>
+    </ul>
+        </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+    
+    </nav>
   	<!-- Contact -->
 		<section id="contact">
       <div class="container">
