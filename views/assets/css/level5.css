@@ -620,8 +620,8 @@ body {
      {
      
        position:relative;
-       top:10Px;
-       left : 543px;
+       top:54Px;
+       left : -897px;
      
      }
    
@@ -629,8 +629,8 @@ body {
      {
      
        position:relative;
-       top:10Px;
-       left : 543px;
+       top:54Px;
+       left : -899px;
      
      }
      
@@ -639,29 +639,29 @@ body {
      
        position:relative;
        top:54Px;
-       left : -358px;
+       left : 0px;
      
      }
  
  
     
-     #indice12
+      #indice12
      {
      
        position:relative;
        top:54Px;
-       left : -358px;
+       left : 0px;
      
-     }
+     } 
   
     
      
-     #indice13
+      #indice13
      {
      
        position:relative;
        top:54px;
-       left : -358px;
+       left : 0px;
      
      } 
  
@@ -672,28 +672,28 @@ body {
      
        position:relative;
        top:54px;
-       left : -358px;
+       left : 0px;
      
      } 
      
-     #indice15
+      #indice15
      {
      
        position:relative;
        top:54px;
-       left : -356px;
+       left : 0px;
      
-     }
- 
+     } 
+  
      
-     #indice16
+      #indice16
      {
      
        position:relative;
-       top:92px;
-       left : -1255px;
+       top:54px;
+       left : 0px;
      
-     }
+     } 
      .numberBOX2 {
       background-color: #220CB6;
       color:black;
@@ -862,6 +862,11 @@ body {
      ::-webkit-input-placeholder {
       color: #f57200;
     }
+
+    #b1{
+      color: #f57200;
+
+    }
     
     button {
       background-color: #220CB6;
@@ -869,10 +874,26 @@ body {
     color: white;
     height: 30px;
     width: 110px;
-    top:300px;
+    top:30px;
     left: 20px;
     border-radius: 10px 08px 10px 08px;
     }
+
+   .svggg{
+position: relative;
+top: -1078px;
+left: 1298px; 
+z-index: 500;
+
+    }
+    .svgg{
+      position: relative;
+      top: -1078px;
+      left: 1298px; 
+      z-index: 500;
+      
+          }
+          
     
     input[type=longtext], select {
       width: 176px;  
@@ -911,4 +932,3 @@ body {
         position: relative;
         top: 740px;
     }
-    
