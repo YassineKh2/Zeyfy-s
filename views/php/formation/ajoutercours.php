@@ -1,5 +1,13 @@
 <?php
 include 'C:\xampp\htdocs\educaplay\controller\coursC.php';
+include '../../../controller/FormationC.php';
+
+$formationC=new FormationC();
+$listeFormations=$formationC->afficherformationssss();
+foreach($listeFormations as $formation){
+    $idF=$formation['id_formation'];
+}
+
 $coursC=new CoursC();
 //date_default_timezone_set('Europe/Paris');
 $date1 = date('Y-m-d');
@@ -55,7 +63,7 @@ if(
     }
     
 
-    $cours = new cours($_POST['cours1'],$date1,'','',$new_img_name,$new_img_name1);
+    $cours = new cours($_POST['cours1'],$date1,'',$idF,$new_img_name,$new_img_name1);
     $coursC->ajoutercours($cours);
 
 
@@ -105,7 +113,7 @@ if(
     }
     
 
-    $cours = new cours($_POST['cours2'],$date1,'','',$new_img_name2,$new_img_name11);
+    $cours = new cours($_POST['cours2'],$date1,'',$idF,$new_img_name2,$new_img_name11);
     $coursC->ajoutercours($cours);
 
     /*----------------------cours3-------------------------------------------*/
@@ -152,7 +160,7 @@ if(
     }
     
 
-    $cours = new cours($_POST['cours3'],$date1,'','',$new_img_name3,$new_img_name111);
+    $cours = new cours($_POST['cours3'],$date1,'',$idF,$new_img_name3,$new_img_name111);
     $coursC->ajoutercours($cours);
 
 
@@ -201,7 +209,7 @@ if(
     }
     
 
-    $cours = new cours($_POST['cours4'],$date1,'','',$new_img_name4,$new_img_name1111);
+    $cours = new cours($_POST['cours4'],$date1,'',$idF,$new_img_name4,$new_img_name1111);
     $coursC->ajoutercours($cours);
  
 }

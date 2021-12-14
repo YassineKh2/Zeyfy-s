@@ -1,5 +1,5 @@
 <?php
-include 'C:\xampp\htdocs\educaplay\config.php';
+include_once 'C:\xampp\htdocs\educaplay\config.php';
 include 'C:\xampp\htdocs\educaplay\model\utilisateurs.php';
 class utilisateurc{
     function recupererutilisateur(){
@@ -137,6 +137,21 @@ function modifierimage($photo,$id)
         echo 'Erreur: '.$e->getMessage();
     }			
 
+}
+/********************************************Function count jouer*****************************************/
+Function count_jouer(){
+
+	$sql="SELECT count(idJoueur) FROM joueur " ;
+    $db = config::getConnexion();
+    try{
+        $query = $db->query($sql);
+        $query->execute();
+   	    $jouer_number =$query->fetchColumn();
+        return $jouer_number;
+    }
+    catch(Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }   
 }
 }
 ?>

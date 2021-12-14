@@ -15,6 +15,17 @@ class FormationC {
             die('Erreur:' . $e->getMessage());
         }
     }
+    function afficherformationssss(){
+        $sql="SELECT * FROM formations order by id_formation desc limit 1";
+        $db = config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+            return $liste;
+        }
+        catch(Exception $e){
+            die('Erreur:' . $e->getMessage());
+        }
+    }
     function afficherformationss($sta,$categ){
         $sql="SELECT * FROM formations WHERE statut = '$sta' AND filiere = '$categ'";
         $db = config::getConnexion();
@@ -139,6 +150,52 @@ $formations=$query->fetch();
 return $formations;
 }catch (Exception $e){
     $e->getMessage();}
+}
+
+/********************************************Function count prog*****************************************/
+Function count_prog(){
+
+	$sql="SELECT count(id_formation) FROM formations WHERE filiere='programmation' " ;
+    $db = config::getConnexion();
+    try{
+        $query = $db->query($sql);
+        $query->execute();
+   	    $prog_number =$query->fetchColumn();
+        return $prog_number;
+    }
+    catch(Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }   
+}
+/********************************************Function count math*****************************************/
+Function count_math(){
+
+	$sql="SELECT count(id_formation) FROM formations WHERE filiere='mathématiques' " ;
+    $db = config::getConnexion();
+    try{
+        $query = $db->query($sql);
+        $query->execute();
+   	    $math_number =$query->fetchColumn();
+        return $math_number;
+    }
+    catch(Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }   
+}
+/********************************************Function count res*****************************************/
+Function count_res(){
+
+	$sql="SELECT count(id_formation) FROM formations WHERE filiere='réseaux' " ;
+    $db = config::getConnexion();
+    try{
+        $query = $db->query($sql);
+        $query->execute();
+   	    $res_number =$query->fetchColumn();
+        return $res_number;
+    }
+    catch(Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }   
 }
 }
 ?>

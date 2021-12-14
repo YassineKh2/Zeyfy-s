@@ -1,6 +1,6 @@
 <?php
-session_start();
-include_once("../config.php");
+
+include_once 'C:\xampp\htdocs\educaplay\config.php';
 include '../model/Enseigant.php';
 class EnseigantC {
     function afficherenseignants(){

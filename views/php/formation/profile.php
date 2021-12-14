@@ -160,30 +160,17 @@ $listeFormations = $formationC->afficherformationsss($_GET['tem']);
             <li class="nav-item">
                     <span>
                     <form action="search.php?statut=0&categ=0" method="POST">
-                        <div class="filtre_ic">
-                            <div class="Card">
-                                <div class="CardInner">
-                                    <label>Taper un mot clé</label>
-                                    <div class="container">
-                                        <div class="Iconn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#657789" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
-                                                <circle cx="11" cy="11" r="8" />
-                                                <line x1="21" y1="21" x2="16.65" y2="16.65" />
-                                            </svg>
-                                        </div>
+                   
                                         <div class="InputContainer">
-                                            <input type="search" name="search" placeholder="recherche" />
+                                            <input type="text" class="search_pos" name="search" placeholder="recherche" />
+                                            <a href=""><button type="submit" class="search_button_v2"><i class="far fa-search"></i></button>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button type= "submit">search</button>
-                        <form action=""></form>
+                      
+                        </form>
                     </span>
 
             </li><!-- End Forms Nav -->
-            <br><br>
+           <!--- <br><br>
             <li class="nav-item">
                 <span>
                     <span>
@@ -208,8 +195,6 @@ $listeFormations = $formationC->afficherformationsss($_GET['tem']);
                     </span>
 
             </li><!-- End Forms Nav -->
-
-
         </ul>
 
     </aside><!-- End Sidebar-->
@@ -237,7 +222,7 @@ $listeFormations = $formationC->afficherformationsss($_GET['tem']);
 
                                 <div class="instructor-profile_courses_list1">
                                     <div class="course_align_v1">
-                                        <img src="../../assets/images/img_profil.jpg" alt="Profile" class="courses_list_img">
+                                        <img src="uploads/<?php echo $formation['image'];?>" alt="Profile" class="courses_list_img">
                                         <div class="course_align1">
 
                                             <h1 class="course_title"><?php echo $formation['titre_f']; ?></h1>
@@ -279,9 +264,8 @@ $listeFormations = $formationC->afficherformationsss($_GET['tem']);
 
                                         <div class="course_button">
                                             <!--show button -->
-                                            <form action="afficherCours.php">
-                                            <button class="course_button_v2"><i class="fal fa-eye"></i></button>
-                                            </form>
+                                            <a href="afficherCours.php?idFormation=<?php echo $formation['id_formation']; ?>"><button class="course_button_v2"><i class="fal fa-eye"></i></button></a>
+
                                             <!--update button-->
                                            
                                            <a href="FormModifierFormation.php?id_formation=<?php echo $formation['id_formation'];?>"><button class="course_button_v2"><i class="far fa-edit"></i></button>

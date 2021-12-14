@@ -12,6 +12,7 @@ $listeFormations=$formationC->afficherformations();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../../assets/css/dashboardyo.css">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -145,7 +146,79 @@ $listeFormations=$formationC->afficherformations();
                             </div>  
                             
     </div>
+    <div class="details">
+                <!---- Order list -->
+                <div class="recentorders">
+                    <div class="cardheader">
+                        <h2>Charts</h2>
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <br><br>
+                            </tr>
+                            <tr>
+                                <canvas id="doughnut-chart" width="800" height="200"></canvas>
+                            </tr>
+                            <tr>
+                                <br><br>
+                            </tr>
+                            <tr>
+                                <canvas id="bar-chart-horizontal" width="800" height="200"></canvas>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+            <script>
+
+                new Chart(document.getElementById("doughnut-chart"), {
+                    type: 'doughnut',
+                    data: {
+                        labels: ["Programmation", "Mathématiques", "Réseaux"],
+                        datasets: [{
+                            label: "Population (millions)",
+                            backgroundColor: ["#3e95cd", "#8e5ea2", "#3cba9f"],
+                            data: [<?php echo $listeprog;?>, <?php echo $listemath;?>, <?php echo $listeres;?>]
+                        }]
+                    },
+                    options: {
+                        title: {
+                            display: true,
+                            text: 'Nombre des formations de chaque categorie'
+                        }
+                    }
+                });
+
+                new Chart(document.getElementById("bar-chart-horizontal"), {
+                    type: 'horizontalBar',
+                    data: {
+                        labels: ["Joueurs", "Enseignants"],
+                        datasets: [{
+                            label: "Population (millions)",
+                            backgroundColor: ["#3e95cd", "#8e5ea2"],
+                            data: [<?php echo $listejoueurs;?>, <?php echo $listeenseignants;?>]
+                        }]
+                    },
+                    options: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Nombre des Utilisateurs'
+                        }
+                    }
+                });
+            </script>
 
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

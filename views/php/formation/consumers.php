@@ -93,12 +93,12 @@
   new Chart(document.getElementById("doughnut-chart"), {
     type: 'doughnut',
     data: {
-      labels: ["Programmation", "Web", "Mathematiques", "Réseau", "Markiting"],
+      labels: ["Programmation", "Mathématiques", "Réseaux"],
       datasets: [
         {
           label: "Population (millions)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: [2478,5267,734,784,433]
+          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f"],
+          data: [2478,5267,734]
         }
       ]
     },
@@ -113,12 +113,12 @@
 new Chart(document.getElementById("bar-chart-horizontal"), {
     type: 'horizontalBar',
     data: {
-        labels: ["Programmation", "Web", "Mathematiques", "Réseau", "Markiting"],
+        labels: ["Joueurs", "Enseignants"],
       datasets: [
         {
           label: "Population (millions)",
-          backgroundColor: ["#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850"],
-          data: [2478,5267,734,784,433]
+          backgroundColor: ["#3e95cd", "#8e5ea2"],
+          data: [2478,5267]
         }
       ]
     },

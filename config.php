@@ -1,5 +1,5 @@
 <?php
-session_start();  
+
   class config {
     private static $pdo = NULL;
 

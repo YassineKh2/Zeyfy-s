@@ -32,5 +32,20 @@ function recupererenseignant($idEnseignant){
         die('Erreur: '.$e->getMessage());
     }
 }
+/********************************************Function count ens*****************************************/
+Function count_ens(){
+
+	$sql="SELECT count(idEnseignant) FROM enseignant " ;
+    $db = config::getConnexion();
+    try{
+        $query = $db->query($sql);
+        $query->execute();
+   	    $ens_number =$query->fetchColumn();
+        return $ens_number;
+    }
+    catch(Exception $e){
+        die('Erreur: '.$e->getMessage());
+    }   
+}
 }
 ?>

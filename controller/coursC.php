@@ -16,8 +16,8 @@ class CoursC {
     }
     function ajoutercours($cours){
 
-        $sql = "INSERT INTO cours (nomCours,dateCreationCours, dateModificationCours, url,contenuCours,image)
-                  VALUES (:nomCours, :dateCreationCours, :dateModificationCours, :url, :contenuCours, :image)";
+        $sql = "INSERT INTO cours (nomCours,dateCreationCours, dateModificationCours, idFormation,contenuCours,image)
+                  VALUES (:nomCours, :dateCreationCours, :dateModificationCours, :idFormation, :contenuCours, :image)";
      $db = config::getConnexion();
      try{
          $query = $db->prepare($sql);
@@ -25,7 +25,7 @@ class CoursC {
              'nomCours'=> $cours->getnomCours(),
              'dateCreationCours'=> $cours->getdateCreationCours(),
              'dateModificationCours'=> $cours->getdateModificationCours(),
-             'url'=> $cours->geturl(),
+             'idFormation'=> $cours->geturl(),
              'contenuCours'=> $cours->getcontenuCours(),
              'image'=> $cours->getimage()
          ]);

@@ -2,7 +2,7 @@
 include 'C:\xampp\htdocs\educaplay\controller\coursC.php';
 
 $coursC = new CoursC();
-
+$id=$_GET["idFormation"];
 $listeCours = $coursC->affichercours();
 
 ?>
@@ -212,6 +212,7 @@ $listeCours = $coursC->affichercours();
         </div>
         <?php
         foreach ($listeCours as $cours) {
+            if($cours['idFormation']==$id){
         ?>
 
             <section class="section dashboard">
@@ -297,7 +298,7 @@ $listeCours = $coursC->affichercours();
 
                 </div>
             </section>
-        <?php } ?>
+        <?php }} ?>
     </main><!-- End #main -->
 
     <!--

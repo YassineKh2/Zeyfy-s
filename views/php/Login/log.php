@@ -4,7 +4,7 @@ $type=$_GET['type'];
     if($_SESSION['etat']==NULL)
     {
         if($type==0)
-        header('Location:..\Mainpage\index.php');
+        header('Location:..\Mainpage\index.php?categ=tout');
         if($type==1)
         header('Location:..\formation\profile.php?statut=tout&categ=tout&tem=0');
     }
