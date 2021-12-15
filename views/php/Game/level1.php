@@ -64,7 +64,7 @@ try {
 	?> 
      </pre>
 
-				<a href="templatequiz1.php"> <button class="button-jouer" role="button">Commencez le quiz!</button> </a>
+				<a href="templatequiz1.php?idCours=<?php echo $cours['idCours'];?>"> <button class="button-jouer" role="button">Commencez le quiz!</button> </a>
 				<div class="div_tel">
 					<a href="telechargerCours.php?url=../formation/uploads/<?php echo $cours['contenuCours'];?>&level=<?php echo $l?>&id_formation=<?php echo $_GET['id_formation'];?>&IdCategorie=<?php echo $_GET['IdCategorie'];?>"> <button class="button-telecharger" role="button">Télécharger le contenue</button></a>
 					<p class="text_tel">                                      Possibilité1:

@@ -269,10 +269,11 @@
         <!-- FIM INDICADORES -->
 
         <div class="botoes">
-            <button type="button" id="valider">Valider</button>
+            <button type="button" id="valider">Inserer</button>
             <button type="reset">Re-commencer </button>
             <div id="correctWords" style="color: #fff">
             </div>
+            <a href="../../php/formation/profile.php?statut=tout&categ=tout&tem=0"><button type="button" class="validate">Valider</button></a>
         </div>
 
      

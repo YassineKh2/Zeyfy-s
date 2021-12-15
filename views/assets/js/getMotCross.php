@@ -22,10 +22,11 @@ for($i=1;$i<= $qty;$i++){
     $result=mysqli_query($conn,$sql);
    
  }
- header("Location:../../php/formation/profile.php?statut=tout&categ=tout&tem=0");
-$x=1;
-// echo "${x}i";
-// echo "$qty";
-// echo "$sql";
+
+
+ $x=1;
+ echo "${x}i";
+echo "$qty";
+echo "$sql";
 
 ?>
