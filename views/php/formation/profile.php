@@ -1,5 +1,12 @@
 <?php
 include 'C:\xampp\htdocs\educaplay\controller\FormationC.php';
+include 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
+include 'C:\xampp\htdocs\educaplay\controller\enseignantC.php';
+if($_SESSION['auth']==false)
+header('Location:..\Login\login.php');
+$enseignantc= new enseignantc();
+$utilisateur = null;
+$utilisateurc = new utilisateurc();
 
 $formationC = new FormationC();
 if ($_GET['statut'] == 'tout' && $_GET['categ'] == 'tout' && $_GET['tem']=='0') {
@@ -10,7 +17,7 @@ if ($_GET['statut'] == 'tout' && $_GET['categ'] == 'tout' && $_GET['tem']=='0') 
 else
 $listeFormations = $formationC->afficherformationsss($_GET['tem']);
 ?>
-?>
+
 
 <html>
 
@@ -63,22 +70,32 @@ $listeFormations = $formationC->afficherformationsss($_GET['tem']);
 
                 <li class="nav-item dropdown pe-3">
 
-                    <a class="nav-link nav-profile d-flex align-items-center pe-3 py-1" href="#" data-bs-toggle="dropdown">
-                        <img src="../../assets/images/img_profil.jpg" alt="Profile" class="rounded-circle" style="max-height: 45px;width:45px">
-                        <span class="d-none d-md-block dropdown-toggle ps-2 py-0">GUETAT Youssef</span>
-                    </a><!-- End Profile Iamge Icon -->
+                <?php $utilisateur = $utilisateurc->recupererutilisateurinfo($_SESSION['user_id']);
+    $type="";
+    if($utilisateur['typee']==0)
+        $type="Etudiant";
+    else
+    {
+    $enseignant=$enseignantc->recupererenseignant($_SESSION['user_id']);
+$type=$enseignant['etude'];
+    }
+    ?>
+                        <a class="nav-link nav-profile d-flex align-items-center pe-3 py-1" href="#" data-bs-toggle="dropdown">
+                            <img src="../../assets/images/Userpics/<?php echo $utilisateur['photo']?>" alt="Profile" class="rounded-circle" style="max-height: 45px;width:45px">
+                            <span class="d-none d-md-block dropdown-toggle ps-2 py-0"><?php echo $utilisateur['nomUtilisateur']." ".$utilisateur['prenomUtilisateur'] ?></span>
+                        </a><!-- End Profile Iamge Icon -->
 
-                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
-                        <li class="dropdown-header">
-                            <h6>GUETAT Youssef</h6>
-                            <span>Engineer</span>
-                        </li>
+                        <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+                            <li class="dropdown-header">
+                                <h6><?php echo $utilisateur['nomUtilisateur']." ".$utilisateur['prenomUtilisateur'] ?></h6>
+                                <span><?php echo $type ?></span>
+                            </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <a class="dropdown-item d-flex align-items-center" href="../User/profileE.php">
                                 <i class="bi bi-person"></i>
                                 <span>My Profile</span>
                             </a>
@@ -88,7 +105,7 @@ $listeFormations = $formationC->afficherformationsss($_GET['tem']);
                         </li>
 
                         <li>
-                            <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                            <a class="dropdown-item d-flex align-items-center" href="../User/settingE.php">
                                 <i class="bi bi-gear"></i>
                                 <span>Account Settings</span>
                             </a>

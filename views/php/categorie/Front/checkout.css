@@ -296,6 +296,8 @@ transition: 0.5s;
       font-family: font-bold;
       font-size: 12px;
       border-radius: 3px;
+      position: relative;
+    left: 30px;
     }
   
     .remove-product:hover {

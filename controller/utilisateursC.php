@@ -1,6 +1,6 @@
 <?php
 include_once 'C:\xampp\htdocs\educaplay\config.php';
-include 'C:\xampp\htdocs\educaplay\model\utilisateurs.php';
+include_once 'C:\xampp\htdocs\educaplay\model\utilisateurs.php';
 class utilisateurc{
     function recupererutilisateur(){
         $sql="SELECT * FROM utilisateurs";

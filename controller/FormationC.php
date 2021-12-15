@@ -197,5 +197,18 @@ Function count_res(){
         die('Erreur: '.$e->getMessage());
     }   
 }
+/********************************************Function count res*****************************************/
+Function affiche($id){
+
+	$sql="SELECT * FROM formations WHERE id_formation='$id' " ;
+    $db = config::getConnexion();
+    try{
+        $liste = $db->query($sql);
+        return $liste;
+    }
+    catch(Exception $e){
+        die('Erreur:' . $e->getMessage());
+    }
+}
 }
 ?>

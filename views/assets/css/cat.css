@@ -1,6 +1,6 @@
 
   /*navigateur barre menu*/
-   * {
+  * {
     margin: 0;
     padding: 0;
   }
@@ -163,11 +163,12 @@
 
 /*Background*/
   section {
-    background: #ffffff;
+    background: #dde7ec00;
     color: #F44336;
     padding: 2em 0 8em;
     min-height: 100vh;
     position: relative;
+    left: -120px;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -302,13 +303,16 @@
   }
   .pricing-palden .pricing-action {
     font-weight: bold;
-    margin: auto 3em 2em 3em;
-    padding: 1em 2em;
+    margin: 1rem 1rem 1rem 1rem;
+    padding: 1rem 1rem 1rem 1rem;
     color: #fff;
     border-radius: 30px;
     background: #220CB6; 
     -webkit-transition: background-color 0.3s;
     transition: background-color 0.3s;
+    position: relative;
+    left: 320px;
+    top: -25px;
   }
   .pricing-palden .pricing-action:hover, .pricing-palden .pricing-action:focus {
     background-color: #fe7062;

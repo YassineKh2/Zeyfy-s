@@ -1,8 +1,12 @@
 <?php
 require '../../../model/db.class.php';
 require '../../../model/panier.class.php';
+include_once '../../../controller/FormationC.php';
+$id=$_GET['id_formation'];
 $DB= new DB();
 $panier = new panier($DB);
+$formationC = new FormationC();
+$listeFormations = $formationC->affiche($id);
 ?>
 
 
@@ -35,54 +39,51 @@ $panier = new panier($DB);
 <div class="container">
         <div class="heading">
           <h1>
-            Achat catégorie
+            Achat Formations
           </h1>
         <form method="post" action="panier.php">
-          <a href="#" class="visibility-cart transition is-open">X</a>    
         </div>
         
         <div class="cart transition is-open">
-          
-          <a href="#" class="btn btn-update">Update cart</a>
-          
+         
+        <button type="submit" class="btn btn-update" onclick="alerts('Le paiement a été effectué avec succès'); return false;"><a href="../Game/indexlevel.php?id_formation=<?php echo $id;?>&IdCategorie=<?php echo $_GET['IdCategorie'];?>" style="color:white;">Payer</a></button>
+        
           <div class="table">
             
             <div class="layout-inline row th">
-              <div class="col col-pro">Catégorie</div>
+              <div class="col col-pro">Formation</div>
               <div class="col col-price align-center "> 
-                Offres
+                Prix
               </div>
-              <div class="qty">Quantité</div>
               <div class="col">Suppression</div>
             </div>
               <?php
-              $IdCategorie = array_keys($_SESSION['panier']);
-              if (empty($IdCategorie)){
-                $categorie = array();
+              /*$ids = array_keys($_SESSION['panier']);
+              if (empty($ids)){
+                $formation = array();
               }
               else {
-                $categorie = $DB->query('SELECT * FROM categorie WHERE IdCategorie IN ('.implode(',',$IdCategorie).')');
+                $formation = $DB->query('SELECT * FROM formations WHERE id_formation IN ('.implode(',',$ids).')');
               }
-              foreach ($categorie as $categorie){
+             */
               ?>
+              <?php //$formation = $DB->query('SELECT * from formations') ;?>
+              <?php  foreach ($listeFormations as $formation){ ?>
             <div class="layout-inline row">
               <div class="col col-pro layout-inline">
-                <h2><?php echo $categorie->$NomCategorie; ?> </h2>
+                <h2>    <?php echo $formation['titre_f']; ?></h2>
               </div>
               <div class="col col-price col-numeric align-center ">
-                <p><?php echo $categorie->$NomOffre; ?></p>
+                <p> <?php echo $formation['prix_f']; ?> Dinar</p>
               </div>
-             <div class="qty"><input type="text" name="panier[quantité][<?php echo $categorie->IdCategorie; ?>]" value=" <?php echo $_SESSION['panier'][$categorie->$IdCategorie]; ?>" width="30">
-               
-             </div>
               <div class="product-removal">
-                <button href="panier.php?removeproduct=<?php echo $categorie->IdCategorie; ?>" class="remove-product">
-                  Supprimer
-                </button>
+              <form method="POST" action="panier.php?ad">
+						           <input type="submit" class="remove-product" name="Supprimer" value="Supprimer">
+					       </form> 
               </div>
             </div>
             <?php } ?>
-            <input type="submit" value="Update">
+           
         </div>
         </form>
         </div>
@@ -90,4 +91,11 @@ $panier = new panier($DB);
    
               
       </div>
+
+              </body>
+      <script>
+        var b =document.querySelector('button');
+
+        b.addEventListener('click',function(){window.alert('Le paiement a été effectué avec succès')});
+      </script>
 

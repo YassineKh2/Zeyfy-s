@@ -1,20 +1,22 @@
 <?php
+include 'C:\xampp\htdocs\educaplay\controller\FormationC.php';
 include_once 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
-require_once '../../../model/db.class.php';
-require_once '../../../model/panier.class.php';
-
 $utilisateurc = new utilisateurc;
-$DB= new DB();
-$panier = new panier($DB);
+$formationC = new FormationC();
+$categ=$_GET['categ'];
+$listeFormations = $formationC->afficherformationsc($categ);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="Front/categorie.css" />
+    <link rel="stylesheet" href="../../assets/css/cat.css" />
+    <link rel="stylesheet" href="../../assets/css/forrr.css">
     <script src="https://kit.fontawesome.com/56a94e38db.js" crossorigin="anonymous"></script>
+
 <link rel="stylesheet" href="../../assets/css/userd.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -29,7 +31,7 @@ $panier = new panier($DB);
           text-align:center;
           font-family: 'Oswald', sans-serif;
           font-size: 18px;
-          height: 100vh;
+          max-height: 1000vh;
         }
         h1{
           color:#212121;
@@ -44,13 +46,13 @@ $panier = new panier($DB);
 <body>
 
     <nav>
-        <a href="offres.html"> <img src="logo.png"> </a>
+        <a href="offres.html"> <img src="../categorie/logo.png"> </a>
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
     <ul>
     <li><a href="../Mainpage/index.php">ACCUEIL</a></li>
        <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
-        <li><a href="panier.php">PANIER</a></li>
+        <li><a href="../categorie/panier.php">PANIER</a></li>
         <li><a href="../avis/index.php">CONTACT</a></li>
     </ul>
         </div>
@@ -78,30 +80,33 @@ $panier = new panier($DB);
   </div>';
         }
         ?>
+
     <section>
         <div class='pricing pricing-palden'>
 
       
-          <div class='pricing-item'>
-          <?php $categorie = $DB->query('SELECT * from categorie') ?>
-              <?php foreach ($categorie as $categorie ) { ?>
-                <div class='pricing-deco'>
-              <svg class='pricing-deco-img' enable-background='new 0 0 300 100' height='100px' id='Layer_1' preserveAspectRatio='none' version='1.1' viewBox='0 0 300 100' width='300px' x='0px' xml:space='preserve' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns='http://www.w3.org/2000/svg' y='0px'>
-                <path class='deco-layer deco-layer--1' d='M30.913,43.944c0,0,42.911-34.464,87.51-14.191c77.31,35.14,113.304-1.952,146.638-4.729&#x000A; c48.654-4.056,69.94,16.218,69.94,16.218v54.396H30.913V43.944z' fill='#FFFFFF' opacity='0.6'></path>
-                <path class='deco-layer deco-layer--2' d='M-35.667,44.628c0,0,42.91-34.463,87.51-14.191c77.31,35.141,113.304-1.952,146.639-4.729&#x000A;  c48.653-4.055,69.939,16.218,69.939,16.218v54.396H-35.667V44.628z' fill='#FFFFFF' opacity='0.6'></path>
-                <path class='deco-layer deco-layer--3' d='M43.415,98.342c0,0,48.283-68.927,109.133-68.927c65.886,0,97.983,67.914,97.983,67.914v3.716&#x000A;  H42.401L43.415,98.342z' fill='#FFFFFF' opacity='0.7'></path>
-                <path class='deco-layer deco-layer--4' d='M-34.667,62.998c0,0,56-45.667,120.316-27.839C167.484,57.842,197,41.332,232.286,30.428&#x000A; c53.07-16.399,104.047,36.903,104.047,36.903l1.333,36.667l-372-2.954L-34.667,62.998z' fill='#FFFFFF'></path>
-              </svg>
-              <div class='pricing-price'>
-              <?php echo $categorie->NomCategorie; ?>
-              </div>
-              <h3 class='pricing-title'>  <?php echo $categorie->NomOffre; ?>  </h3>
+          
+          <?php
+        foreach ($listeFormations as $formation) {
+        ?>
+            <div class="instructor-profile_courses_list1">
+                <div class="course_align_v1">
+                    <img src="../../assets/images/img_profil.jpg" alt="Profile" class="courses_list_img">
+                    <div class="course_align1">
+                        <h1 class="course_title"><?php echo $formation['titre_f']; ?></h1>
+                    </div>
+                </div>
+                <div class="course_align1">
+                    <div class="course_v3">
+                        <div class="course_categorie"><?php echo $formation['filiere']; ?></div>
+                        <div class="course_categorie" style="margin-left:1rem"><?php echo $formation['prix_f']; ?> Dinar</div>
+                        <a class='pricing-action' href="../categorie/panier.php?id_formation=<?php echo $formation['id_formation'];?>&IdCategorie=<?php echo $_GET['IdCategorie'];?>">Ajouter Panier</a>
+                    </div>
+                </div>
             </div>
-            
-            <a class='pricing-action' href="../formation/afficheForC.php?categ=<?php echo $categorie->NomCategorie;?>&IdCategorie=<?php echo $categorie->IdCategorie;?>">Afficher formations</a>
-              <?php }?>
+        <?php } ?>
               
-          </div>
+        
          
          
         </div>
@@ -161,6 +166,7 @@ $panier = new panier($DB);
             </div>
         </div>
     </footer> 
+
   <!----------------- script for drop donw menu---------------------->
   <script>
         function drop() {

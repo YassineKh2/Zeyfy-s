@@ -1,5 +1,8 @@
 /*navigateur barre menu*/
-
+body
+{
+  background-color:#88c3f3; 
+}
 nav{
  
   background-color:#88c3f3;
@@ -49,7 +52,7 @@ transition: 0.5s;
 /*--Contact--*/
 section#contact {
   background-color:#88c3f3;
-  padding: 100px 15px;
+  padding: 221px 15px;
 }
 section#contact .container{
   max-width: 900px;

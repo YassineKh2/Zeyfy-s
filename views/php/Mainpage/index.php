@@ -79,7 +79,7 @@ $listeFormations = $formationC->afficherformationsc($_GET['categ']);
          if ($_SESSION['auth'] == false)   
        echo'<a href="../Login/login.php"> <button class="button-get" role="button">Jouez !</button></a>';
        else
-       echo'<a href="../Game/indexlevel.php"> <button class="button-get" role="button">Jouez !</button></a>';
+       echo'<a href="../categorie/categorie.php"> <button class="button-get" role="button">Jouez !</button></a>';
        ?>
     </section>
     <!------------- formation------------>

@@ -1,11 +1,13 @@
 <?php 
+include_once 'C:\xampp\htdocs\educaplay\config.php';
+
 class panier{
 
     private $DB;
 
     public function __construct($DB){
         if(!isset($SESSION)){
-            session_start();
+            // session_start();
         }
         if(!isset($SESSION['panier'])){
             $SESSION['panier'] = array();
@@ -20,25 +22,25 @@ class panier{
     }
 
     public function update(){
-        foreach($_SESSION['panier'] as $IdCategorie => $quantite){
-            if(isset($_POST['panier']['quantite'][$IdCategorie])){
-                $_SESSION['panier'][$IdCategorie] = $_POST['panier']['quantite'][$IdCategorie];
+        foreach($_SESSION['panier'] as $id_formation => $quantite){
+            if(isset($_POST['panier']['quantite'][$id_formation])){
+                $_SESSION['panier'][$id_formation] = $_POST['panier']['quantite'][$id_formation];
             }
         }
         $_SESSION['panier'] = $_POST['panier']['quantite'];
     }
 
-    public function add($IdCategorie){
-        if(isset($_SESSION['panier'][$IdCategorie])){
-            $_SESSION['panier'][$IdCategorie]++;
+    public function add($id_formation){
+        if(isset($_SESSION['panier'][$id_formation])){
+            $_SESSION['panier'][$id_formation]++;
         }
         else {
-            $_SESSION['panier'][$IdCategorie] = 1;
+            $_SESSION['panier'][$id_formation] = 1;
         }
     }
 
-    public function removeproduct($IdCategorie){
-        unset($_SESSION['panier'][$IdCategorie]);
+    public function removeproduct($id_formation){
+        unset($_SESSION['panier'][$id_formation]);
     }
   
 }
