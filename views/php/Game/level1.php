@@ -3,7 +3,9 @@
 
 include_once 'C:\xampp\htdocs\educaplay\config.php';
 include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
-$sql = "SELECT * from cours";
+$id=$_GET['id_formation'];
+$l=$_GET['level'];
+$sql = "SELECT * from cours where idFormation='$id' and level='$l'";
 try {
 	$db = config::getConnexion();
 	$liste = $db->query($sql);
@@ -50,9 +52,10 @@ try {
 		</nav>
 
 		<div class="text-box">
-			<h1 id="titreCours1">Cours Javascript</h1>
+		<?php foreach ($liste as $cours) { ?>
+			<h1 id="titreCours1">Cours <?php echo $cours['nomCours'];?></h1>
 
-			<?php foreach ($liste as $cours) { ?>
+			
 				<pre id="contenuDuCours" value=<?php //echo $cours['idCours']
 												?>><?php //echo $cours['contenuCours']
 																				?>
@@ -63,7 +66,7 @@ try {
 
 				<a href="templatequiz1.php"> <button class="button-jouer" role="button">Commencez le quiz!</button> </a>
 				<div class="div_tel">
-					<a href="telechargerCours.php?url=../formation/uploads/<?php echo $cours['contenuCours'];?>"> <button class="button-telecharger" role="button">Télécharger le contenue</button></a>
+					<a href="telechargerCours.php?url=../formation/uploads/<?php echo $cours['contenuCours'];?>&level=<?php echo $l?>&id_formation=<?php echo $_GET['id_formation'];?>&IdCategorie=<?php echo $_GET['IdCategorie'];?>"> <button class="button-telecharger" role="button">Télécharger le contenue</button></a>
 					<p class="text_tel">                                      Possibilité1:
 
                 Avec EDUCAPLAY il est possible de
@@ -77,7 +80,8 @@ try {
 						
                     Avec EDUCAPLAY il est possible 
 	  aussi d'ouvrire le fichier de cours et terminer 
-                    votre lecture avec google Docs.
+                    votre lecture 
+					avec google Docs.
 					</p>
 				</div>
 		</div>

@@ -2,6 +2,8 @@
 require '../../../model/db.class.php';
 require '../../../model/panier.class.php';
 include_once '../../../controller/FormationC.php';
+include_once 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
+$utilisateurc = new utilisateurc;
 $id=$_GET['id_formation'];
 $DB= new DB();
 $panier = new panier($DB);
@@ -16,7 +18,10 @@ $listeFormations = $formationC->affiche($id);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link rel="stylesheet" href="../../assets/css/userd.css"> 
     <link rel="stylesheet" href="Front/checkout.css" />
+    <script src="https://kit.fontawesome.com/56a94e38db.js" crossorigin="anonymous"></script>
+
     <title>Document</title>
 </head>
 <body>
@@ -26,16 +31,39 @@ $listeFormations = $formationC->affiche($id);
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
-            <li><a href="">ACCUEIL</a></li>
-            <li><a href="">PLANS</a></li>
-            <li><a href="">FONCTIONNALITES</a></li>
-            <li><a href="">CONTACT</a></li>
+        <li><a href="../Mainpage/index.php">ACCUEIL</a></li>
+       <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
+        <li><a href="../categorie/panier.php">PANIER</a></li>
+        <li><a href="../avis/index.php">CONTACT</a></li>
         </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>
         
         </nav>
+
         </section>
+        <?php
+        if ($_SESSION['auth'] == false)
+            echo '<span><a href="../Login/login.php"></a></span>';
+        else {
+            $utilisateur = $utilisateurc->recupererutilisateurinfo($_SESSION['user_id']);
+            echo '<div class="action">
+      <div class="profile" onclick="drop();">
+          <img src="../../assets/images/Userpics/' . $utilisateur['photo'] . '" width="300">
+      </div>
+      <div class="menu">
+          <h3>' . $utilisateur['username'] . '<br><p class="a">Etudient</p></h3>
+         <ul>
+              <li class="fas fa-user"><a href="..\User\profiedash.php">Mon Profile</a></li><br>
+              <li class="far fa-clipboard"><a href="#">Mes Formation</a></li><br>
+              <li class="fas fa-edit"><a href="..\User\settings.php">Paramétres</a></li><br>
+              <li class="fas fa-sign-out-alt"><a href="..\User\singout.php">Deconnection</a></li>
+         </ul>
+      </div>
+  </div>';
+        }
+        ?>
+
 <div class="container">
         <div class="heading">
           <h1>
@@ -93,6 +121,14 @@ $listeFormations = $formationC->affiche($id);
       </div>
 
               </body>
+                <!----------------- script for drop donw menu---------------------->
+    <script>
+        function drop() {
+            const dropmenu = document.querySelector(".menu");
+            dropmenu.classList.toggle('active');
+        }
+    </script>
+
       <script>
         var b =document.querySelector('button');
 

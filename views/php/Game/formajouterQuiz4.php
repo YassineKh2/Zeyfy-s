@@ -4,8 +4,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
     include_once 'C:\xampp\htdocs\educaplay\model\jeux.php'; 
     $idF=$_GET['idF'];
      $sql= "SELECT * from categorie";
-     $sql1= "SELECT * from cours where (level=1 and idFormation='$idF')";
-     
+     $sql1= "SELECT * from cours where (level=4 and idFormation='$idF')";
         try {
             $db=config::getConnexion();
     $liste=$db->query($sql);
@@ -58,7 +57,7 @@ include_once 'C:\xampp\htdocs\educaplay\controller\JeuxController.php';
                                 );
 
                                 $jeuxC->ajouterJeux($jeux);
-                                header("location:formajouterQuiz2.php?idF=$idF");
+                                header('location:Enseignantmotcrois.php');
                             }
                             else
                                 $error = "Missing information";

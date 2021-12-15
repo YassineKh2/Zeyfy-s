@@ -50,8 +50,8 @@ function getWords(){
         xhttp.send(form);
     }
 }
-console.log("empty?",checkEmptyString(indice));
-console.log("form?",form);
+// console.log("empty?",checkEmptyString(indice));
+// console.log("form?",form);
 valider.addEventListener('click',getWords);
 
 

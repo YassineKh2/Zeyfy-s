@@ -16,8 +16,8 @@ class CoursC {
     }
     function ajoutercours($cours){
 
-        $sql = "INSERT INTO cours (nomCours,dateCreationCours, dateModificationCours, idFormation,contenuCours,image)
-                  VALUES (:nomCours, :dateCreationCours, :dateModificationCours, :idFormation, :contenuCours, :image)";
+        $sql = "INSERT INTO cours (nomCours,dateCreationCours, dateModificationCours, idFormation,contenuCours,image,level)
+                  VALUES (:nomCours, :dateCreationCours, :dateModificationCours, :idFormation, :contenuCours, :image, :level)";
      $db = config::getConnexion();
      try{
          $query = $db->prepare($sql);
@@ -27,10 +27,11 @@ class CoursC {
              'dateModificationCours'=> $cours->getdateModificationCours(),
              'idFormation'=> $cours->geturl(),
              'contenuCours'=> $cours->getcontenuCours(),
-             'image'=> $cours->getimage()
+             'image'=> $cours->getimage(),
+             'level'=> $cours->getlevel()
          ]);
          $_SESSION['error']="data add seccsesfuly";
-         header("Location:profile.php?statut=tout&categ=tout&tem=0");
+         //header("Location:profile.php?statut=tout&categ=tout&tem=0");
  } catch (Exception $e){
      $e->getMessage();
  }

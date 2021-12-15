@@ -8,13 +8,15 @@ class cours
     private string $url;
     private string $contenuCours;
     private string $image;
-public function __construct($d,$f,$t,$de,$p,$i){
+    private string $level;
+public function __construct($d,$f,$t,$de,$p,$i,$l){
     $this->nomCours = $d;
     $this->dateCreationCours = $f;
     $this->dateModificationCours = $t;
     $this->url= $de;
     $this->contenuCours= $p;
     $this->image= $i;
+    $this->level= $l;
 }
 public function getidCours (){
     return $this->idCours  ;
@@ -37,6 +39,9 @@ public function getcontenuCours(){
 public function getimage(){
     return $this->image ;
 }
+public function getlevel(){
+    return $this->level ;
+}
 
 public function setnomCours($nomCours){
     $this->nomCours = $nomCours ;
@@ -55,6 +60,9 @@ public function setcontenuCours($contenuCours){
 }
 public function setimage($image){
     $this->image = $image ;
+}
+public function setlevel($level){
+    $this->level = $level ;
 }
 }
 ?>
