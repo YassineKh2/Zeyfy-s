@@ -20,10 +20,9 @@ include 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
     <div class="nav-links" id="navLinks">
         <i class="fa fa-times" onclick="hideMenu()"></i>
 <ul>
-    <li><a href="">ACCUEIL</a></li>
-    <li><a href="">PLANS</a></li>
-    <li><a href="">FONCTIONNALITES</a></li>
-    <li><a href="">CONTACT</a></li>
+<li><a href="../Mainpage/index.php">ACCUEIL</a></li>
+                    <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
+                    <li><a href="../avis/index.php">CONTACT</a></li>
 </ul>
     </div>
     <i class="fa fa-bars" onclick="showMenu()"></i>

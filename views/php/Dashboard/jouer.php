@@ -54,12 +54,12 @@ $listeScore=$joueur_score_jeuxC->afficherscore();?>
                     </a>
                 </li>
                 <li>
-                    <a href="jouer.php">
-                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                        <span class="title">Jouer</span>
+                <a href="dashboardcat.php">
+                        <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+                        <span class="title">Categorie</span>
                     </a>
-                </li>
-                <li>
+                    </li>
+                             <li>
                 <li>
                     <a href="dashavis.php">
                         <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>

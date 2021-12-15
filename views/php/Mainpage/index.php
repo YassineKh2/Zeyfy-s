@@ -153,13 +153,9 @@ $listeFormations = $formationC->afficherformationsc($_GET['categ']);
             <h3>EDUCAPLAY</h3>
 
             <p class="footer-links">
-                <a href="#">ACCUEIL</a>
-                |
-                <a href="#">PLANS</a>
-                |
-                <a href="#">FONCTIONNALITES</a>
-                |
-                <a href="../avis/index.php">CONTACT</a>
+            <li><a href="../Mainpage/index.php">ACCUEIL</a></li>
+                    <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
+                    <li><a href="../avis/index.php">CONTACT</a></li>
             </p>
 
             <p class="footer-company-name">© 2021 Jeu éducatif en ligne.</p>

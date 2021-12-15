@@ -44,7 +44,7 @@
     header('Location:..\Login\login.php');
 
     if (isset($_POST['upload'])){
-        $target= "C:/xampp\htdocs/educaplay/views/assets/images/Userpics/".basename($_FILES['image']['name']);
+        $target= "C:/xampp/htdocs/educaplay/views/assets/images/Userpics/".basename($_FILES['image']['name']);
         $image=$_FILES['image']['name'];
         $utilisateurc->modifierimage($image,$_SESSION['user_id']);
         move_uploaded_file($_FILES['image']['tmp_name'],$target);
@@ -56,7 +56,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="settings.css">
+    <link rel="stylesheet" type="text/css" href="settingsU.css">
     
     <title>Profile</title>
 </head>
@@ -117,7 +117,7 @@
             </div>
            
         </div>
-<form action="" method="POST" id="form">
+<form action="" method="POST" id="form" enctype="multipart/form-data">
     <div class="wrapper">   
         <div class="right">
             <div class="info">
@@ -150,27 +150,31 @@
                      <h4>Confirmer Mot De Passe</h4>
                      <input type="password" name="password2" id="passwordd" value=""> 
                      </div>
-                </div>
-                <button id="sure" class="btn">Desactiver</button>   
+                </div>  
             </div>
             
             <img  src="../../assets/images/Userpics/'.$utilisateur['photo'].'" onclick="" class="pic" width="40%">
+            <div class="picc">
+            <input type="file" name="image" class="bb">
+            <input type="submit" value="Changer photo" id="yess" name="upload" class="bbb"> 
+            </div> 
            ';
         ?>
+         
         </div>
         
     </div>
-       <input type="submit" value="Modifier" class="btn" id='yes'>
+       <input type="submit" value="Modifier" class="btn" id='yes' name="upload">
         <input type="reset" value="Annuler" class="btn" id='no'>
-</form>
 
- <form action="settings.php" method="POST" enctype="multipart/form-data">
- <input type="file" name="image">
- <input type="submit" value="Changer" id='yess' name="upload"> 
+</form>
+<!-- <div class="picc">
+<form action="settings.php" method="POST" enctype="multipart/form-data">
+ <input type="file" name="image" class="bb">
+ <input type="submit" value="Changer photo" id='yess' name="upload" class="bbb"> 
  </form>
        
-
-
+</div>     -->
 
 <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
@@ -201,8 +205,8 @@
 
     
     function myFunction() {
-  var x = document.getElementById("password1");
-  var y = document.getElementById("password2");
+  var x = document.getElementById("password");
+  var y = document.getElementById("passwordd");
   if (x.type === "password") {
     x.type = "text";
     y.type = "text";

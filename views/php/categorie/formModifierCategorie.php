@@ -2,13 +2,21 @@
 include '../../../controller/CategorieC.php';
 $categorieC=new CategorieC();
 
+    $sql="SELECT * FROM offres";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+			}
+			catch(Exception $e){
+				die('Erreur:'. $e->getMessage());
+			}
 ?>
 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="dashboard.css">
+    <link rel="stylesheet" type="text/css" href="Front/dashboard.css">
     <title>User Display</title>
 </head>
     <body>
@@ -51,7 +59,13 @@ $categorieC=new CategorieC();
                         </label>
                     </td>
                     <td>
-                        <input type="text" name="NomOffre" value="<?php echo $categorie['NomOffre']; ?>" id="NomOffre">
+                    <select name="NomOffre">
+                        <?php
+                         foreach($liste as $offres) {
+                        ?>
+                                <option value="<?php echo $offres['NomOffre'] ?>"><?php echo $offres['NomOffre'] ?></option>
+                                     <?php }  ?>
+                    </select>;  
                     </td>
                 </tr>            
                 <tr>

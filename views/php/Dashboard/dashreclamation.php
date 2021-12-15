@@ -61,7 +61,12 @@ $listeavis=$avisC->afficheravis();
                         <span class="title">Chercher jeux</span>
                     </a>
                 </li>
-               
+                <li>
+                <a href="dashboardcat.php">
+                        <span class="icon"><ion-icon name="book-outline"></ion-icon></span>
+                        <span class="title">Categorie</span>
+                    </a>
+                    </li>
                 <li>
                 <li>
                     <a href="dashavis.php">

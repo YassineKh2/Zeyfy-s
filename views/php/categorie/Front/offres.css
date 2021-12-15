@@ -10,6 +10,11 @@
     background-size:cover;
     position: relative;
   } */
+  .piccc{
+    position:absolute;
+    right: -20px;
+    top: -15px;
+    }
   nav{
       display: flex;
       padding: -2% 2%;

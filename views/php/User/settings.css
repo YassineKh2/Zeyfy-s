@@ -13,6 +13,7 @@
     --black2: #999;
 }
 body{
+    background-color: rgba(128, 128, 128, 0.267);
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -179,15 +180,16 @@ background: var(--white);
     border-radius: 6px;
     text-decoration: none;
     color: var(--white);
-    left: 1050px;
-    top: 830px;
+    left: 1100px;
+    top: 837px;
     border-color: #287bff;
-
+    margin-top: 30px;
 }
 .btn:hover{
     background: #02c4ff;
     border-color: #02c4ff;
 }
+
 /* responsive desing*/
 @media (max-width: 991px)
 {
@@ -262,6 +264,7 @@ background: var(--white);
   height: 750px;
   display: flex;
   box-shadow: 0 20px 20px 0 rgba(69, 90, 100, 0.39);
+  background-color: white;
 }
 
 .wrapper .left{
@@ -384,4 +387,39 @@ bottom: 0;
 }
 .em{
     position: absolute;
+}
+.image{
+    position: relative;
+    padding: 5px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    left: 455px;
+    top: -591px;
+    color: #287bff;
+
+}
+.picc{
+    position: absolute;
+    left: 497px;
+    top: 420px;
+
+}
+.bbb{
+    padding: 5px 20px;
+    background: #03f397;
+    border-radius: 6px;
+    text-decoration: none;
+    border-color: #03f397;
+}
+.bbb:hover{
+    background: #75f5c4;
+    border-color: #75f5c4;
+}
+.bb input{
+    width: 130px;
+    height: 30px;
+    border: none;
+    outline: none;
+    font-size: 20px;
+    color: black;
 }

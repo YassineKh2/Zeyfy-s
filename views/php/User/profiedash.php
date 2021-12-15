@@ -1,6 +1,6 @@
 <?php
  include 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
- include_once 'C:\xampp\htdocs\educaplay\controller\enseignantC.php';
+ include 'C:\xampp\htdocs\educaplay\controller\enseignantC.php';
  if($_SESSION['auth']==false)
  header('Location:..\Login\login.php');
  $utilisateurc = new utilisateurc();
