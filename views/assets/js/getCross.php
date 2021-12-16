@@ -3,12 +3,12 @@
 $conn = mysqli_connect("localhost","root","","educaplay");
 
 //geting data from crossword table
-$result = mysqli_query($conn, "SELECT * FROM `crossword` ");
+                    $result = mysqli_query($conn, "SELECT * FROM `crossword` ");
 // WHERE idjeux=1
 //storing in array
 $data= array();
 // 2 req / req tjyb feha id lettre w lettre w thothom f array / req indice indice/
-while($row = mysqli_fetch_assoc($result))
+    while($row = mysqli_fetch_assoc($result))
 {
     $cross=array();
     $cross["idLettre"]= $row["idLettre"];

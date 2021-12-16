@@ -1,11 +1,11 @@
 <?php
-	include 'C:\xampp\htdocs\educaplay\config.php';
+	include_once 'C:\xampp\htdocs\educaplay\config.php';
 	include_once 'C:\xampp\htdocs\educaplay\model\avis.php';
     
 class avisC{
     function ajouteravis($avis){
-        $sql="INSERT INTO avis (contenu,reclamation,dateAvis,nbrN,note) 
-        VALUES (:contenu,:reclamation,:dateAvis,:nbrN,:note)";
+        $sql="INSERT INTO avis (contenu,reclamation,dateAvis,nbrN,note,idUtilisateur) 
+        VALUES (:contenu,:reclamation,:dateAvis,:nbrN,:note,:idUtilisateur)";
         $db = config::getConnexion();
         try{
             $query = $db->prepare($sql);
@@ -17,7 +17,7 @@ class avisC{
                 'dateAvis' => date("Y/m/d"),
                 'nbrN' => 0,
                 'note'=>$avis->getnote(),
-
+                'idUtilisateur' => $avis->getidUtilisateur()
             ]);			
         }
         catch (Exception $e){

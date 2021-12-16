@@ -34,7 +34,7 @@ if (
             $_POST['username'],'',''
         );
         $utilisateurc->modifierutilisateur($utilisateur,$_SESSION['user_id']);
-        header('Location:profile.php');
+        header('Location:profileE.php');
   
     }
     else

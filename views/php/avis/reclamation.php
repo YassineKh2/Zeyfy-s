@@ -22,7 +22,7 @@ $error = "";
          !empty($_POST["reclamation"])
      ) {
          $avis = new avis(
-             '',$_POST['reclamation'],22/01/2021,0,''
+             '',$_POST['reclamation'],22/01/2021,0,'',$_SESSION['user_id']
            
          );
          $avisC->ajouteravis($avis);

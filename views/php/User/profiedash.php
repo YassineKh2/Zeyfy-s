@@ -33,12 +33,6 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></ion-icon></span>
-                        <span class="title">Mes Formation</span>
-                    </a>
-                </li>
-                <li>
                     <a href="avis_et_reclamation.php">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                         <span class="title">Avis et Reclamation</span>
@@ -51,7 +45,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../avis/reclamation.php">
                         <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
                         <span class="title">Aide</span>
                     </a>

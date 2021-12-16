@@ -1,11 +1,14 @@
 
 
 <?php
-
+// $k="rfrg";
+// //$k=$_GET["idCours"];
+// echo $k;
+// header('Location: initSre.php?i=$idCours');
 //getting data from db
 $conn = mysqli_connect("localhost","root","","educaplay");
 //geting data from jeux table
-$result = mysqli_query($conn, "SELECT question,reponseA,reponseB,reponseC,reponseD,correctAnswer FROM `jeux`   ");
+$result = mysqli_query($conn, "SELECT question,reponseA,reponseB,reponseC,reponseD,correctAnswer FROM `jeux` where idCours='44'  ");
 // where idCours='.$idCours.'
 // WHERE idCours=1
 //storing in array

@@ -1,7 +1,12 @@
 <?php
 include 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
+include 'C:\xampp\htdocs\educaplay\controller\avisC.php';
 if($_SESSION['auth']==false)
 header('Location:..\Login\login.php');
+$avisC= new avisC();
+$avis= new avisC();
+$listeavis=$avisC->afficheravis(); 
+$listeavis2=$avis->afficheravis(); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,12 +36,6 @@ header('Location:..\Login\login.php');
                 </li>
                 <li>
                     <a href="#">
-                        <span class="icon"><ion-icon name="clipboard-outline"></ion-icon></span>
-                        <span class="title">Mes Formation</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
                         <span class="icon"><ion-icon name="person-outline"></ion-icon></span>
                         <span class="title">Avis et Reclamation</span>
                     </a>
@@ -48,7 +47,7 @@ header('Location:..\Login\login.php');
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="../avis/reclamation.php">
                         <span class="icon"><ion-icon name="help-circle-outline"></ion-icon></span>
                         <span class="title">Aide</span>
                     </a>
@@ -77,24 +76,28 @@ header('Location:..\Login\login.php');
             <table>
                 <tr>
                     <td>Avis</td>
-
+                    <td></td>
+                    <td>Date</td>
+                    <td>Note</td>
                 </tr>
-                <tr>
-                    <td><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, eos. Accusamus eligendi 
-                        nihil facilis minima. Ob</p></td>
-                        <td><a href=""><ion-icon name="create-outline"></ion-icon></a></td>
-                        <td><a href=""><ion-icon name="trash-outline"></ion-icon></a></td>
-                </tr>
-                <tr>
-                    <td><p>meeeeeeeeeeeeeeh</p></td>
-                    <td><a href=""><ion-icon name="create-outline"></ion-icon></a></td>
-                    <td><a href=""><ion-icon name="trash-outline"></ion-icon></a></td>
-                </tr>
-                <tr>
-                    <td><p>idkk mann</p></td>
-                    <td><a href=""><ion-icon name="create-outline"></ion-icon></a></td>
-                    <td><a href=""><ion-icon name="trash-outline"></ion-icon></a></td>
-                </tr>
+<?php foreach($listeavis as $avisC) {
+    if ($avisC['idUtilisateur']==$_SESSION['user_id'])
+                {
+                    if($avisC['reclamation']==''){
+                          
+                        echo '
+                            <tr>
+                                <td><p>'.$avisC['contenu'].'</p></td>
+                                <td></td>
+                                <td><p>'.$avisC['dateAvis'].'</p></td>
+                                <td><p>'.$avisC['note'].'</p></td>
+                                <td><a href=""><ion-icon name="create-outline"></ion-icon></a></td>
+                             <td><a href=""><ion-icon name="trash-outline"></ion-icon></a></td>
+                            </tr>';
+                }
+}
+}
+?>
         </table>
         </div>
         <br><br>
@@ -103,24 +106,26 @@ header('Location:..\Login\login.php');
                 <table>
                     <tr>
                         <td>Reclamation</td>
-                        <td>Dans</td>
-                        <td>Statue</td>
+                        <td></td>
+                        <td>Date</td>
                     </tr>
-                    <tr>
-                        <td><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, eos. Accusamus eligendi 
-                            nihil facilis minima. Ob</p></td>
-                        <td><p>Info</p></td>
-                        <td><span class="status delivered">Delivered</span></td>
-                        <td><a href=""><ion-icon name="create-outline"></ion-icon></a></td>
-                        <td><a href=""><ion-icon name="trash-outline"></ion-icon></a></td>
-                    </tr>
-                    <tr>
-                        <td><p>Cours info</p></td>
-                        <td><p>Math</p></td>
-                        <td><span class="status pending">En Cours</span></td>
-                        <td><a href=""><ion-icon name="create-outline"></ion-icon></a></td>
-                        <td><a href=""><ion-icon name="trash-outline"></ion-icon></a></td>
-                    </tr>
+                    <?php foreach($listeavis2 as $avis) {
+    if ($avis['idUtilisateur']==$_SESSION['user_id'])
+                {
+                    if($avis['contenu']==''){
+                          
+                        echo '
+                            <tr>
+                                <td><p>'.$avis['reclamation'].'</p></td>
+                                <td></td>
+                                <td><p>'.$avis['dateAvis'].'</p></td>
+                                <td><a href=""><ion-icon name="create-outline"></ion-icon></a></td>
+                             <td><a href=""><ion-icon name="trash-outline"></ion-icon></a></td>
+                            </tr>';
+                }
+}
+}
+?>
                 </table>
         </div>
 </div>

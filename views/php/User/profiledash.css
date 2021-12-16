@@ -118,8 +118,7 @@ background: var(--white);
     position: absolute;
     width: calc(100% - 300px);
     left: 300px;
-    min-height: 100vh;
-    background: var(--white);
+    min-height: 100vh;  
     transition: 0.5s;
 }
 .main.active{

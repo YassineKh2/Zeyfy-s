@@ -22,7 +22,7 @@ $error = "";
          $avis = new avis(
              $_POST['contenu'],
              '',22/01/2021,0,
-             $_POST['note']
+             $_POST['note'],$_SESSION['user_id']
 
            
          );

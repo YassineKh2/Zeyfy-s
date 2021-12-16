@@ -179,7 +179,7 @@ $type=$enseignant['etude'];
         
         </div>
     </div>
-    <a href="settings.php" class="btn">Modifier</a>
+    <a href="settingE.php" class="btn">Modifier</a>
 <div class="main2">
         <div class="topbar">
             <div class="toggle">
@@ -187,34 +187,7 @@ $type=$enseignant['etude'];
             </div>
            
         </div>
-<div class="ar">
-        <div class="reclamation">
-                    <h4>Vos Reclamation</h4>
-                <table>
-                    <tr>
-                        <td>Reclamation</td>
-                        <td>Dans</td>
-                        <td>Statue</td>
-                    </tr>
-                    <tr>
-                        <td><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, eos. Accusamus eligendi 
-                            nihil facilis minima. Ob</p></td>
-                        <td><p>Info</p></td>
-                        <td><span class="status delivered">Delivered</span></td>
-                        <td><a href=""><ion-icon name="create-outline"></ion-icon></a></td>
-                        <td><a href=""><ion-icon name="trash-outline"></ion-icon></a></td>
-                    </tr>
-                    <tr>
-                        <td><p>Cours info</p></td>
-                        <td><p>Math</p></td>
-                        <td><span class="status pending">En Cours</span></td>
-                        <td><a href=""><ion-icon name="create-outline"></ion-icon></a></td>
-                        <td><a href=""><ion-icon name="trash-outline"></ion-icon></a></td>
-                    </tr>
-                </table>
-        </div>
-</div>
-            
+
 
 
 

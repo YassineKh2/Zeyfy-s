@@ -47,18 +47,15 @@ include 'C:\xampp\htdocs\educaplay\controller\utilisateursC.php';
           <img src="../../assets/images/idk.png">
       </div>
       <div class="menu">
-          <h3>User<br><p class="a">Profession</p></h3>
+          <h3>ADMIN<br><p class="a">ADMIN</p></h3>
          <ul>
               <li class="fas fa-user"><a href="..\dashboard\dashboard.php">My Profile</a></li><br>
               <li class="fas fa-edit"><a href="..\User\settings.php">Edit Profile</a></li><br>
-              <li class="fas fa-inbox"><a href="#">Inbox</a></li><br>
-              <li class="fas fa-question"><a href="#">Help</a></li><br>
               <li class="fas fa-sign-out-alt"><a href="..\User\singout.php">Logout</a></li>
          </ul>
       </div>
   </div>';
 ?>
-<button class="button-get" role="button">GET START</button>
     </section>
 <!------------- formation------------>
 <section class="formation">

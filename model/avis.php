@@ -8,14 +8,14 @@ class avis
     private string $nbrN;
     private string $idUtilisateur;
     private $note;
-public function __construct($n,$p,$m,$f,$s){
+public function __construct($n,$p,$m,$f,$s,$l){
    
     $this->contenu = $n;
     $this->reclamation = $p;
     $this->dateAvis = $m;
     $this->nbrN = $f;
     $this->note = $s;
-   
+    $this->idUtilisateur = $l;
 }
 public function getidAvis(){
     return $this->idAvis ;
