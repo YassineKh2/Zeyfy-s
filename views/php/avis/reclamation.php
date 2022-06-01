@@ -26,11 +26,11 @@ $error = "";
            
          );
          $avisC->ajouteravis($avis);
-        
+         header("location:../Mainpage/index.php?categ=1");
      }
   
  }
- $email='ziedghanem30@gmail.com';
+ $email='lufa1.torkhani@gmail.com';
  $email_content = array(
     'Subject' => 'IMPORTANT!! ETUDIER RECLAMATION by EDUCAPLAY',
     'body' => "Bonjour Mr/Mme zied,
@@ -70,9 +70,9 @@ sendemail($email,$email_content);
         <div class="nav-links" id="navLinks">
             <i class="fa fa-times" onclick="hideMenu()"></i>
     <ul>
-    <li><a href="../Mainpage/index.php">ACCUEIL</a></li>
+    <li><a href="../Mainpage/index.php?categ=1">ACCUEIL</a></li>
                     <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
-                    <li><a href="../avis/index.php">CONTACT</a></li>
+                    <li><a href="../avis/index.php?categ=1">CONTACT</a></li>
     </ul>
         </div>
         <i class="fa fa-bars" onclick="showMenu()"></i>

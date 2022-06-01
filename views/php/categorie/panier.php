@@ -31,10 +31,10 @@ $listeFormations = $formationC->affiche($id);
             <div class="nav-links" id="navLinks">
                 <i class="fa fa-times" onclick="hideMenu()"></i>
         <ul>
-        <li><a href="../Mainpage/index.php">ACCUEIL</a></li>
+        <li><a href="../Mainpage/index.php?categ=1">ACCUEIL</a></li>
        <li><a href="../avis/reclamation.php">RECLAMATION</a></li>
-        <li><a href="../categorie/panier.php">PANIER</a></li>
-        <li><a href="../avis/index.php">CONTACT</a></li>
+        <li><a href="../categorie/panier.php?id_formation=1">PANIER</a></li>
+        <li><a href="../avis/index.php?categ=1">CONTACT</a></li>
         </ul>
             </div>
             <i class="fa fa-bars" onclick="showMenu()"></i>

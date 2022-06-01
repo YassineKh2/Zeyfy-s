@@ -4,8 +4,9 @@ $utilisateurc = new utilisateurc;
 ?>
 <?php
 include 'C:\xampp\htdocs\educaplay\controller\FormationC.php';
-
+ 
 $formationC = new FormationC();
+
 if(strcmp($_GET['categ'],'')!=0)
 $listeFormations = $formationC->afficherformationsc($_GET['categ']);
 ?>
